@@ -1,0 +1,58 @@
+.start h1{
+  font-size: 80px;
+  color: orange;
+  font-family: Georia;
+  font-style: bold;
+}
+h1{
+  font-size: 40px;
+  color: orange;
+  font-family: Georia;
+  font-style: bold;
+}
+.backgroundpic{
+}
+.start h4{
+  color: gray;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  font-style: cursive;
+}
+.author{
+  border-top: 1px solid lightgray; 
+  border-bottom: 1px solid lightgray;
+  color: lightgray;   
+}
+body{
+  text-align: center;
+  background: #141E30;
+  background: -webkit-linear-gradient(-45deg, #35577D, #141E30);
+}
+p{
+  line-height: 50px;
+  padding-top: 30px;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-weight: bold;
+}
+.share a{
+  background: orange;
+  border: 1px solid orange;
+  border-radius: 10px;
+  color: white;
+  display: inline-block;
+  margin: 10px;
+  padding: 14px;
+  text-decoration: none;
+  text-align: left;
+}
+.share a:hover {
+  background: white;
+  border: 1px solid orange;
+  color: orange;
+}
+.backgroundcolor1{
+  background-color: black;
+  
+}
