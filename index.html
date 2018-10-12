@@ -5,12 +5,36 @@
     <head>
       <body>
         <script>
-          var favColor = prompt("what is your favorite color?", "blue's a nice one").toUpperCase()          
-        if(favColor === "BLUE") {
-        confirm("cool, blue's a good color")
-        }else{ 
-         confirm("Blue is a better color") 
-        }
+          var randomNumber = (Math.floor(Math.random() * 90))
+if (randomNumber > 60) {
+  var computerChoice = ("Rock")
+} if (randomNumber > 30) {
+  var computerChoice = ("Paper")
+} else {
+  var computerChoice = ("Sissors")
+}
+var playerChoice = prompt("Choose what to play!", "Rock, Paper, or Sissors".toUpperCase)
+if (playerChoice === "ROCK" && computerChoice === "Rock") {
+  confirm("It's a tie, you both chose rock!")
+} if (playerChoice === "ROCK" && computerChoice === "Paper") {
+  confirm("You lost, the computer chose paper!")
+} if (playerChoice === "ROCK" && computerChoice === "Sissors") {
+  confirm("You won, The computer choose sissors!")
+} if (playerChoice === "PAPER" && computerChoice === "Rock") {
+  confirm("You won, the computer chose rock!")
+} if (playerChoice === "PAPER" && computerChoice === "Paper") {
+  confirm("It's a tie, you both chose paper!")
+} if (playerChoice === "PAPER" && computerChoice === "Sissors") {
+  confirm("You lost, the computer chose sissors!")
+} if (playerChoice === "SISSORS" && computerChoice === "Rock") {
+  confirm("You lost, the computer chose rock!")
+} if (playerChoice === "SISSORS" && computerChoice === "Paper") {
+  confirm("You won, the computer chose paper!")
+} if (playerChoice === "SISSORS" && computerChoice === "Sissors") {
+  confirm("It's a tie, you both picked sissors!")
+} else {
+  confirm("Sorry, that's not an option!")
+}
         </script>
         
         <body>
