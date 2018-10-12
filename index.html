@@ -6,6 +6,8 @@
       
       <body> <button onclick="RPS()">Play Rock, Paper, Sissors!</button>
        <script>
+          var playerScore = 0
+           var computerScore = 0
          function RPS() {
            
           var randomNumber = (Math.floor(Math.random() * 90))
@@ -16,8 +18,7 @@ if (randomNumber > 60) {
 } else {
   var computerChoice = ("Sissors")
 }
-           var playerScore = 0
-           var computerScore = 0
+           
 var playerChoice = prompt("Choose what to play!", "Rock, Paper, or Sissors").toUpperCase();
 if (playerChoice === "ROCK" && computerChoice === "Rock") {
   confirm("It's a tie, you both chose rock!")
