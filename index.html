@@ -48,10 +48,15 @@ if (playerChoice === "ROCK" && computerChoice === "Rock") {
 } if (playerChoice === "SISSORS" && computerChoice === "Sissors") {
   confirm("It's a tie, you both picked sissors!")
 } else {
-  confirm("The current score is " + computerScore + " computer vs " + playerScore + " player")
+  confirm("The current score is " + computerScore + " (computer) vs " + playerScore + " (player) Get five points to win!")
 }
-        
+   if (playerScore === 5){
+   confirm("Congrats! You beat the computer!")
+   }
+   if (computerScore === 5)
+   confirm("The computer beat you...")        
          }
+         
          </script>
        
         
