@@ -14,13 +14,13 @@
 if (randomNumber > 60) {
   var computerChoice = ("Rock")
   confirm(randomNumber)
-} if (randomNumber > 30) {
+}else{ if (randomNumber > 30) {
   var computerChoice = ("Paper")
   confirm(randomNumber)
 } else {
   var computerChoice = ("Sissors")
   confirm(randomNumber)
-}
+}}
            
 var playerChoice = prompt("Choose what to play!", "Rock, Paper, or Sissors").toUpperCase();
 if (playerChoice === "ROCK" && computerChoice === "Rock") {
