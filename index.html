@@ -49,7 +49,9 @@ if (playerChoice === "ROCK" && computerChoice === "Rock") {
   playerScore++
 } if (playerChoice === "SISSORS" && computerChoice === "Sissors") {
   confirm("It's a tie, you both picked sissors!")
-} else {
+} if(playerChoice === "END"){
+  playerScore + 5 
+}else {
   confirm("The current score is " + computerScore + " (computer) vs " + playerScore + " (player) Get five points to win!")
 }
    if (playerScore === 5){
