@@ -4,15 +4,14 @@
     <h1>Niffirg</h1>
     <head>
       
-      <body> <button onclick="RPS()" class="btn">Play Rock, Paper, Sissors!</button>
-        <link href="style.css" type="text/css" rel="stylesheet">
+      <body> 
        <script>
           var playerScore = 0
            var computerScore = 0
          function RPS() {
         </script>
            <html>
-            
+            <br>
            <img src="http://gclipart.com/wp-content/uploads/2017/08/Rock-clip-art-free-clipart-images-4.png" height="100" width="100">
              <img src="http://images.clipartpanda.com/paper-clip-art-paper.png" height="100" width="100">
                <img src="http://images.clipartpanda.com/hair-scissors-clip-art-dcrGoRoc9.png" height="100" width="100">
@@ -59,12 +58,15 @@ if (playerChoice === "ROCK" && computerChoice === "Rock") {
    if (playerScore === 5){
    confirm("Congrats! You beat the computer!")
    }
-   if (computerScore === 5)
+   if (computerScore === 5) {
    confirm("The computer beat you...")        
          }
          
          </script>
-       
+       <html>
+         <button onclick="RPS()" class="btn">Play Rock, Paper, Sissors!</button>
+        <link href="style.css" type="text/css" rel="stylesheet">
+         </html>
         
         <body>
 </html>
