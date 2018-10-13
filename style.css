@@ -1,4 +1,4 @@
-.gameButton {
+.btn {
   background-color: #ff0000;;
   font-size: 20px;
   font-color: ##ffffff;
@@ -7,7 +7,7 @@
   border-radius: 12px;
 }
 
-.gameButton:hover {
+.btn:hover {
   background-color: ##ffffff;
   font-size: 20px;
   font-color: #ff0000;
