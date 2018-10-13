@@ -1,14 +1,14 @@
 .btn {
   background-color: #ff0000;;
   font-size: 20px;
-  font-color: ##ffffff;
+  font-color: #f2f2f2;
   padding: 12px 28px;
   border: 2px solid #ff0000;
   border-radius: 12px;
 }
 
 .btn:hover {
-  background-color: ##ffffff;
+  background-color: #f2f2f2;
   font-size: 20px;
   font-color: #ff0000;
   padding: 12px 28px;
