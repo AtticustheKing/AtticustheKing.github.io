@@ -2,72 +2,16 @@
   <head>
     <title>Homepage</title>
     <h1>Niffirg</h1>
-    <head>
+    </head>
       
       <body>
         <html>
         <a href="./index.html">Home Page</a>
   <a href="./rockpapersissors.html">Play Rock Paper Sissors!</a>
          
-         <button onclick="RPS()" class="btn">Play Rock, Paper, Sissors!</button>
         <link href="style.css" type="text/css" rel="stylesheet">
-         </html>
-        
-       <script>      
-          var playerScore = 0
-           var computerScore = 0
-         function RPS() {
-        
-          var randomNumber = (Math.floor(Math.random() * 90))
-if (randomNumber > 60) {
-  var computerChoice = ("Rock")
-}else{ if (randomNumber > 30) {
-  var computerChoice = ("Paper")
-} else {
-  var computerChoice = ("Sissors")
-}}
-           
-var playerChoice = prompt("Choose what to play!", "Rock, Paper, or Sissors").toUpperCase();
-if (playerChoice === "ROCK" && computerChoice === "Rock") {
-  confirm("It's a tie, you both chose rock!")
-} if (playerChoice === "ROCK" && computerChoice === "Paper") {
-  confirm("You lost, the computer chose paper!")
-  computerScore++ 
-} if (playerChoice === "ROCK" && computerChoice === "Sissors") {
-  confirm("You won, The computer choose sissors!")
-  playerScore++
-} if (playerChoice === "PAPER" && computerChoice === "Rock") {
-  confirm("You won, the computer chose rock!")
-  playerScore++
-} if (playerChoice === "PAPER" && computerChoice === "Paper") {
-  confirm("It's a tie, you both chose paper!")
-} if (playerChoice === "PAPER" && computerChoice === "Sissors") {
-  confirm("You lost, the computer chose sissors!")
-  computerScore++
-} if (playerChoice === "SISSORS" && computerChoice === "Rock") {
-  confirm("You lost, the computer chose rock!")
-  computerScore++
-} if (playerChoice === "SISSORS" && computerChoice === "Paper") {
-  confirm("You won, the computer chose paper!")
-  playerScore++
-} if (playerChoice === "SISSORS" && computerChoice === "Sissors") {
-  confirm("It's a tie, you both picked sissors!")
-} if(playerChoice === "END"){
-  playerScore += 5 
-} if(playerChoice === "LOSE"){ 
-  computerScore += 5         
-}else {
-  confirm("The current score is " + computerScore + " (computer) vs " + playerScore + " (player) Get five points to win!")
-}
-   if (playerScore === 5){
-   confirm("Congrats! You beat the computer!")
-   }
-   if (computerScore === 5) {
-   confirm("The computer beat you...")        
-         }}
-         
-         </script>
+        </html>
   
         
-        <body>
+        </body>
 </html>
