@@ -56,9 +56,13 @@ if (playerChoice === "ROCK" && computerChoice === "Rock") {
    if (playerScore === 5){
    confirm("Congrats! You beat the computer! Try inspect element on this page.") 
    console.log('You are either seeing this in the console, or checking the code, either way you found this. Try typing in the code: 4387, have fun.')
+   computerScore = 0;
+   playerScore = 0;    
    }
    if (computerScore === 5) {
-   confirm("The computer beat you...")        
+   confirm("The computer beat you...")
+       computerScore = 0;
+       playerScore = 0;
          }}
          
          </script>
