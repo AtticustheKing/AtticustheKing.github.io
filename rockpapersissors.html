@@ -1,7 +1,8 @@
 <html>
     <head>
         <title>Rock Paper Sissors</title>
-        </head>
+    <button id="sbtn" onclick="secret()" class="btn">Play Rock, Paper, Sissors!</button>    
+    </head>
     <body>
 <html>
      <a href="./index.html">Home Page</a>
@@ -50,6 +51,7 @@ if (playerChoice === "ROCK" && computerChoice === "Rock") {
   confirm("It's a tie, you both picked sissors!")
 } if (playerChoice === '4387') { 
   confirm ('I am so gald you found this! Here is something for you to try:')
+    document.getElementById("sbtn").innerHTML = 'Secret Button';
 } else {
   confirm("The current score is " + computerScore + " (computer) vs " + playerScore + " (player) Get five points to win!")
 }
