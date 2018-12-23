@@ -30,13 +30,13 @@
   x: innerWidth/2 - player_width/2,
   y: innerHeight - (player_height + 10),
   power: 10,
-  draw: function {
+  draw: function() {
   c.drawImage(player_image, this.x, this.y, this.width, this.height);
  }
  };
  
  //ANIMATION LOOP
- function() animate {
+ function animate {
   requestAnimationFrame(animate);
   c.clearReact(0,0, canvas.width, canvas.height);
   player.draw();
