@@ -7,11 +7,43 @@
  <br>
 <canvas id="canvas" style="background:#19F5F9"></canvas> 
 <script>
+ 
+ //SET UP
  var canvas = document.getElementById('canvas')
+ var c = canvas.getContext('2d');
  var innerWidth = 360;
  var innerHeight = 620; 
  canvas.width = innerWidth;
  canvas.height = innerHeight;
+ 
+ //PLAYER SET-UP
+ var player = {}
+ var player_height = 100;
+ var player_width = 100;
+ var player_image = new image();
+ player_image.src = 'https://www.clipartmax.com/png/middle/108-1089910_muffin-bakery-cupcake-clip-art-cartoon-muffin-png.png';
+ 
+ //CREATE PLAYER
+ player = {
+  height: player_height,
+  width: player_width,
+  x: innerWidth/2 - player_width/2,
+  y: innerHeight - (player_height + 10),
+  power: 10,
+  draw: function {
+  c.drawImage(player_image, this.x, this.y, this.width, this.height);
+ }
+ };
+ 
+ //ANIMATION LOOP
+ function animate {
+  requestAnimationFrame(animate);
+  c.clearReact(0,0, canvas.width, canvas.height);
+  player.draw();
+ };
+ 
+ animate();
+ 
  </script>
  </body>
 </html>
