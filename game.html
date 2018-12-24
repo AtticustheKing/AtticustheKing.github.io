@@ -46,7 +46,7 @@
   document.addEventListener('keyup', function (event) { keys[event.keyCode] = false; })
  }
  }
- 
+ console.log(myGameArea.keys)
 if (myGameArea.keys && myGameArea.keys[37]) {player.x -= 5};
 if (myGameArea.keys && myGameArea.keys[38]) {player.y -= 5};
 if (myGameArea.keys && myGameArea.keys[39]) {player.x += 5};
