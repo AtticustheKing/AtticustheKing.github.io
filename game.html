@@ -15,7 +15,7 @@
  var innerHeight = 775; 
  canvas.width = innerWidth;
  canvas.height = innerHeight;
- var keys = [];
+ 
  
  //PLAYER SET-UP
  var player = {}
@@ -36,15 +36,18 @@
  };
  
  //ARROW KEY EVENT LISTENER
+ gameArea = {
+  keys: gameArea.keys || []
+ } 
  
  document.addEventListener('keydown', function (event){ keys[event.keyCode] = true; })
  
  document.addEventListener('keyup', function (event){ keys[event.keyCode] = false; })
 
-if (keys && keys[37]) {player.x -= 5};
-if (keys && keys[38]) {player.y -= 5};
-if (keys && keys[39]) {player.x += 5};
-if (keys && keys[40]) {player.y += 5}; 
+if (gameArea.keys && gameArea.keys[37]) {player.x -= 5};
+if (gameArea.keys && gameArea.keys[38]) {player.y -= 5};
+if (gameArea.keys && gameArea.keys[39]) {player.x += 5};
+if (gameArea.keys && gameArea.keys[40]) {player.y += 5}; 
  
 
  
