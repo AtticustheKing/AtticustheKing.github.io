@@ -29,13 +29,22 @@
   width: player_width,
   x: innerWidth/2 - player_width/2,
   y: innerHeight - (player_height + 10),
-  power: 10,
   draw: function() {
   c.drawImage(player_image, this.x, this.y, this.width, this.height);
  }
  };
  
  //ARROW KEY EVENT LISTENER
+ 
+ document.onkeydown = function (event){
+ 
+ if (event.KeyCode === 37) { player.x -= 5)
+  
+  
+ }
+ document.addEventListener('keyup', function (e){
+ })
+
  
  
  //ANIMATION LOOP
