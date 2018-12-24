@@ -36,14 +36,17 @@
  };
  
  //ARROW KEY EVENT LISTENER
- var gameArea = {
-  keys: gameArea.keys || []
- } 
+ var myGameArea = {
+ start: function() { 
+  
+  document.addEventListener('keydown', function (event) { 
+   myGameArea.keys = (myGameArea.keys || []);
+   keys[event.keyCode] = true; })
  
- document.addEventListener('keydown', function (event){ keys[event.keyCode] = true; })
+  document.addEventListener('keyup', function (event) { keys[event.keyCode] = false; })
+ }
+ }
  
- document.addEventListener('keyup', function (event){ keys[event.keyCode] = false; })
-
 if (gameArea.keys && gameArea.keys[37]) {player.x -= 5};
 if (gameArea.keys && gameArea.keys[38]) {player.y -= 5};
 if (gameArea.keys && gameArea.keys[39]) {player.x += 5};
