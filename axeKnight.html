@@ -42,9 +42,12 @@
  
  //CONTROLLER
 controller = {
-  up: false,
-  left: false,
-   right: false, 
+ up: false,
+ left: false,
+ right: false, 
+ attack: false,
+ dash: false,
+ heal: false;
  keyListener: function(event) {
   
   var key_state = (event.type == 'keydown')?true:false;
@@ -56,6 +59,11 @@ controller = {
     break;
    case 90: controller.up = key_state;
     break; 
+   case 88: controller.attack = key_state;
+    break;
+   case 67: conroller.dash = key_state;
+    break;
+   case 65: controller.heal = key_state;
   } 
   }  
   }
