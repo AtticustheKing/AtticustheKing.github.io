@@ -60,16 +60,16 @@ controller = {
  //ANIMATION
  
  animation = function() {
-  if (player.jumping = false && key_state === controller.up) {
+  if (player.jumping = false && controller.up) {
    player.y_velocity -=20;
    player.jumping = true; 
   }
  
- if (key_state === controller.left) {
+ if (controller.left) {
  player.x_velocity -= 0.5;
  }
  
- if (key_state === controller.right) {
+ if (controller.right) {
   player.y_velocity += 0.5;
  } 
  
