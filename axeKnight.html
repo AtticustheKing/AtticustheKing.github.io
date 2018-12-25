@@ -26,7 +26,7 @@
  player_image.src = 'http://sohme.com/wp-content/uploads/2015/07/red.png';
  
   var player = {
-  jumping: true,
+  jumping: false,
   x_velocity: 0,
   y_velocity: 0, 
   height: player_height,
@@ -47,8 +47,7 @@ controller = {
   
   var key_state = (event.type == 'keydown')?true:false;
 
-console.log(event.keyCode)
-  console.log(key_state)
+
 
   switch(event.keyCode) {
    case 37: controller.left = key_state;
