@@ -46,7 +46,10 @@ controller = {
  keyListener: function(event) {
   
   var key_state = (event.type == 'keydown')?true:false;
-
+ 
+  if (event.keyCode === 90) {
+   player.y_velocity -= 40;
+   player.jumping = true; }
 
 
   switch(event.keyCode) {
@@ -54,8 +57,8 @@ controller = {
     break;
    case 39: controller.right = key_state;
     break;
-   case 90: controller.up = key_state;
-    break;
+  /* case 90: controller.up = key_state;
+    break; */
   } 
   }  
   }
@@ -63,11 +66,10 @@ controller = {
  //ANIMATION
 
  animation = function() {
-  if (player.jumping === false && controller.up) {
+ /* if (player.jumping === false && controller.up) {
    player.y_velocity -= 40;
-   console.log (player.y_velocity)
    player.jumping = true; 
-  }
+  }*/
  
  if (controller.left) {
  player.x_velocity -= 0.5;
