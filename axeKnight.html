@@ -47,8 +47,8 @@ controller = {
   
   var key_state = (event.type == 'keydown')?true:false;
  
-  if (event.keyCode === 90) {
-   player.y_velocity -= 40;
+  if (event.keyCode === 90 && player.jumping === false;) {
+   player.y_velocity -= 20;
    player.jumping = true; }
 
 
