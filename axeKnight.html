@@ -72,7 +72,9 @@ controller = {
 
  animation = function() {
   if (player.jumping === false && controller.up) {
-   for (controller.up === flase, player.y_velocity < 70, player.y_velocity +=10);
+   while (controller.up === true && player.y_velocity < 70) {
+    player.y_velocity += 10; 
+   }
    player.jumping = true; 
   }
  
