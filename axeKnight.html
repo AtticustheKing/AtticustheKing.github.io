@@ -26,6 +26,8 @@
  player_image.src = 'http://sohme.com/wp-content/uploads/2015/07/red.png';
  
   var player = {
+  damage: 10,
+  health: 100,
   jumping: false,
   x_velocity: 0,
   y_velocity: 0, 
@@ -99,5 +101,7 @@ if (player.y > 775 - 20 - 100) {
   window.requestAnimationFrame(animation);
   window.addEventListener('keydown', controller.keyListener);
   window.addEventListener('keyup', controller.keyListener);  
+  
+  
   </script>
   
