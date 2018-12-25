@@ -7,7 +7,9 @@
  <br>
 <canvas id="canvas" style="background:#000"></canvas> 
 <script>
- var setUp, avatar, animation, controller;
+ 
+ //SET UP
+ var avatar, animation, controller;
  var canvas = document.getElementById('canvas')
  var c = canvas.getContext('2d');
  var innerWidth = 1420;
@@ -16,6 +18,82 @@
  canvas.height = innerHeight;
  
  
+ //AVATAR
+ var player_height = 100;
+ var player_width = 100;
+ var player_image = new Image();
+ player_image.src = 'http://sohme.com/wp-content/uploads/2015/07/red.png';
+ 
+  var player = {
+  jumping: true,
+  x_velocity: 0,
+  y_velocity: 0, 
+  height: player_height,
+  width: player_width,
+  x: innerWidth/2 - player_width/2,
+  y: innerHeight - (player_height + 100),
+  draw: function() {
+  c.drawImage(player_image, this.x, this.y, this.width, this.height);
+ }
+ };
+ 
+ //CONTROLLER
+contoller = {
+ 
+ keyListener: function(event) {
+ 
+  key_state = (event.type == 'keydown')?true:false;
+ 
+  switch(event.keyCode) {
+   case 37: controller.left = key_state;
+    break;
+   case 39: contoller.right = key_state;
+    break;
+   case 90: controller.up = key_state;
+    break;
+  } 
+  }  
+  }
+ 
+ //ANIMATION
+ 
+ animation = function() {
+  if (player.jumping = false && key_state === controller.up) {
+   player.y_velocity -=20;
+   player.jumping = true; 
+  }
+ 
+ if (key_state === controller.left) {
+ player.x_velocity -= 0.5;
+ }
+ 
+ if key_state === controller.right) {
+  player.y_velocity += 0.5;
+ } 
+ 
+ c.clearRect(0,0, canvas.width, canvas.height);
+ player.draw();
+ 
+ }
+ 
+player.y_velocity += 1.5;
+player.x += x_velocity;
+player.y += y_velocity;
+x_velocity *= 0.9;
+y_velocity *= 0.9;
+
+  
+if (player.y > 775 - 20 - 100) {
+  player.jumping = false;
+  player.y = 775 - 20 - 100; 
+  y_velocity = 0; 
+}
+
+
+window.requestAnimationFrame('animation');
  
  
- </script>
+  window.addEventListener('keydown', controller.keyListener);
+  window.addEventListener('keyup', controller.keyListener);  
+  </script>
+  
