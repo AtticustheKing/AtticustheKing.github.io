@@ -77,16 +77,16 @@ contoller = {
  }
  
 player.y_velocity += 1.5;
-player.x += x_velocity;
-player.y += y_velocity;
-x_velocity *= 0.9;
-y_velocity *= 0.9;
+player.x += player.x_velocity;
+player.y += player.y_velocity;
+player.x_velocity *= 0.9;
+player.y_velocity *= 0.9;
 
   
 if (player.y > 775 - 20 - 100) {
   player.jumping = false;
   player.y = 775 - 20 - 100; 
-  y_velocity = 0; 
+  player.y_velocity = 0; 
 }
 
 
