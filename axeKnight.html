@@ -76,8 +76,6 @@ console.log(event.keyCode)
   player.y_velocity += 0.5;
  } 
  
- c.clearRect(0,0, canvas.width, canvas.height);
- player.draw();
  
  }
  
@@ -93,7 +91,8 @@ if (player.y > 775 - 20 - 100) {
   player.y = 775 - 20 - 100; 
   player.y_velocity = 0; 
 }
-
+c.clearRect(0,0, canvas.width, canvas.height);
+player.draw();
 
 window.requestAnimationFrame(animation);
  
