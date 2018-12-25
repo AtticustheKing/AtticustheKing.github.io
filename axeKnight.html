@@ -9,13 +9,15 @@
 <script>
  
  //SET UP
- var avatar, animation, controller;
+ var animation, controller;
  var canvas = document.getElementById('canvas')
  var c = canvas.getContext('2d');
  var innerWidth = 1420;
  var innerHeight = 775; 
  canvas.width = innerWidth;
  canvas.height = innerHeight;
+ c.clearRect(0,0, canvas.width, canvas.height);
+ player.draw();
  
  
  //AVATAR
@@ -90,8 +92,7 @@ if (player.y > 775 - 20 - 100) {
   player.y = 775 - 20 - 100; 
   player.y_velocity = 0; 
 }
-c.clearRect(0,0, canvas.width, canvas.height);
-player.draw();
+
  }
 
 window.requestAnimationFrame(animation);
