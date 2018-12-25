@@ -43,10 +43,10 @@ controller = {
   left: false,
    right: false, 
  keyListener: function(event) {
- 
-   console.log(event.keyCode)
   
   var key_state = (event.type == 'keydown')?true:false;
+
+console.log(event.keyCode)
 
   switch(event.keyCode) {
    case 37: controller.left = key_state;
