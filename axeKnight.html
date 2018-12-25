@@ -16,8 +16,7 @@
  var innerHeight = 775; 
  canvas.width = innerWidth;
  canvas.height = innerHeight;
- c.clearRect(0,0, canvas.width, canvas.height);
- player.draw();
+ 
  
  
  //AVATAR
@@ -93,11 +92,14 @@ if (player.y > 775 - 20 - 100) {
   player.y_velocity = 0; 
 }
 
+ 
+ c.clearRect(0,0, canvas.width, canvas.height);
+ player.draw();
+  
+  window.requestAnimationFrame(animation);
  }
 
-window.requestAnimationFrame(animation);
- 
- 
+  window.requestAnimationFrame(animation);
   window.addEventListener('keydown', controller.keyListener);
   window.addEventListener('keyup', controller.keyListener);  
   </script>
