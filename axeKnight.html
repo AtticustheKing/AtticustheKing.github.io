@@ -26,13 +26,14 @@
  //AVATARS SET UP
  
 //ENEMY
- 
- function spawnEnemy () {
-var locationNumber = Math.floor(Math.random()*2)
-if (locationNumber === 1){
-var spawnLocation = 20
-} else {
- var spawnLocation = 1300 }}
+ var spawnLocation = function spawnEnemy() {
+var enemySpawnNumber = Math.floor(Math.random()*2)
+ if ( enemySpawnNumber === 1){
+ return 20;
+ }else{
+ return 1300;
+ }
+ }
  
  var enemy_height = 100;
  var enemy_width = 100;
