@@ -82,7 +82,7 @@ controller = {
   if (player.face === 'right') 
   {
    player.dash = true;
-   player.x += 40;
+   player.x_velocity += 30;
    setTimeout(waitDashRight, 2000) 
    function waitDashRight() {
  player.dash = false;
@@ -91,7 +91,7 @@ controller = {
    if (player.face === 'left')
    {
     player.dash = true;
-   player.x -= 40;
+   player.x -= 150;
     setTimeout(waitDashLeft, 2000)
     function waitDashLeft() {
  player.dash = false;
