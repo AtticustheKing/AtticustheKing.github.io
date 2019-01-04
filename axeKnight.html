@@ -23,14 +23,43 @@
  player.x = 1300;
  }
  
- //AVATAR
+ //AVATARS SET UP
+ 
+//ENEMY
+ 
+ function spawnEnemy () {
+var locationNumber = Math.floor(Math.random()*2)
+if (locationNumber === 1){
+spawnLocation = 20
+} else {
+ location = 1300 }}
+ 
+ var enemy_height = 100;
+ var enemy_width = 100;
+ var enemy_image = new Image();
+ enemy_image.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Solid_blue.svg/225px-Solid_blue.svg.png';
+ 
+  var enemy = {
+   x: spawnLocation,
+   y: 775 - 20 - 100,
+   damage: 10,
+   health: 30,
+   x_velocity: 0,
+   y_velocity: 0,
+   height: enemy_height,
+   width: enemy_width,
+   draw: function() {
+   c.drawImage(player_image, this.x, this.y, this.width, this.height)
+  }}
+ 
+  //PLAYER
+  
  var player_height = 100;
  var player_width = 100;
  var player_image = new Image();
  player_image.src = 'http://sohme.com/wp-content/uploads/2015/07/red.png';
  
   var player = { 
-   dashSpeed: 0,
    gravity: true,
    face: 'right',
    dash: false,
@@ -76,15 +105,15 @@ controller = {
   }  
   }
  
- //ANIMATION
+ //PLAYER ANIMATION
 
- animation = function() {
+ playerAnimation = function() {
   
   if (controller.dash && player.dash === false){
   if (player.face === 'right') 
   {
    player.dash = true;
-   player.dashSpeed += 50;
+   dashRight();
    setTimeout(waitDashRight, 750) 
    function waitDashRight() {
  player.dash = false;
@@ -93,7 +122,7 @@ controller = {
    if (player.face === 'left')
    {
     player.dash = true;
-   player.dashSpeed -= 50;
+    dashLeft();
     setTimeout(waitDashLeft, 750)
     function waitDashLeft() {
  player.dash = false;
@@ -128,8 +157,7 @@ player.face = 'right';
  
 player.y_velocity += 5;
 player.x += player.x_velocity;
-player.y += player.y_velocity;
-player.x += player.dashSpeed  
+player.y += player.y_velocity; 
 
   if (player.gravity === true) {
   player.x_velocity *= 0.9;
@@ -146,10 +174,37 @@ if (player.y > 775 - 20 - 100) {
  c.clearRect(0,0, canvas.width, canvas.height);
  player.draw();
   
-  window.requestAnimationFrame(animation);
+  window.requestAnimationFrame(playerAnimation);
  }
 
-  window.requestAnimationFrame(animation);
+ //ENEMY ANIMATION
+ 
+ enemyAnimation = function () {
+ 
+  if(player.x > enemy.x){
+   enemy.x_velocity += 0.8
+  }
+  if(player.x < enemy.x){
+   enemy.x_velocity -= 0.8
+  }
+  
+enemy.x += enemy.x_velocity;
+
+  if (enemy.gravity === true) {
+  enemy.x_velocity *= 0.9;
+enemy.y_velocity *= 0.9;
+  }
+  
+  c.clearRect(0,0, canvas.width, canvas.height);
+ enemy.draw();
+  
+  window.requestAnimationFrame(enemyAnimation);
+ }
+ 
+ 
+ 
+ window.requestAnimationFrame(enemyAnimation);
+ window.requestAnimationFrame(playerAnimation);
   window.addEventListener('keydown', controller.keyListener);
   window.addEventListener('keyup', controller.keyListener);  
   
