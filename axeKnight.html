@@ -16,6 +16,8 @@
  var innerHeight = 775; 
  canvas.width = innerWidth;
  canvas.height = innerHeight;
+ 
+ 
  function stopLeft() {
   player.x = 20;
  }
@@ -26,14 +28,14 @@
  //AVATARS SET UP
  
 //ENEMY
- var spawnLocation = function spawnEnemy() {
+ /*var spawnLocation = function spawnEnemy() {
 var enemySpawnNumber = Math.floor(Math.random()*2)
  if ( enemySpawnNumber === 1){
  return 20;
  }else{
  return 1300;
  }
- }
+ }*/
  
  var enemy_height = 100;
  var enemy_width = 100;
@@ -41,7 +43,7 @@ var enemySpawnNumber = Math.floor(Math.random()*2)
  enemy_image.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Solid_blue.svg/225px-Solid_blue.svg.png';
  
   var enemy = {
-   x: spawnLocation,
+   x: 20,
    y: innerHeight - enemy_height,
    damage: 10,
    health: 30,
