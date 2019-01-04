@@ -100,13 +100,11 @@ if (player.y > 775 - 20 - 100) {
 }
   
   while (player.x <= 5){
-controller.left = false;
-   break;
+player.x -= 1.2;
   }
   
   while (player.x >= innerWidth - 5){
-controller.right = false;
-   break;
+player.x += 1.2;
   }
  
  c.clearRect(0,0, canvas.width, canvas.height);
