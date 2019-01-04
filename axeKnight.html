@@ -99,11 +99,11 @@ if (player.y > 775 - 20 - 100) {
   player.y_velocity = 0; 
 }
   
-  while (player.x <= 5){
+  if (player.x <= 5){
 player.x -= 1.2;
   }
   
-  while (player.x >= innerWidth - 5){
+  if (player.x >= innerWidth - 5){
 player.x += 1.2;
   }
  
