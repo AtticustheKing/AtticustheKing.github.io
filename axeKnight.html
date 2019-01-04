@@ -171,17 +171,10 @@ if (player.y > 775 - 20 - 100) {
   player.y_velocity = 0; 
 }
 
- 
- c.clearRect(0,0, canvas.width, canvas.height);
- player.draw();
   
-  window.requestAnimationFrame(playerAnimation);
- }
-
- //ENEMY ANIMATION
- 
- enemyAnimation = function () {
- 
+  //ENEMY ANIMATION
+  
+  
   if(player.x > enemy.x){
    enemy.x_velocity += 0.8
   }
@@ -195,16 +188,20 @@ enemy.x += enemy.x_velocity;
   enemy.x_velocity *= 0.9;
 enemy.y_velocity *= 0.9;
   }
-  
-  c.clearRect(0,0, canvas.width, canvas.height);
+ 
+ c.clearRect(0,0, canvas.width, canvas.height);
+ player.draw();
  enemy.draw();
   
-  window.requestAnimationFrame(enemyAnimation);
+  window.requestAnimationFrame(playerAnimation);
  }
+
+
  
  
  
- window.requestAnimationFrame(enemyAnimation);
+ 
+ 
  window.requestAnimationFrame(playerAnimation);
   window.addEventListener('keydown', controller.keyListener);
   window.addEventListener('keyup', controller.keyListener);  
