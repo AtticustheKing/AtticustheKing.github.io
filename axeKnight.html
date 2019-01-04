@@ -98,7 +98,13 @@ if (player.y > 775 - 20 - 100) {
   player.y = 775 - 20 - 100; 
   player.y_velocity = 0; 
 }
-
+  
+  if (player.x < 5){
+controller.left = false;
+  }
+  if (player.x > 1415){
+controller.right = false;
+  }
  
  c.clearRect(0,0, canvas.width, canvas.height);
  player.draw();
