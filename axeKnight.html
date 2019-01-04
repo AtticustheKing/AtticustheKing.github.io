@@ -30,6 +30,7 @@
  player_image.src = 'http://sohme.com/wp-content/uploads/2015/07/red.png';
  
   var player = { 
+   face: right,
    dash: false,
    damage: 10,
   health: 100,
@@ -78,11 +79,21 @@ controller = {
  animation = function() {
   
   if (controller.dash && player.dash === false){
-  player.dash = true;
+  if (player.face === right) 
+  {
+   player.dash = true;
    player.x_velocity += 5;
  player.dash = false;
   }
- 
+   
+   if (player.face === left)
+   {
+    player.dash = true;
+   player.x_velocity -= 5;
+ player.dash = false;
+   }
+  }
+  
   if (player.jumping === false && controller.up) {
    player.y_velocity -= 80;
    player.jumping = true; 
@@ -99,10 +110,12 @@ stopLeft()
   
   if (controller.left) {
  player.x_velocity -= 1.2;
+   player.face = left;
  }
  
  if (controller.right) {
   player.x_velocity += 1.2;
+player.face = right;
  } 
  
 player.y_velocity += 5;
