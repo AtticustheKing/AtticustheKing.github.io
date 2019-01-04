@@ -85,10 +85,10 @@ controller = {
    player.dash = true;
    player.gravity = false; 
    player.x_velocity += 30;
+   player.gravity = true;
    setTimeout(waitDashRight, 750) 
    function waitDashRight() {
  player.dash = false;
-    player.gravity = true;
   }}
    
    if (player.face === 'left')
@@ -96,10 +96,10 @@ controller = {
     player.dash = true;
     player.gravity = false;
    player.x_velocity -= 30;
+    player.gravity = true;
     setTimeout(waitDashLeft, 750)
     function waitDashLeft() {
  player.dash = false;
-     player.gravity = true;
    }}
   }
   
