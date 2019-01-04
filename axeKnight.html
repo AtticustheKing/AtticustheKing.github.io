@@ -30,6 +30,7 @@
  player_image.src = 'http://sohme.com/wp-content/uploads/2015/07/red.png';
  
   var player = { 
+   gravity: true,
    face: 'right',
    dash: false,
    damage: 10,
@@ -82,19 +83,23 @@ controller = {
   if (player.face === 'right') 
   {
    player.dash = true;
+   player.gravity = false; 
    player.x_velocity += 30;
    setTimeout(waitDashRight, 750) 
    function waitDashRight() {
  player.dash = false;
+    player.gravity = true;
   }}
    
    if (player.face === 'left')
    {
     player.dash = true;
+    player.gravity = false;
    player.x_velocity -= 30;
     setTimeout(waitDashLeft, 750)
     function waitDashLeft() {
  player.dash = false;
+     player.gravity = true;
    }}
   }
   
@@ -125,9 +130,11 @@ player.face = 'right';
 player.y_velocity += 5;
 player.x += player.x_velocity;
 player.y += player.y_velocity;
-player.x_velocity *= 0.9;
-player.y_velocity *= 0.9;
 
+  if (player.gravity === true) {
+  player.x_velocity *= 0.9;
+player.y_velocity *= 0.9;
+  }
   
 if (player.y > 775 - 20 - 100) {
   player.jumping = false;
