@@ -30,7 +30,8 @@
  player_image.src = 'http://sohme.com/wp-content/uploads/2015/07/red.png';
  
   var player = { 
-  damage: 10,
+   dash: false,
+   damage: 10,
   health: 100,
   jumping: false,
   x_velocity: 0,
@@ -77,7 +78,9 @@ controller = {
  animation = function() {
   
   if (controller.dash && player.dash === false){
-  
+  player.dash = true;
+   player.x_velocity += 5;
+ player.dash = false;
   }
  
   if (player.jumping === false && controller.up) {
