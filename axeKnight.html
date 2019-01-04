@@ -99,10 +99,10 @@ if (player.y > 775 - 20 - 100) {
   player.y_velocity = 0; 
 }
   
-  if (player.x < 5){
+  while (player.x <= 5){
 controller.left = false;
   }
-  if (player.x > 1415){
+  while (player.x >= 1415){
 controller.right = false;
   }
  
