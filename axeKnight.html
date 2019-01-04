@@ -189,6 +189,14 @@ enemy.x += enemy.x_velocity;
   enemy.x_velocity *= 0.9;
 enemy.y_velocity *= 0.9;
   }
+  
+  if (enemy.x >= 1300){
+enemyStopRight()
+  }
+  
+    if (enemy.x <= 20){
+enemyStopLeft()
+  }
  
  c.clearRect(0,0, canvas.width, canvas.height);
  player.draw();
