@@ -16,8 +16,12 @@
  var innerHeight = 775; 
  canvas.width = innerWidth;
  canvas.height = innerHeight;
- 
- 
+ function stopLeft() {
+  player.x = 20;
+ }
+ function stopRight() {
+ player.y = 1300;
+ }
  
  //AVATAR
  var player_height = 100;
@@ -25,9 +29,7 @@
  var player_image = new Image();
  player_image.src = 'http://sohme.com/wp-content/uploads/2015/07/red.png';
  
-  var player = {
-  tooFarRight: false,
-  tooFarLeft: false, 
+  var player = { 
   damage: 10,
   health: 100,
   jumping: false,
@@ -79,27 +81,19 @@ controller = {
   }
  
   if (player.x >= 1300){
-  player.tooFarRight = true;
+stopRight()
   }
   
     if (player.x <= 20){
-player.tooFarLeft = true;
-  }
-  
-  if (player.x <= 1300){
-  player.tooFarRight = false;
-  }
-  
-    if (player.x >= 20){
-player.tooFarLeft = false;
+stopLeft()
   }
   
   
-  if (controller.left && player.tooFarLeft === false) {
+  if (controller.left) {
  player.x_velocity -= 1.2;
  }
  
- if (controller.right && player.tooFarRight === false) {
+ if (controller.right) {
   player.x_velocity += 1.2;
  } 
  
