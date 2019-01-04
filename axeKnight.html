@@ -83,15 +83,19 @@ controller = {
   {
    player.dash = true;
    player.x += 5;
+   setTimeout(waitDashRight, 2000) 
+   function waitDashRight() {
  player.dash = false;
-  }
+  }}
    
    if (player.face === 'left')
    {
     player.dash = true;
    player.x -= 5;
+    setTimeout(waitDashLeft, 2000)
+    function waitDashLeft() {
  player.dash = false;
-   }
+   }}
   }
   
   if (player.jumping === false && controller.up) {
