@@ -26,6 +26,8 @@
  player_image.src = 'http://sohme.com/wp-content/uploads/2015/07/red.png';
  
   var player = {
+  tooFarRight: false,
+  tooFarLeft: false, 
   damage: 10,
   health: 100,
   jumping: false,
@@ -76,22 +78,22 @@ controller = {
    player.jumping = true; 
   }
  
- if (controller.left) {
- player.x_velocity -= 1.2;
- }
- 
- if (controller.right) {
-  player.x_velocity += 1.2;
- } 
- 
-   
- if (player.x >= 1300){
-  console.log("right")
+  if (player.x >= 1300){
+  player.tooFarRight === true;
   }
   
     if (player.x <= 5){
-console.log("left")
+player.tooFarRight === true;
   }
+  
+  
+  if (controller.left && player.tooFarLeft === false) {
+ player.x_velocity -= 1.2;
+ }
+ 
+ if (controller.right && player.tooFarRight === false) {
+  player.x_velocity += 1.2;
+ } 
  
 player.y_velocity += 5;
 player.x += player.x_velocity;
