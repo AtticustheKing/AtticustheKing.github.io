@@ -42,7 +42,7 @@ var enemySpawnNumber = Math.floor(Math.random()*2)
  
   var enemy = {
    x: spawnLocation,
-   y: 775 - 20 - 100,
+   y: innerHeight - enemy_height,
    damage: 10,
    health: 30,
    x_velocity: 0,
@@ -50,7 +50,7 @@ var enemySpawnNumber = Math.floor(Math.random()*2)
    height: enemy_height,
    width: enemy_width,
    draw: function() {
-   c.drawImage(enemy_image, this.x, this.y, this.width, this.height)
+   c.drawImage(enemy_image, this.x, this.y, this.width, this.height);
   }}
  
   //PLAYER
@@ -108,7 +108,7 @@ controller = {
  
  //PLAYER ANIMATION
 
- playerAnimation = function() {
+ animation = function() {
   
   if (controller.dash && player.dash === false){
   if (player.face === 'right') 
@@ -193,7 +193,7 @@ enemy.y_velocity *= 0.9;
  player.draw();
  enemy.draw();
   
-  window.requestAnimationFrame(playerAnimation);
+  window.requestAnimationFrame(animation);
  }
 
 
@@ -202,7 +202,7 @@ enemy.y_velocity *= 0.9;
  
  
  
- window.requestAnimationFrame(playerAnimation);
+ window.requestAnimationFrame(animation);
   window.addEventListener('keydown', controller.keyListener);
   window.addEventListener('keyup', controller.keyListener);  
   
