@@ -101,9 +101,12 @@ if (player.y > 775 - 20 - 100) {
   
   while (player.x <= 5){
 controller.left = false;
+   break;
   }
-  while (player.x >= 1350){
+  
+  while (player.x >= innerWidth - 5){
 controller.right = false;
+   break;
   }
  
  c.clearRect(0,0, canvas.width, canvas.height);
