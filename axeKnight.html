@@ -84,7 +84,14 @@ controller = {
   player.x_velocity += 1.2;
  } 
  
- 
+   
+ if (player.x >= 1300){
+  player.x_velocity -= 1.2;
+  }
+  
+    if (player.x <= 5){
+player.y_velocity += 1.2;
+  }
  
 player.y_velocity += 5;
 player.x += player.x_velocity;
@@ -98,14 +105,7 @@ if (player.y > 775 - 20 - 100) {
   player.y = 775 - 20 - 100; 
   player.y_velocity = 0; 
 }
-  
- if (player.x >= 1300){
-  player.x_velocity -= 1.2;
-  }
-  
-    if (player.x <= 5){
-player.y_velocity += 1.2;
-  }
+
  
  c.clearRect(0,0, canvas.width, canvas.height);
  player.draw();
