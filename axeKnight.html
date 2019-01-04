@@ -84,8 +84,10 @@ controller = {
   {
    player.dash = true;
    player.gravity = false; 
-   player.x_velocity += 30;
-   player.gravity = true;
+   player.x_velocity += 50;
+   setTimeout (waitGravityRight, 100)
+   function waitGravityRight() {
+   player.gravity = true;}
    setTimeout(waitDashRight, 750) 
    function waitDashRight() {
  player.dash = false;
@@ -95,8 +97,10 @@ controller = {
    {
     player.dash = true;
     player.gravity = false;
-   player.x_velocity -= 30;
-    player.gravity = true;
+   player.x_velocity -= 50;
+    setTimeout (waitGravityLeft, 100)
+    function waitGravityLeft() {
+    player.gravity = true;}
     setTimeout(waitDashLeft, 750)
     function waitDashLeft() {
  player.dash = false;
