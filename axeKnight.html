@@ -79,11 +79,13 @@ controller = {
   }
  
   if (player.x >= 1300){
-  player.tooFarRight === true;
+  player.tooFarRight = true;
+  console.log(player.tooFarRight)
   }
   
     if (player.x <= 5){
-player.tooFarRight === true;
+player.tooFarLeft = true;
+console.log(player.tooFarLeft)
   }
   
   
