@@ -178,8 +178,12 @@ if (player.y > 775 - 20 - 100) {
   
   if(player.x > enemy.x){
    enemy.x_velocity += 0.3
-  }else{
+  }
+  if (player.x < enemy.x){
    enemy.x_velocity -= 0.3
+  }
+  if (player.x === enemy.x){
+   enemy.x_velocity = 0
   }
   
 enemy.x += enemy.x_velocity;
