@@ -22,8 +22,8 @@
  
 //ENEMY
  
- var enemy_height = 100;
- var enemy_width = 100;
+ var enemy_height = 10;
+ var enemy_width = 10;
  var enemy_image = new Image();
  enemy_image.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Solid_blue.svg/225px-Solid_blue.svg.png';
  
@@ -189,6 +189,15 @@ enemy.x += enemy.x_velocity;
   enemy.x_velocity *= 0.9;
 enemy.y_velocity *= 0.9;
   }
+  
+  
+  //COLLISION DETECTION
+  
+  if (player.x === enemy.x) {
+   player.health -= 10;
+  }
+  
+  document.write(player.health)
   
  c.clearRect(0,0, canvas.width, canvas.height);
  player.draw();
