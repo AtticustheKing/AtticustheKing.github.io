@@ -18,20 +18,6 @@
  canvas.height = innerHeight;
  
  
- function stopLeft() {
-  player.x = 25;
- }
- function stopRight() {
- player.x = 1295;
- }
- 
- function enemyStopLeft() {
-  enemy.x = 25;
- }
- function enemyStopRight() {
- enemy.x = 1295;
- }
- 
  //AVATARS SET UP
  
 //ENEMY
@@ -43,7 +29,7 @@
  
   var enemy = {
    x: 20,
-   y: innerHeight - enemy_height,
+   y: innerHeight - (enemy_height + 100),
    damage: 10,
    health: 30,
    x_velocity: 0,
@@ -137,25 +123,25 @@ controller = {
    player.y_velocity -= 80;
    player.jumping = true; 
   }
- 
-  if (player.x >= 1300){
-stopRight()
-  }
-  
-    if (player.x <= 20){
-stopLeft()
-  }
   
   
   if (controller.left) {
- player.x_velocity -= 1.2;
+ if (player.x <= 20) {
+ player.x_velocity = 0;
+  player.face = 'left';
+ } else {
+   player.x_velocity -= 1.2;
    player.face = 'left';
- }
+ }}
  
  if (controller.right) {
+  if (player.x >= 1300) {
+   player.x_velocity = 0;
+   player.face = 'right';
+  } else {
   player.x_velocity += 1.2;
 player.face = 'right';
- } 
+ }} 
  
 player.y_velocity += 5;
 player.x += player.x_velocity;
@@ -186,6 +172,14 @@ if (player.y > 775 - 20 - 100) {
    enemy.x_velocity = 0
   }
   
+  if (enemy.x >= 1300) {
+   enemy.x_velocity = 0;
+  }
+  
+   if (enemy.x <= 20) {
+   enemy.x_velocity = 0;
+  }
+  
 enemy.x += enemy.x_velocity;
 
   if (enemy.gravity === true) {
@@ -193,14 +187,6 @@ enemy.x += enemy.x_velocity;
 enemy.y_velocity *= 0.9;
   }
   
-  if (enemy.x >= 1300){
-enemyStopRight()
-  }
-  
-    if (enemy.x <= 20){
-enemyStopLeft()
-  }
- 
  c.clearRect(0,0, canvas.width, canvas.height);
  player.draw();
  enemy.draw();
