@@ -195,8 +195,15 @@ enemy.y_velocity *= 0.9;
   
   if (player.x === enemy.x) {
    player.health -= 10;
-   
+   player.x_velocity -=5;
   }
+   
+   
+   if (player.health === 0) {
+    window.alert('YOU DIED')
+   }
+   
+   
  /*c.getElementById('playerHealth') = (player.health) 
  <h3 id = 'playerHealth'></h3>*/
   
