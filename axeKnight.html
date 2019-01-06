@@ -175,10 +175,12 @@ if (player.y > 775 - 20 - 100) {
   
   if (enemy.x >= 1300) {
    enemy.x_velocity = 0;
+   enemy.x -= 2; 
   }
   
    if (enemy.x <= 20) {
    enemy.x_velocity = 0;
+   enemy.x += 2; 
   }
   
 enemy.x += enemy.x_velocity;
