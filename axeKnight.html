@@ -221,10 +221,10 @@ enemy.y += enemy.y_velocity;
    player.y + player.height > enemy.y) {
     
    if (enemy.face === 'right'){
-   enemy.x_velocity -= 10;
-   enemy.y_velocity -= 10;
-   player.x_velocity += 10;
-   player.y_velocity -= 10;
+   enemy.x_velocity -= 20;
+   enemy.y_velocity -= 20;
+   player.x_velocity += 20;
+   player.y_velocity -= 20;
    if (player.imunity === false){
     player.health -= enemy.damage;
     player.imunity = true;
@@ -236,10 +236,10 @@ enemy.y += enemy.y_velocity;
    }
    
    if (enemy.face === 'left'){
-   enemy.x_velocity += 10;
-   enemy.y_velocity -= 10;
-   player.x_velocity -= 10;
-   player.y_velocity -= 10;
+   enemy.x_velocity += 20;
+   enemy.y_velocity -= 20;
+   player.x_velocity -= 20;
+   player.y_velocity -= 20;
    if (player.imunity === false){
     player.health -= enemy.damage;
     player.imunity = true;
