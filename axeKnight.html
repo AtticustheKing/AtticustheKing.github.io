@@ -26,9 +26,7 @@
  var enemy_height = 50;
  var enemy_width = 50;
  var enemy_image = new Image();
- enemy_image.src = 'slash.png';
-
- //https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Solid_blue.svg/225px-Solid_blue.svg.png'
+ enemy_image.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Solid_blue.svg/225px-Solid_blue.svg.png';
   
  var enemy = {
    gravity: true,
@@ -45,7 +43,8 @@
   }}
  
   //PLAYER
-  
+ var slash_image = new Image();
+ slash_image.src = 'slash.png'
  var player_height = 100;
  var player_width = 100;
  var player_image = new Image();
@@ -104,7 +103,14 @@ controller = {
 
  animation = function() {
   
-  if (controller.dash && player.dash === false){
+ if (controller.attack && player.face === 'right') {
+  c.drawImage(slash_image, player.x + 120, 50, 100)
+ }
+  
+  
+  
+  
+  /* if (controller.dash && player.dash === false){
   if (player.face === 'right') 
   {
    player.dash = true;
@@ -122,7 +128,7 @@ controller = {
     function waitDashLeft() {
  player.dash = false;
    }}
-  }
+  } */
   
   
   
