@@ -30,6 +30,7 @@
   var enemy = {
    gravity: true,
    x: 25,
+   x_end: enemy.x + 50,
    y: 775 - 20 - 50,
    damage: 10,
    health: 30,
@@ -60,6 +61,7 @@
   height: player_height,
   width: player_width,
   x: innerWidth/2 - player_width/2,
+  x_end: player.x + 100,
   y: innerHeight - (player_height + 100),
   draw: function() {
   c.drawImage(player_image, this.x, this.y, this.width, this.height);
@@ -198,7 +200,7 @@ enemy.y_velocity *= 0.9;
   
   
   
-  if (player.x === enemy.x) {
+  if (enemy.x < player.x_end && enemy.x > player.x) {
    player.health -= 10;
    player.x_velocity -= 5;
    console.log(player.health)
