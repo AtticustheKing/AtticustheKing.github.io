@@ -212,6 +212,8 @@ enemy.y_velocity *= 0.9;
    player.y < enemy.y + enemy.height &&
    player.y + player.height > enemy.y) {
     
+   enemy.x_velocity -= 5;
+   enemy.y_velocity -= 5;
    player.x_velocity += 5;
    player.y_velocity -= 5;
    if (player.imunity === false){
@@ -228,7 +230,7 @@ enemy.y_velocity *= 0.9;
    
    if (player.health === 0) {
     window.alert('YOU DIED')
-    window.reload();
+    location.reload();
    }
    
    
