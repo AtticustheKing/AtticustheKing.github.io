@@ -200,13 +200,13 @@ if (player.y > 775 - 20 - 100) {
    enemy.x += 2; 
   }
   
-enemy.x += enemy.x_velocity;
-enemy.y += enemy.y_velocity;
-
-  if (enemy.gravity === true) {
+   if (enemy.gravity === true) {
   enemy.x_velocity *= 0.9;
 enemy.y_velocity *= 0.9;
   }
+  
+enemy.x += enemy.x_velocity;
+enemy.y += enemy.y_velocity;
   
   
   //COLLISION DETECTION
