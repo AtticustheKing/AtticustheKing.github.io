@@ -197,12 +197,10 @@ enemy.y_velocity *= 0.9;
   
   
   
-  if (enemy.x <= player.x_end && enemy.x => player.x) {
-   player.health -= 10;
-   player.x_velocity -= 5;
-   console.log(player.health)
-  }
-   
+if (enemy.x_end === player.x){
+ player.health -= enemy.damge;
+ console.log('it worked!')
+}
    
    if (player.health === 0) {
     window.alert('YOU DIED')
