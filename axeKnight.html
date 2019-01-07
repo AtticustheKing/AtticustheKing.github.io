@@ -30,7 +30,7 @@
   var enemy = {
    gravity: true,
    x: 25,
-   x_end: function() {return this.x + 50},
+   x_end: this.x + 50,
    y: 775 - 20 - 50,
    damage: 10,
    health: 30,
