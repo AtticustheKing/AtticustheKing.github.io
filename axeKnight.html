@@ -205,6 +205,15 @@ enemy.y_velocity *= 0.9;
   
   //COLLISION DETECTION
   
+  if (player.x < enemy.x + enemy.width &&
+   player.x + player.width > enemy.x &&
+   player.y < enemy.y + enemy.height &&
+   player.y + player.height > emeny.y) {
+    
+   player.health -= enemy.damage;
+   player.x_velocity += 5;
+   player.y_velocity -= 5
+}
   
    
    if (player.health === 0) {
