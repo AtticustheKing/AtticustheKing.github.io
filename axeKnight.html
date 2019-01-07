@@ -26,11 +26,11 @@
  var enemy_width = 50;
  var enemy_image = new Image();
  enemy_image.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Solid_blue.svg/225px-Solid_blue.svg.png';
+
  
   var enemy = {
    gravity: true,
    x: 25,
-   x_end: function() {this.x + 50},
    y: 775 - 20 - 50,
    damage: 10,
    health: 30,
@@ -67,6 +67,14 @@
   c.drawImage(player_image, this.x, this.y, this.width, this.height);
  }
  };
+ 
+ 
+var end = {
+ player: player.x + 100,
+ enemy: enemy.x + 50;
+ 
+}
+ 
  
  //CONTROLLER
 controller = {
@@ -196,11 +204,11 @@ enemy.y_velocity *= 0.9;
   //COLLISION DETECTION
   
   
-  if (enemy.x_end === 50) {
-   console.log("enemy.x_end = 50")
+  if (end.enemy === 50) {
+   console.log("end.enemy = 50")
   }
   
-if (enemy.x_end === player.x){
+if (end.enemy === player.x){
  player.health -= enemy.damge;
  console.log('it worked!')
 }
