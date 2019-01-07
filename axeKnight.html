@@ -217,6 +217,7 @@ enemy.y_velocity *= 0.9;
    if (player.imunity === false){
     player.health -= enemy.damage;
     player.imunity = true;
+    console.log(player.health)
     setTimeout(playerImunity, player.imunityLength)
     function playerImunity() {
     player.imunity = false;
