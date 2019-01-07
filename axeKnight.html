@@ -29,6 +29,7 @@
  enemy_image.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Solid_blue.svg/225px-Solid_blue.svg.png';
   
  var enemy = {
+   face: 'right',  
    gravity: true,
    x: 25,
    y: 775 - 20 - 50,
@@ -178,10 +179,12 @@ if (player.y > 775 - 20 - 100) {
   
   
   if(player.x > enemy.x){
-   enemy.x_velocity += 0.8
+   enemy.x_velocity += 0.8;
+   enemy.face = 'right';
   }
   if (player.x < enemy.x){
-   enemy.x_velocity -= 0.8
+   enemy.x_velocity -= 0.8;
+   enemy.face = 'left';
   }
   if (player.x === enemy.x){
    enemy.x_velocity = 0
@@ -198,6 +201,7 @@ if (player.y > 775 - 20 - 100) {
   }
   
 enemy.x += enemy.x_velocity;
+enemy.y += enemy.y_velocity;
 
   if (enemy.gravity === true) {
   enemy.x_velocity *= 0.9;
@@ -212,19 +216,36 @@ enemy.y_velocity *= 0.9;
    player.y < enemy.y + enemy.height &&
    player.y + player.height > enemy.y) {
     
-   enemy.x_velocity -= 5;
-   enemy.y_velocity -= 5;
-   player.x_velocity += 5;
-   player.y_velocity -= 5;
+   if (enemy.face === 'right'){
+   enemy.x_velocity -= 10;
+   enemy.y_velocity -= 10;
+   player.x_velocity += 10;
+   player.y_velocity -= 10;
    if (player.imunity === false){
     player.health -= enemy.damage;
     player.imunity = true;
-    console.log(player.health)
     setTimeout(playerImunity, player.imunityLength)
     function playerImunity() {
     player.imunity = false;
     }
    }
+   }
+   
+   if (enemy.face === 'left'){
+   enemy.x_velocity += 10;
+   enemy.y_velocity -= 10;
+   player.x_velocity -= 10;
+   player.y_velocity -= 10;
+   if (player.imunity === false){
+    player.health -= enemy.damage;
+    player.imunity = true;
+    setTimeout(playerImunity, player.imunityLength)
+    function playerImunity() {
+    player.imunity = false;
+    }
+   }
+   }
+   
 }
   
    
