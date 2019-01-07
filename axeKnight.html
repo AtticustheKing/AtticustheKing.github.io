@@ -30,7 +30,7 @@
   var enemy = {
    gravity: true,
    x: 25,
-   x_end: this.x + 50,
+   x_end: function() {this.x + 50},
    y: 775 - 20 - 50,
    damage: 10,
    health: 30,
@@ -195,8 +195,10 @@ enemy.y_velocity *= 0.9;
   
   //COLLISION DETECTION
   
-  console.log(enemy.x_end)
-  console.log(enemy.x)
+  
+  if (enemy.x_end === 50) {
+   console.log("enemy.x_end = 50")
+   ]
   
 if (enemy.x_end === player.x){
  player.health -= enemy.damge;
