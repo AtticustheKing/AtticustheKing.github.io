@@ -6,6 +6,7 @@
  <a href="./index.html">Homepage</a>
  <br>
 <canvas id="canvas" style="background:#000"></canvas> 
+  
 <script>
  
  //SET UP
@@ -25,10 +26,11 @@
  var enemy_height = 50;
  var enemy_width = 50;
  var enemy_image = new Image();
- enemy_image.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Solid_blue.svg/225px-Solid_blue.svg.png';
+ enemy_image.src = 'slash.png';
 
- 
-  var enemy = {
+ //https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Solid_blue.svg/225px-Solid_blue.svg.png'
+  
+ var enemy = {
    gravity: true,
    x: 25,
    y: 775 - 20 - 50,
