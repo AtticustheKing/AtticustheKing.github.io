@@ -51,6 +51,8 @@
  player_image.src = 'http://sohme.com/wp-content/uploads/2015/07/red.png';
  
   var player = { 
+   imunityLength: 100,
+   imunity: false,
    gravity: true,
    face: 'right',
    dash: false,
@@ -212,8 +214,14 @@ enemy.y_velocity *= 0.9;
     
    player.x_velocity += 5;
    player.y_velocity -= 5;
-   player.health -= enemy.damage; 
-   console.log(player.health)
+   if (player.imunity === false){
+    player.health -= enemy.damage;
+    player.imunity = true;
+    setTimeout(playerImunity, player.imunityLength)
+    function playerImunity() {
+    player.imunity = false;
+    }
+   }
 }
   
    
@@ -222,8 +230,8 @@ enemy.y_velocity *= 0.9;
    }
    
    
- /*c.getElementById('playerHealth') = (player.health) 
- <h3 id = 'playerHealth'></h3>*/
+ c.getElementById('playerHealth') = (player.health) 
+ <h3 id = 'playerHealth'></h3>
   
  c.clearRect(0,0, canvas.width, canvas.height);
  player.draw();
