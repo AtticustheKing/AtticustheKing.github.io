@@ -195,12 +195,9 @@ enemy.y_velocity *= 0.9;
   
   //COLLISION DETECTION
   
-  console.log(player.x)
-  console.log(enemy.x)
   
   
-  
-  if (enemy.x < player.x_end && enemy.x > player.x) {
+  if (enemy.x <= player.x_end && enemy.x => player.x) {
    player.health -= 10;
    player.x_velocity -= 5;
    console.log(player.health)
