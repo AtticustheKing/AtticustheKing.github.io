@@ -200,6 +200,10 @@ if (player.y > 775 - 20 - 100) {
    enemy.x += 2; 
   }
   
+  if (enemy.y > 775 - 20 - 50) {
+   enemy.y_velocity = 0;
+  }
+  
    if (enemy.gravity === true) {
   enemy.x_velocity *= 0.9;
 enemy.y_velocity *= 0.9;
