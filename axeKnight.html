@@ -212,9 +212,8 @@ enemy.y_velocity *= 0.9;
     
    player.x_velocity += 5;
    player.y_velocity -= 5;
-   setTimeOut(takeDamage, 100)
-   function takeDamage() {player.health -= enemy.damage; 
-                          console.log(player.health)}
+   player.health -= enemy.damage; 
+   console.log(player.health)
 }
   
    
