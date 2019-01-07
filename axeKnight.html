@@ -30,7 +30,7 @@
   var enemy = {
    gravity: true,
    x: 25,
-   x_end: enemy.x + 50,
+   x_end: this.x + 50,
    y: 775 - 20 - 50,
    damage: 10,
    health: 30,
@@ -61,7 +61,7 @@
   height: player_height,
   width: player_width,
   x: innerWidth/2 - player_width/2,
-  x_end: player.x + 100,
+  x_end: this.x + 100,
   y: innerHeight - (player_height + 100),
   draw: function() {
   c.drawImage(player_image, this.x, this.y, this.width, this.height);
