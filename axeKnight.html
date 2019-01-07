@@ -69,12 +69,6 @@
  };
  
  
-var end = {
- player: player.x + 100,
- enemy: enemy.x + 50
- 
-}
- 
  
  //CONTROLLER
 controller = {
@@ -204,14 +198,6 @@ enemy.y_velocity *= 0.9;
   //COLLISION DETECTION
   
   
-  if (end.enemy === enemy.x + 50) {
-   console.log("end.enemy = 50")
-  }
-  
-if (end.enemy === player.x){
- player.health -= enemy.damge;
- console.log('it worked!')
-}
    
    if (player.health === 0) {
     window.alert('YOU DIED')
