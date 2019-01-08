@@ -18,7 +18,7 @@
  var innerHeight = 775; 
  canvas.width = innerWidth;
  canvas.height = innerHeight;
- 
+ var playerHealth = new component("30px", "Consolas", "white", 280, 40, "text");
  //AVATARS SET UP
  
 //ENEMY
@@ -34,7 +34,7 @@
    x: 25,
    y: 775 - 20 - 50,
    damage: 10,
-   health: new component("30px", "Consolas", "black", 280, 40, "text"),
+   health: playerHealth,
    x_velocity: 0,
    y_velocity: 0,
    height: enemy_height,
