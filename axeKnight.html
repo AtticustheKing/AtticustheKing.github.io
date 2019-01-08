@@ -263,9 +263,11 @@ enemy.y += enemy.y_velocity;
   
    
    if (player.health === 0) {
+    setTimeout(end, 1000)
+    function end(){
     window.alert('YOU DIED')
     location.reload();
-   }
+   }}
    
    
  
