@@ -109,6 +109,16 @@ controller = {
 
  animation = function() {
   
+   //DIFFERENT SCREENS
+  
+  if (controller.esc){
+   if (pause === false){
+   pause = true;
+   }else{
+    pause = false;
+   }
+  }
+  
   if (pause === false) {
   
  if (controller.attack && player.face === 'right') {
@@ -274,17 +284,9 @@ enemy.x += enemy.x_velocity;
     location.reload();
    }}
    
-   
- 
- //DIFFERENT SCREENS
   
-  if (controller.esc){
-   if (pause === false){
-   pause = true;
-   }else{
-    pause = false;
-   }
-  }
+  
+
   
  c.clearRect(0,0, canvas.width, canvas.height);
  player.draw();
