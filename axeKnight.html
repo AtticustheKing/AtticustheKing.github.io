@@ -278,8 +278,8 @@ enemy.x += enemy.x_velocity;
   
    
    if (player.health === 0) {
-    setTimeout(end, 1000)
-    function end(){
+    setTimeout(deadTimer, 1000)
+    function deadTimer(){
     window.alert('YOU DIED')
     location.reload();
    }}
