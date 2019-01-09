@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Rock Paper Sissors</title>   
+        <title>Rock Paper Scissors</title>   
     </head>
     <body>
 <html>
@@ -20,16 +20,16 @@ if (randomNumber > 60) {
 }else{ if (randomNumber > 30) {
   var computerChoice = ("Paper")
 } else {
-  var computerChoice = ("Sissors")
+  var computerChoice = ("Scissors")
 }}
            
-var playerChoice = prompt("Choose what to play!", "Rock, Paper, or Sissors").toUpperCase();
+var playerChoice = prompt("Choose what to play!", "Rock, Paper, or Scissors").toUpperCase();
 if (playerChoice === "ROCK" && computerChoice === "Rock") {
   confirm("It's a tie, you both chose rock!")
 } if (playerChoice === "ROCK" && computerChoice === "Paper") {
   confirm("You lost, the computer chose paper!")
   computerScore++ 
-} if (playerChoice === "ROCK" && computerChoice === "Sissors") {
+} if (playerChoice === "ROCK" && computerChoice === "Scissors") {
   confirm("You won, The computer choose sissors!")
   playerScore++
 } if (playerChoice === "PAPER" && computerChoice === "Rock") {
@@ -37,17 +37,17 @@ if (playerChoice === "ROCK" && computerChoice === "Rock") {
   playerScore++
 } if (playerChoice === "PAPER" && computerChoice === "Paper") {
   confirm("It's a tie, you both chose paper!")
-} if (playerChoice === "PAPER" && computerChoice === "Sissors") {
+} if (playerChoice === "PAPER" && computerChoice === "Scissors") {
   confirm("You lost, the computer chose sissors!")
   computerScore++
-} if (playerChoice === "SISSORS" && computerChoice === "Rock") {
+} if (playerChoice === "SCISSORS" && computerChoice === "Rock") {
   confirm("You lost, the computer chose rock!")
   computerScore++
-} if (playerChoice === "SISSORS" && computerChoice === "Paper") {
+} if (playerChoice === "SCISSORS" && computerChoice === "Paper") {
   confirm("You won, the computer chose paper!")
   playerScore++
-} if (playerChoice === "SISSORS" && computerChoice === "Sissors") {
-  confirm("It's a tie, you both picked sissors!")
+} if (playerChoice === "SCISSORS" && computerChoice === "Scissors") {
+  confirm("It's a tie, you both picked scissors!")
 } if (playerChoice === '4387') { 
   confirm ('I am so gald you found this! Here is something for you to try:')
     document.getElementById("sbtn").innerHTML = 'Secret Button';
@@ -68,7 +68,7 @@ if (playerChoice === "ROCK" && computerChoice === "Rock") {
          
          </script>
   <html>
-       <button onclick="RPS()" class="btn">Play Rock, Paper, Sissors!</button>
+       <button onclick="RPS()" class="btn">Play Rock, Paper, Scissors!</button>
         <link href="style.css" type="text/css" rel="stylesheet">
       </html>
         
