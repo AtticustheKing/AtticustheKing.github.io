@@ -22,6 +22,40 @@
  
  //AVATARS SET UP
  
+ 
+ 
+//ATTACK
+var attack_width = 100 ;
+var attack_height = 20;
+var attack_image = new Image();
+attack_image.src = 'https://images-na.ssl-images-amazon.com/images/I/41sc29FSaEL._UX385_.jpg' 
+ 
+ var x_attackRight = player.x + player.width + attack.width;
+ var y_attackRight = player.y + (player.height / 2)
+ 
+ var attackRight = {
+ with: attack_width,
+ height: attack_height, 
+ x: x_attackRight,
+ y: y_attackRight,
+ draw: function() {
+ c.drawImage(attack_image, this.x, this.y, this.width, this.height)
+  }
+ }
+ 
+ var x_attackLeft = player.x;
+ var y_attackLeft = player.y + (player.height / 2)
+ 
+ var attackLeft = {
+  with: attack_width,
+  height: attack_height, 
+  x: x_attackLeft,
+  y: y_attackLeft,
+  draw: function() {
+ c.drawImage(attack_image, this.x, this.y, this.width, this.height)
+  }
+ }
+ 
 //ENEMY
  
  var enemy_height = 50;
@@ -238,6 +272,17 @@ enemy.x += enemy.x_velocity;
    }
    
   
+   //ATTACK ANIMATION
+   
+   if (controller.attack){
+    if(player.face === 'right'){
+    attackRight.draw();
+    }
+    if player.face === 'left'){
+     attackLeft.draw();
+    }
+   }
+   
   //COLLISION DETECTION
   
   if (player.x < enemy.x + enemy.width &&
