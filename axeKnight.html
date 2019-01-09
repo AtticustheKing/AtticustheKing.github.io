@@ -18,7 +18,7 @@
  var innerHeight = 775; 
  canvas.width = innerWidth;
  canvas.height = innerHeight;
- var hideHealth = false;
+ 
  
  //AVATARS SET UP
  
@@ -232,12 +232,11 @@ enemy.x += enemy.x_velocity;
    //HEATH, MONEY, AND ALL ONSCREEN TEXT
     
    function drawHealth() {
-    if (hideHealth === false){
     c.font = "18px Arial"
     c.fillStyle = "ffffff"
     c.fillText("Health: " + player.health, 25, 25)
    }
-   }
+   
   
   //COLLISION DETECTION
   
