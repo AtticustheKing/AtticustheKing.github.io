@@ -71,10 +71,11 @@
   x: innerWidth/2 - player_width/2,
   x_end: this.x + 100,
   y: innerHeight - (player_height + 100),
-  draw: function() {
-  c.drawImage(player_image, 0, 0, this.width/5, this.height/2, this.x, this.y, this.width, this.height);
- }
  };
+ 
+ function drawPlayer() {
+  c.drawImage(player_image, 0, 0, player.width/5, player.height/2, player.x, player.y, player.width, player.height);
+ }
  
  //ATTACK
 var attack_width = 100 ;
@@ -347,7 +348,7 @@ enemy.x += enemy.x_velocity;
 
   
  c.clearRect(0,0, canvas.width, canvas.height);
- player.draw();
+ drawPlayer();
  enemy.draw();
  drawHealth();  
   
