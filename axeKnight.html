@@ -49,6 +49,8 @@
  
   //PLAYER
  //direction/movement functions
+ var movementArray = [rightOne(), rightTwo(), rightThree(), rightFour(), rightFive(), leftOne(), leftTwo(), leftThree(), leftFour(), leftFive()]
+ 
  function rightOne() {
 player.sx = 0
 player.sy = 0
@@ -163,6 +165,7 @@ player.sHeight = 276
  
  function drawPlayer() {
   c.drawImage(player_image, player.sx, player.sy, player.sWidth, player.sHeight, player.x, player.y, player.sWidth, player.sHeight);
+ movementArray++
  }
  
  //ATTACK
@@ -438,7 +441,11 @@ enemy.x += enemy.x_velocity;
 
   
  c.clearRect(0,0, canvas.width, canvas.height);
- drawPlayer();
+ 
+   setInterval(drawPlayer, 100)
+   
+   
+
  enemy.draw();
  drawHealth();  
   
