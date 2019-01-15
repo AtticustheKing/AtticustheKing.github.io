@@ -275,7 +275,13 @@ controller = {
    }}
   } */
   
-  
+  if (player.x >= 1300) {
+  player.x = 1295
+  }
+   
+   if (player.x <= 20) {
+    player.x = 25
+   }
   
   if (player.jumping === false && controller.up) {
    player.y_velocity -= 80;
