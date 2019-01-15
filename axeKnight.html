@@ -140,11 +140,11 @@ player.sWidth = 709
   y: innerHeight - (player_height + 100),
  };
  
- 
- 
+ var pHeight = player.sHeight + player.sy
+var pWidth = player.sWidth - player.sx 
  
  function drawPlayer() {
-  c.drawImage(player_image, player.sx, player.sy, player.sWidth, player.sHeight, player.x, player.y, player.sWidth, player.sHeight);
+  c.drawImage(player_image, player.sx, player.sy, player.sWidth, player.sHeight, player.x, player.y, pWidth, pHeight);
  }
  
  //ATTACK
