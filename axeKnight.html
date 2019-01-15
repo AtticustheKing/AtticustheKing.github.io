@@ -227,9 +227,9 @@ player.y += player.y_velocity;
 player.y_velocity *= 0.9;
   }
   
-if (player.y > 775 - 20 - player.height/2) {
+if (player.y > 775 - 20 - player.sHeight) {
   player.jumping = false;
-  player.y = 775 - 20 - player.height/2; 
+  player.y = 775 - 20 - player.sHeight; 
   player.y_velocity = 0; 
 }
 
