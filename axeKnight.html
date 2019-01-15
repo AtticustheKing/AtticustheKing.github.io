@@ -49,92 +49,70 @@
  
   //PLAYER
  //direction/movement functions
- //var movementArray = [rightOne(), rightTwo(), rightThree(), rightFour(), rightFive(), leftOne(), leftTwo(), leftThree(), leftFour(), leftFive()]
+ var movementArray = [rightOne(), rightTwo(), rightThree(), rightFour(), rightFive(), leftOne(), leftTwo(), leftThree(), leftFour(), leftFive()]
  
  function rightOne() {
 player.sx = 0
 player.sy = 0
-//player.sHeight = 276 
-//player.sWidth = 105 
 player.sWidth = 105
 player.sHeight = 276 
  }
  function rightTwo() {
   player.sx = 110
 player.sy = 0
-//player.sHeight = 276 
-//player.sWidth = 255  
   player.sWidth = 145
 player.sHeight =  276
  }
  function rightThree() {
   player.sx = 260
-player.sy = 0
-//player.sHeight = 276 
-//player.sWidth = 422 
+player.sy = 0 
   player.sWidth = 162
 player.sHeight = 276 
  } 
   function rightFour() {
 player.sx = 427
 player.sy = 0
-//player.sHeight = 276 
-//player.sWidth = 570  
    player.sWidth = 147
 player.sHeight = 276 
  }
  function rightFive() {
 player.sx = 575
 player.sy = 0
-//player.sHeight = 276 
-//player.sWidth = 709  
   player.sWidth = 134
 player.sHeight = 276 
  }
  function leftFive() {
  player.sx = 0
 player.sy = 281
-//player.sHeight = 558 
-//player.sWidth = 140 
   player.sWidth = 140
 player.sHeight = 276
  }
   function leftFour() {
    player.sx = 145
 player.sy = 281
-//player.sHeight = 558 
-//player.sWidth = 290 
    player.sWidth = 145
 player.sHeight = 276 
  }
  function leftThree() {
   player.sx = 295
 player.sy = 281
-//player.sHeight = 558 
-//player.sWidth = 440 
   player.sWidth = 145
 player.sHeight = 276 
  }
  function leftTwo() {
   player.sx = 445
 player.sy = 281
-//player.sHeight = 558 
-//player.sWidth = 585 
   player.sWidth = 140
 player.sHeight = 276 
  } 
  function leftOne() {
   player.sx = 590
 player.sy = 281
-//player.sHeight = 558 
-//player.sWidth = 709 
 player.sWidth = 119
 player.sHeight = 276 
  } 
  
  
- var slash_image = new Image();
- slash_image.src = 'slash.png'
  var player_height = 595;
  var player_width = 879;
  var player_image = new Image();
@@ -164,39 +142,7 @@ player.sHeight = 276
  
  
  function drawPlayer() {
-  c.drawImage(player_image, player.sx, player.sy, player.sWidth, player.sHeight, player.x, player.y, player.sWidth, player.sHeight);
- }
- 
- //ATTACK
-var attack_width = 100 ;
-var attack_height = 20;
-var attack_image = new Image();
-attack_image.src = 'https://images-na.ssl-images-amazon.com/images/I/41sc29FSaEL._UX385_.jpg' 
- 
- var x_attackRight = player.x + player.width + attack_width;
- var y_attackRight = player.y + (player.height / 2)
- 
- var attackRight = {
- with: attack_width,
- height: attack_height, 
- x: x_attackRight,
- y: y_attackRight,
- draw: function() {
- c.drawImage(attack_image, this.x, this.y, this.width, this.height)
-  }
- }
- 
- var x_attackLeft = player.x;
- var y_attackLeft = player.y + (player.height / 2)
- 
- var attackLeft = {
-  with: attack_width,
-  height: attack_height, 
-  x: x_attackLeft,
-  y: y_attackLeft,
-  draw: function() {
- c.drawImage(attack_image, this.x, this.y, this.width, this.height)
-  }
+  c.drawImage(player_image, player.sx, player.sy, player.sWidth, player.sHeight, player.x, player.y, player.sWidth, player.sHeight); 
  }
  
  
@@ -297,6 +243,7 @@ controller = {
    player.x_velocity -= 1.2; 
   player.face = 'left'
   leftOne()
+  
  }}
  
  if (controller.right) {
@@ -447,8 +394,10 @@ enemy.x += enemy.x_velocity;
   
  c.clearRect(0,0, canvas.width, canvas.height);
    
+ 
+
+ drawPlayer();
    
- drawPlayer(); 
  enemy.draw();
  drawHealth();  
   
