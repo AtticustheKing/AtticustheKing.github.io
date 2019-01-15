@@ -62,6 +62,10 @@
    face: 'right',
    dash: false,
    damage: 10,
+   sx: 0,
+   sy: 0,
+   sWidth: 105,
+   sHeight: 276,
   health: 100,
   jumping: false,
   x_velocity: 0,
@@ -73,8 +77,11 @@
   y: innerHeight - (player_height + 100),
  };
  
+ 
+ 
+ 
  function drawPlayer() {
-  c.drawImage(player_image, 0, 0, 105, 276, player.x, player.y, 105, player.height/2);
+  c.drawImage(player_image, player.sx, player.sy, player.sWidth, player.sHeight, player.x, player.y, player.sWidth, player.sHeight);
  }
  
  //ATTACK
