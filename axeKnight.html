@@ -107,7 +107,7 @@ player.sWidth = 585
   player.sx = 590
 player.sy = 252
 player.sHeight = 558 
-player.sWidth = 709`  
+player.sWidth = 709  
  } 
  
  
@@ -269,6 +269,8 @@ controller = {
   player.face = 'left';
  } else {
    player.x_velocity -= 1.2; 
+  player.face = 'left'
+  leftOne()
  }}
  
  if (controller.right) {
@@ -278,6 +280,7 @@ controller = {
   } else {
   player.x_velocity += 1.2;
 player.face = 'right';
+   rightOne()
  }} 
  
 player.y_velocity += 5;
