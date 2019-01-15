@@ -295,9 +295,9 @@ enemy.x += enemy.x_velocity;
   //COLLISION DETECTION
   
   if (player.x < enemy.x + enemy.width &&
-   player.x + 105 > enemy.x &&
+   player.x + player.sWidth > enemy.x &&
    player.y < enemy.y + enemy.height &&
-   player.y + player.height/2 > enemy.y) {
+   player.y + player.sHeight > enemy.y) {
     
    if (enemy.face === 'right'){
    enemy.x_velocity -= 40;
