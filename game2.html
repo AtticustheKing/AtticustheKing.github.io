@@ -8,7 +8,9 @@
  <br>
 <canvas id="canvas" style="background:#fffff"></canvas> 
     <script>
- //SET UP 
+ //SET UP
+ var animation     
+ var controller     
  var canvasImage = new Image();
  canvasImage.src = 'https://images-na.ssl-images-amazon.com/images/I/81Y3RO3rPML._SL1500_.jpg'
  var c = canvas.getContext('2d');
@@ -16,8 +18,72 @@
  var innerHeight = 775; 
  canvas.width = innerWidth;
  canvas.height = innerHeight;
- c.drawImage(canvasImage, 0, 0, 1420, 775);     
+ 
+      function drawCanvasImage = {
+      c.drawImage(canvasImage, 0, 0, 1420, 775); }   
       
+      //PLAYER
+      var playerImage = new Image();
+      playerImage.src = 'https://kawaii.kawaii.at/img/solid-red-fabric-Robert-Kaufman-USA-Red-179485-1.JPG'
+      
+      var player = {
+       x: innerWidth/2,
+       y: innerHeight/2,
+       height: 100,
+       width: 100,
+       drawImage: c.drawImage(playerImage, this.x, this.y, this.width, this.height) 
+          
+      }
+      
+      
+      //controller
+      controller = {
+ up: false,
+ left: false,
+ right: false, 
+ down: false,
+ keyListener: function(event) {
+  
+  var key_state = (event.type == 'keydown')?true:false;
+ 
+  switch(event.keyCode) {
+   case 37: controller.left = key_state;
+    break;
+   case 39: controller.right = key_state;
+    break;
+   case 90: controller.up = key_state;
+    break; 
+   case 88: controller.down = key_state;
+    break;
+  }  
+  }
+      
+      
+     
+     //animation
+      
+      animation = function() {
+        
+        
+        
+        
+        
+       c.clearRect(0,0, canvas.width, canvas.height);
+        
+        drawCanvasImage();
+        player.draw();
+      
+       window.requestAnimationFrame(animation);
+      }
+      
+      
+      
+      
+   window.requestAnimationFrame(animation);
+  window.addEventListener('keydown', controller.keyListener);
+  window.addEventListener('keyup', controller.keyListener);  
+  
+        
       </script>
     </body>
 </html>
