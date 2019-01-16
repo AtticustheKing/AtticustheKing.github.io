@@ -19,7 +19,7 @@
  canvas.width = innerWidth;
  canvas.height = innerHeight;
  
-      function drawCanvasImage = {
+      function drawCanvasImage()  {
       c.drawImage(canvasImage, 0, 0, 1420, 775); }   
       
       //PLAYER
@@ -31,7 +31,7 @@
        y: innerHeight/2,
        height: 100,
        width: 100,
-       drawImage: c.drawImage(playerImage, this.x, this.y, this.width, this.height) 
+       drawImage: function() {c.drawImage(playerImage, this.x, this.y, this.width, this.height) }
           
       }
       
