@@ -146,7 +146,7 @@ player.sWidth = 119
 player.sHeight = 276 
  } 
  
-  var movementArray = [rightOne(), rightTwo(), rightThree(), rightFour(), rightFive(), leftOne(), leftTwo(), leftThree(), leftFour(), leftFive()]
+
  
  
  //CONTROLLER
@@ -244,7 +244,7 @@ controller = {
  } else {
    player.x_velocity -= 1.2; 
   player.face = 'left'
-  movementArray[5]
+  leftOne();
   
  }}
  
@@ -255,7 +255,7 @@ controller = {
   } else {
   player.x_velocity += 1.2;
 player.face = 'right';
-   movementArray[0]
+   rightOne();
  }} 
  
 player.y_velocity += 5;
