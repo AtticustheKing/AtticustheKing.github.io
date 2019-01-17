@@ -54,6 +54,13 @@
  //direction/movement functions
 
  
+  function playerRightMovement() {
+ player.frame = player.frame + 1
+   console.log(player.frame)
+ if (player.frame > 5){
+ player.frame = 5
+ }}
+ 
  
  
  var player_height = 595;
@@ -184,12 +191,6 @@ player.face = 'right';
 }
    }
   
-  function playerRightMovement() {
- player.frame = player.frame + 1
-   console.log(player.frame)
- if (player.frame > 5){
- player.frame = 5
- }}
  
  
  
