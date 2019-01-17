@@ -168,6 +168,10 @@ controller = {
  } else {
    player.x_velocity -= 1.2; 
   player.face = 'left'
+  player.frame++
+  if (player.frame < 6) {
+   player.frame = 7
+  }
  }
  }
  
