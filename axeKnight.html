@@ -180,15 +180,17 @@ controller = {
 player.face = 'right';
    player.frame = 1
    setInterval(playerRightMovement(), 1000)
-  function playerRightMovement() {
+}
+   }
+ }
+ function playerRightMovement() {
  player.frame = player.frame + 1
    console.log(player.frame)
  if (player.frame > 5){
  player.frame = 2
  }
-}
-   }
- } 
+ 
+ 
  
 player.y_velocity += 5;
 player.x += player.x_velocity;
