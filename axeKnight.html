@@ -21,6 +21,12 @@
  
  
 
+  function playerRightMovement() {
+ player.frame = player.frame + 1
+   console.log(player.frame)
+ if (player.frame > 5){
+ player.frame = 5
+ }
  
  //AVATARS SET UP
  
@@ -182,13 +188,7 @@ player.face = 'right';
    setInterval(playerRightMovement(), 1000)
 }
    }
- }
- function playerRightMovement() {
- player.frame = player.frame + 1
-   console.log(player.frame)
- if (player.frame > 5){
- player.frame = 2
- }
+ 
  
  
  
