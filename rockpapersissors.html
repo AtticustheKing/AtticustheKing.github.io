@@ -7,9 +7,19 @@
      <a href="./index.html">Home Page</a>
     <br>
     <br>
+    <canvas id="canvas" style="background:#fffff"></canvas>
          </html>
         
-       <script>      
+       <script>  
+           var canvas = document.getElementById('canvas')
+ var c = canvas.getContext('2d');
+ var innerWidth = 1420;
+ var innerHeight = 775; 
+ canvas.width = innerWidth;
+ canvas.height = innerHeight;
+ 
+           
+           
           var playerScore = 0
            var computerScore = 0
          function RPS() {
@@ -48,15 +58,14 @@ if (playerChoice === "ROCK" && computerChoice === "Rock") {
   playerScore++
 } if (playerChoice === "SCISSORS" && computerChoice === "Scissors") {
   confirm("It's a tie, you both picked scissors!")
-} if (playerChoice === '4387') { 
-  confirm ('I am so gald you found this! Here is something for you to try:')
-    document.getElementById("sbtn").innerHTML = 'Secret Button';
+} if (playerChoice === '423098') { 
+  confirm ('I am so gald you found this! Here is something for you to try')
+    winFunction();
 } else {
   confirm("The current score is " + computerScore + " (computer) vs " + playerScore + " (player) Get five points to win!")
 }
    if (playerScore === 5){
-   confirm("Congrats! You beat the computer! Try inspect element on this page.") 
-   console.log('You are either seeing this in the console, or checking the code, either way you found this. Try typing in the code: 4387, have fun.')
+   confirm("Congrats! You beat the computer! Try out the code 423098") 
    computerScore = 0;
    playerScore = 0;    
    }
@@ -66,6 +75,11 @@ if (playerChoice === "ROCK" && computerChoice === "Rock") {
        playerScore = 0;
          }}
          
+           function winFunction() {
+            c.fillStyle = 'black'   
+               c.fill();
+           }
+           
          </script>
   <html>
        <button onclick="RPS()" class="btn">Play Rock, Paper, Scissors!</button>
