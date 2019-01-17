@@ -11,7 +11,7 @@
  
  //SET UP
  var pause = false;
- var animation, controller;
+ var  controller;
  var canvas = document.getElementById('canvas')
  var c = canvas.getContext('2d');
  var innerWidth = 1420;
@@ -121,7 +121,7 @@ controller = {
  
  //PLAYER ANIMATION
 
- animation = function() {
+ function animation() {
   
    //DIFFERENT SCREENS
   
@@ -388,11 +388,12 @@ player.sHeight = 276
   
   
  
-  window.requestAnimationFrame(animation);
+ 
  }
   
+ setInterval(animation, 300)
+
  
- window.requestAnimationFrame(animation);
   window.addEventListener('keydown', controller.keyListener);
   window.addEventListener('keyup', controller.keyListener);  
   
