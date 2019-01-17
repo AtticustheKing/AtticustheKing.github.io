@@ -179,7 +179,7 @@ controller = {
   player.x_velocity += 1.2;
 player.face = 'right';
    player.frame = 1
-   setInerval(playerRightMovement(), 100)
+   setInterval(playerRightMovement(), 100)
 function playerRightMovement() {
  console.log("player right movement works")
  player.frame++
