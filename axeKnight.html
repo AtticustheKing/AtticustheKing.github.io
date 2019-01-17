@@ -58,8 +58,8 @@
  var player_image = new Image();
  player_image.src = 'knight (1).png';
  
-  var player = { 
-   currentFrame: 1,
+  var player = {
+   frame: 1,
    imunityLength: 100,
    imunity: false,
    gravity: true,
@@ -84,12 +84,8 @@
  
  function drawPlayer() {
   c.drawImage(player_image, player.sx, player.sy, player.sWidth, player.sHeight, player.x, player.y, player.sWidth, player.sHeight); 
- updateFrame();
  }
  
- function updateFrame() {
-player.frame++ 
- }
 
 if (player.frame === 1){  
 function rightOne() {
@@ -254,7 +250,16 @@ controller = {
   } else {
   player.x_velocity += 1.2;
 player.face = 'right';
- }} 
+   player.frame = 1
+  function rightMovement() {
+   setTimeout(function (){player.frame = 2}, 300)
+   setTimeout(function () {player.frame = 3}, 300)
+   setTimeout(function () {player.frame = 4}, 300)
+   setTimeout(function () {player.frame = 5}, 300)
+   if (controller.right) {
+    rightMovement();
+   }
+ }}} 
  
 player.y_velocity += 5;
 player.x += player.x_velocity;
