@@ -315,15 +315,7 @@ enemy.x += enemy.x_velocity;
   
    //ATTACK ANIMATION
    
-   if (controller.attack){
-    if (player.face === 'right'){
-    attackRight.draw();
-    }
-    if (player.face === 'left'){
-     attackLeft.draw();
-    }
-   }
-   
+  
   //COLLISION DETECTION
   
   if (player.x < enemy.x + enemy.width &&
