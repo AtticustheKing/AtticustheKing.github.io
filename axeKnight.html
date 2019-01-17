@@ -83,10 +83,8 @@
  
  
  function drawPlayer() {
-  setTimeout(drawWait, 100)
-  function drawWait() {
   c.drawImage(player_image, player.sx, player.sy, player.sWidth, player.sHeight, player.x, player.y, player.sWidth, player.sHeight); 
- }}
+ }
  
  if (player.frame === 1) {
 player.sx = 0
@@ -232,11 +230,7 @@ controller = {
  } else {
    player.x_velocity -= 1.2; 
   player.face = 'left'
-player.frame = 6;
-player.frame = 7;
-player.frame = 8;
-player.frame = 9;
-player.frame = 10;  
+player.frame = 6; 
   }
  }
  
