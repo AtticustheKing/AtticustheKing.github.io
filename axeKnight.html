@@ -179,10 +179,9 @@ controller = {
   player.x_velocity += 1.2;
 player.face = 'right';
    player.frame = 1
-   setInterval(playerRightMovement(), 100)
-function playerRightMovement() {
- console.log("player right movement works")
- player.frame++
+   setInterval(playerRightMovement(), 1000)
+ player.frame = player.frame + 1
+   console.log(player.frame)
  if (player.frame > 5){
  player.frame = 2
  }
