@@ -53,6 +53,9 @@
   //PLAYER
  //direction/movement functions
 
+ function rightMovementInterval() {
+  setInterval(playerRightMovement(), 1000)
+ }
  
   function playerRightMovement() {
  player.frame = player.frame + 1
@@ -187,7 +190,7 @@ controller = {
   player.x_velocity += 1.2;
 player.face = 'right';
    player.frame = 1
-   setInterval(playerRightMovement(), 10000)
+   rightMovementInterval();
 }
    }
   
