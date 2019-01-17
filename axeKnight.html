@@ -161,34 +161,7 @@ controller = {
   }
   
   
-  if (controller.left) {
- if (player.x <= 20) {
- player.x_velocity = 0;
-  player.face = 'left';
- } else {
-   player.x_velocity -= 1.2; 
-  player.face = 'left'
-  if (player.frame <= 6 || player.frame >= 10) {
-  player.frame = 7
-  }
-  player.frame++
- }
- }
- 
- if (controller.right) {
-  if (player.x >= 1300) {
-   player.x_velocity = 0;
-   player.face = 'right';
-  } else {
-  player.x_velocity += 1.2;
-player.face = 'right';
-   if (player.frame >= 5){
-    player.frame = 2
-   }
-   player.frame++
-   
-}
-   }
+//MOVEMENT GOES HERE 
   
   if (controller.right === false && controller.left === false) {
    if (player.face === 'right'){
@@ -398,13 +371,43 @@ player.sHeight = 276
   
  enemy.draw();
  drawHealth();  
-  
-  
- 
- 
+   
  }
+ 
+ 
+ function run() {
+ 
+   if (controller.left) {
+ if (player.x <= 20) {
+ player.x_velocity = 0;
+  player.face = 'left';
+ } else {
+   player.x_velocity -= 1.2; 
+  player.face = 'left'
+  if (player.frame <= 6 || player.frame >= 10) {
+  player.frame = 7
+  }
+  player.frame++
+ }
+ }
+ 
+ if (controller.right) {
+  if (player.x >= 1300) {
+   player.x_velocity = 0;
+   player.face = 'right';
+  } else {
+  player.x_velocity += 1.2;
+player.face = 'right';
+   if (player.frame >= 5){
+    player.frame = 2
+   }
+   player.frame++
+   
+}
+   }}
   
  setInterval(animation, 50)
+ setInterval(run, 100)
 
  
   window.addEventListener('keydown', controller.keyListener);
