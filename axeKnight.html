@@ -59,6 +59,7 @@
  player_image.src = 'knight (1).png';
  
   var player = { 
+   frameNumber: 1,
    imunityLength: 100,
    imunity: false,
    gravity: true,
@@ -82,64 +83,66 @@
  
  
  function drawPlayer() {
+  setTimeout(drawWait, 100)
+  function drawWait() {
   c.drawImage(player_image, player.sx, player.sy, player.sWidth, player.sHeight, player.x, player.y, player.sWidth, player.sHeight); 
- }
+ }}
  
- function rightOne() {
+ if (player.frame === 1) {
 player.sx = 0
 player.sy = 0
 player.sWidth = 105
 player.sHeight = 276 
  }
- function rightTwo() {
+if (player.frame === 2) {
   player.sx = 110
 player.sy = 0
   player.sWidth = 145
 player.sHeight =  276
  }
- function rightThree() {
+ if (player.frame === 3) {
   player.sx = 260
 player.sy = 0 
   player.sWidth = 162
 player.sHeight = 276 
  } 
-  function rightFour() {
+if (player.frame === 4) {
 player.sx = 427
 player.sy = 0
    player.sWidth = 147
 player.sHeight = 276 
  }
- function rightFive() {
+ if (player.frame === 5) {
 player.sx = 575
 player.sy = 0
   player.sWidth = 134
 player.sHeight = 276 
  }
- function leftFive() {
+if (player.frame === 6) {
  player.sx = 0
 player.sy = 281
   player.sWidth = 140
 player.sHeight = 276
  }
-  function leftFour() {
+if (player.frame === 7) {
    player.sx = 145
 player.sy = 281
    player.sWidth = 145
 player.sHeight = 276 
  }
- function leftThree() {
+if (player.frame === 8) {
   player.sx = 295
 player.sy = 281
   player.sWidth = 145
 player.sHeight = 276 
  }
- function leftTwo() {
+if (player.frame === 9) {
   player.sx = 445
 player.sy = 281
   player.sWidth = 140
 player.sHeight = 276 
  } 
- function leftOne() {
+if (player.frame === 10) {
   player.sx = 590
 player.sy = 281
 player.sWidth = 119
@@ -244,12 +247,11 @@ controller = {
  } else {
    player.x_velocity -= 1.2; 
   player.face = 'left'
-  leftOne();
-  while(controller.left === true){
-   setTimeout(leftTwo(), 100)
-   setTimeout(leftThree(), 100)
-   setTimeout(leftFour(), 100)
-   setTimeout(leftFive(), 100)
+player.frame = 1;
+player.frame = 2;
+player.frame = 3;
+player.frame = 4;
+player.frame = 5;  
   }
  }}
  
