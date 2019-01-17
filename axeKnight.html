@@ -392,7 +392,7 @@ player.sHeight = 276
  player.x_velocity = 0;
   player.face = 'left';
  } else {
-   player.x_velocity -= 3.8; 
+   player.x_velocity -= 5.4; 
   player.face = 'left'
   if (player.frame <= 6 || player.frame >= 10) {
   player.frame = 7
@@ -406,7 +406,7 @@ player.sHeight = 276
    player.x_velocity = 0;
    player.face = 'right';
   } else {
-  player.x_velocity += 3.8;
+  player.x_velocity += 5.4;
 player.face = 'right';
    if (player.frame >= 5){
     player.frame = 2
@@ -417,7 +417,7 @@ player.face = 'right';
    }}
   
  setInterval(animation, 30)
- setInterval(run, 100)
+ setInterval(run, 150)
 
  
   window.addEventListener('keydown', controller.keyListener);
