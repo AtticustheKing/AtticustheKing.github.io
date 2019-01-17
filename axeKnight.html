@@ -10,6 +10,8 @@
 <script>
  
  //SET UP
+ var deathImage = new Image();
+ deathImage.src = 'https://static-cdn.jtvnw.net/jtv_user_pictures/e91a3dcf-c15a-441a-b369-996922364cdc-profile_image-300x300.png'
  var pause = false;
  var  controller;
  var canvas = document.getElementById('canvas')
@@ -292,11 +294,11 @@ enemy.x += enemy.x_velocity;
    
    if (player.health === 0) {
     
-    window.alert('YOU DIED')
-    hideHealth = true;
+  c.drawImage(deathImage, 0, 0, innerWidth, innerHeight)
+ c.fillText ("YOU DIED", innerWidth/2, innerHeight/2)
     player.health ++ 
-    location.reload();
-    hideHealth = false;
+    setTimeout(function() {location.reload()}, 100)
+ 
    }
    
   
