@@ -182,10 +182,11 @@ controller = {
   } else {
   player.x_velocity += 1.2;
 player.face = 'right';
-   if (player.frame > 5){
-    player.frame = 2
-   }
-   player.frame++
+   player.frame = 2;
+   //if (player.frame > 5){
+    //player.frame = 2
+   //}
+   //player.frame++
    
 }
    }
@@ -404,7 +405,7 @@ player.sHeight = 276
  
  }
   
- setInterval(animation, 1000)
+ setInterval(animation, 30)
 
  
   window.addEventListener('keydown', controller.keyListener);
