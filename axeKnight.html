@@ -168,11 +168,10 @@ controller = {
  } else {
    player.x_velocity -= 1.2; 
   player.face = 'left'
-  player.frame = 10
-  //if (player.frame < 6) {
-   //player.frame = 7
-  //}
-  //player.frame++
+  if (player.frame <= 6) {
+  player.frame = 7
+  }
+  player.frame++
  }
  }
  
@@ -343,25 +342,25 @@ player.sWidth = 105
 player.sHeight = 276 
  }
  if (player.frame === 2){ 
-  player.sx = 100
+  player.sx = 99
 player.sy = 0
   player.sWidth = 150
 player.sHeight =  276
  }
   if (player.frame === 3){ 
-  player.sx = 246
+  player.sx = 245
 player.sy = 0 
   player.sWidth = 167
 player.sHeight = 276 
  }
    if (player.frame === 4){ 
-player.sx = 412
+player.sx = 411
 player.sy = 0
    player.sWidth = 149
 player.sHeight = 276 
  }
    if (player.frame === 5){  
-player.sx = 562
+player.sx = 561
 player.sy = 0
   player.sWidth = 149
 player.sHeight = 276 
