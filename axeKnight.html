@@ -63,6 +63,7 @@
  player_image.src = 'knight (1).png';
  
   var player = {
+   colWidth: 105,
    frame: 1,
    imunityLength: 100,
    imunity: false,
@@ -293,10 +294,7 @@ enemy.x += enemy.x_velocity;
   
    
    if (player.health === 0) {
-    
-  c.drawImage(deathImage, 0, 0, innerWidth, innerHeight)
- c.fillText ("YOU DIED", innerWidth/2, innerHeight/2)
-    player.health ++ 
+ 
     setTimeout(function() {location.reload()}, 100)
  
    }
@@ -322,7 +320,7 @@ player.sy = 0
   player.sWidth = 150
 player.sHeight =  276
  }
-  if (player.frame === 3){ 
+  if (player.frame === 3){  
   player.sx = 247
 player.sy = 0 
   player.sWidth = 167
@@ -334,7 +332,7 @@ player.sy = 0
    player.sWidth = 149
 player.sHeight = 276 
  }
-   if (player.frame === 5){  
+   if (player.frame === 5){    
 player.sx = 563
 player.sy = 0
   player.sWidth = 149
