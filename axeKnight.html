@@ -105,6 +105,10 @@ controller = {
   var key_state = (event.type == 'keydown')?true:false;
  
   switch(event.keyCode) {
+    case 84: controller.T = key_state;
+    break;
+    case 89: controller.Y = key_state;
+    break;
    case 37: controller.left = key_state;
     break;
    case 39: controller.right = key_state;
@@ -125,6 +129,10 @@ controller = {
  //PLAYER ANIMATION
 
  function animation() {
+  
+  if (controller.Y === true && controller.T) {
+  var playerInput = prompt("ENTER TEXT HERE:")
+  }
   
    //DIFFERENT SCREENS
   
@@ -294,7 +302,7 @@ enemy.x += enemy.x_velocity;
   
    
    if (player.health === 0) {
- alert("IAN SUCKS")
+
     setTimeout(function() {location.reload()}, 100)
  
    }
