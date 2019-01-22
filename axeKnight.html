@@ -130,10 +130,7 @@ controller = {
 
  function animation() {
   
-  if (controller.Y === true && controller.T) {
-  var playerInput = prompt("ENTER TEXT HERE:")
-  }
-  
+
    //DIFFERENT SCREENS
   
   
@@ -380,6 +377,11 @@ player.sHeight = 276
  enemy.draw();
  drawHealth();  
    
+  
+  if (controller.Y === true && controller.T === true) {
+  var playerInput = prompt("ENTER TEXT HERE:")
+  }
+  
  }
  
  //PLAYER RUNNING ANIMATION
