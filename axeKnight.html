@@ -10,8 +10,8 @@
 <script>
  
  //SET UP
- var deathImage = new Image();
- deathImage.src = 'https://static-cdn.jtvnw.net/jtv_user_pictures/e91a3dcf-c15a-441a-b369-996922364cdc-profile_image-300x300.png'
+ var death_image = new Image();
+ death_image.src = 'https://static-cdn.jtvnw.net/jtv_user_pictures/e91a3dcf-c15a-441a-b369-996922364cdc-profile_image-300x300.png'
  var pause = false;
  var  controller;
  var canvas = document.getElementById('canvas')
@@ -301,7 +301,7 @@ enemy.x += enemy.x_velocity;
    if (player.health === 0) {
 
     setTimeout(function() {location.reload()}, 100)
- 
+ c.drawImage(death_image, 0,0, innerWidth, innerHeight)
    }
    
   
