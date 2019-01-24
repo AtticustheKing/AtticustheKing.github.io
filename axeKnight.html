@@ -141,26 +141,6 @@ controller = {
   
   
   
-  /* if (controller.dash && player.dash === false){
-  if (player.face === 'right') 
-  {
-   player.dash = true;
-   dashRight();
-   setTimeout(waitDashRight, 750) 
-   function waitDashRight() {
- player.dash = false;
-  }}
-   
-   if (player.face === 'left')
-   {
-    player.dash = true;
-    dashLeft();
-    setTimeout(waitDashLeft, 750)
-    function waitDashLeft() {
- player.dash = false;
-   }}
-  } */
-  
   if (player.x >= 1300) {
   player.x = 1295
   }
@@ -240,7 +220,6 @@ enemy.y_velocity *= 0.9;
   }
   
 enemy.x += enemy.x_velocity;
-//enemy.y += enemy.y_velocity;
    
    
    //HEATH, MONEY, AND ALL ONSCREEN TEXT
@@ -349,36 +328,70 @@ player.sy = 0
   player.sWidth = 151
 player.sHeight = 276 
  }
-    if (player.frame === 10){ 
- player.sx = 0
-player.sy = 284
-  player.sWidth = 142
-player.sHeight = 276
- }
-     if (player.frame === 9){ 
-   player.sx = 143
-player.sy = 281
-   player.sWidth = 152
-player.sHeight = 276 
- }
-      if (player.frame === 8){
-  player.sx = 294
-player.sy = 281
-  player.sWidth = 156
-player.sHeight = 276 
- }
-       if (player.frame === 7){ 
-  player.sx = 442
-player.sy = 281
-  player.sWidth = 147
-player.sHeight = 276 
- }
-        if (player.frame === 6){ 
+  
+  if (player.frame === 10){ 
   player.sx = 592
 player.sy = 281
 player.sWidth = 126
 player.sHeight = 276 
  }
+  
+    if (player.frame === 9){ 
+ player.sx = 0
+player.sy = 284
+  player.sWidth = 142
+player.sHeight = 276
+ }
+     if (player.frame === 8){ 
+   player.sx = 143
+player.sy = 281
+   player.sWidth = 152
+player.sHeight = 276 
+ }
+      if (player.frame === 7){
+  player.sx = 294
+player.sy = 281
+  player.sWidth = 156
+player.sHeight = 276 
+ }
+       if (player.frame === 6){ 
+  player.sx = 442
+player.sy = 281
+  player.sWidth = 147
+player.sHeight = 276 
+ }
+  
+  if (player.frame === 11){ 
+  player.sx = 725
+player.sy = 0
+player.sWidth = 150
+player.sHeight = 276 
+ }
+  
+  if (player.frame === 12){ 
+  player.sx = 882
+player.sy = 0
+player.sWidth = 106
+player.sHeight = 276 
+ }
+  
+  if (player.frame === 13){ 
+  player.sx = 735
+player.sy = 281
+player.sWidth = 106
+player.sHeight = 276 
+ }
+  
+  if (player.frame === 14){ 
+  player.sx = 847
+player.sy = 281
+player.sWidth = 150
+player.sHeight = 276 
+ }
+  
+  
+  
+  
   
  enemy.draw();
  drawHealth();  
@@ -398,7 +411,7 @@ player.sHeight = 276
  
  //PLAYER RUNNING ANIMATION
  
- function run() {
+ function playerMovement() {
   
   
   if (player.jumping === true) {
@@ -439,7 +452,7 @@ player.face = 'right';
    }}
   
  setInterval(animation, 30)
- setInterval(run, 150)
+ setInterval(playerMovement, 150)
 
  
   window.addEventListener('keydown', controller.keyListener);
