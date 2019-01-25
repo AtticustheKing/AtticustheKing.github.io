@@ -97,7 +97,11 @@
  y: 500,
  width: 1609,
  height: 335,
- };
+ }
+ 
+ function drawRightAxe() { 
+  c.drawImage(axe_image, rightAxe.x, rightAxe.y, rightAxe.width, rightAxe.height)
+ }
  
  //CONTROLLER
 controller = {
@@ -468,9 +472,6 @@ function attackAnimation() {
 if (controller.attack){
 drawRightAxe();
 } 
- function drawRightAxe() { 
-  c.drawImage(axe_image, rightAxe.x, rightAxe.y, rightAxe.width, rightAxe.height)
- }
  }
  
  setInterval(attackAnimation, 30)
