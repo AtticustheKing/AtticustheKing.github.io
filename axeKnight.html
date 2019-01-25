@@ -463,13 +463,19 @@ player.face = 'right';
 }
    }}
  
- function attackAnimation() {
+ 
+function attackAnimation() {
+if (controller.attack){
+ console.log(rightAxe.x)
+ console.log(player.x + player.sWidth)
+ console.log(rightAxe.y)
+ console.log(player.y/2)
  c.drawImage(axe_image, rightAxe.x, rightAxe.y, rightAxe.width, rightAxe.height)
   
-  
+} 
  }
  
- setInterval(attackAnimation, 50)
+ setInterval(attackAnimation, 30)
  setInterval(animation, 30)
  setInterval(playerMovement, 150)
 
