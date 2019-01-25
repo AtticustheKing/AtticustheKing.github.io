@@ -10,6 +10,8 @@
 <script>
  
  //SET UP
+ var axe_image = new Image();
+ axe_image.src = ''
  var death_image = new Image();
  death_image.src = 'https://static-cdn.jtvnw.net/jtv_user_pictures/e91a3dcf-c15a-441a-b369-996922364cdc-profile_image-300x300.png'
  var pause = false;
@@ -26,15 +28,7 @@
   
  
  //AVATARS SET UP
- 
- //AXE
- 
- var axe = {
- 
-  
-  
-  
- }
+
 
 //ENEMY
  
@@ -59,7 +53,6 @@
   }}
  
   //PLAYER
- //direction/movement functions
  
  
  
@@ -69,7 +62,6 @@
  player_image.src = 'axe_Knight.png';
  
   var player = {
-   pushOff: false,
    frame: 1,
    imunityLength: 100,
    imunity: false,
@@ -97,6 +89,13 @@
   c.drawImage(player_image, player.sx, player.sy, player.sWidth, player.sHeight, player.x, player.y, player.sWidth, player.sHeight); 
  }
  
+ //AXE
+ 
+ var rightAxe = {
+ x: player.x + player.sWidth,
+ y: player.y/2,
+  
+ }
  
  //CONTROLLER
 controller = {
@@ -412,27 +411,9 @@ player.sHeight = 276
  //PLAYER RUNNING ANIMATION
  
  function playerMovement() {
+    
   
-  if(player.jumping === true){
-   player.pushOff = true
-   if (player.pushOff === true)
-   if (controller.right === false && controller.left === false) {
-     if (player.face === 'right'){
-      player.frame = 11
-    } if (player.face === 'left'){
-     player.frame = 13
-    }    }else{
-   if (player.face === 'right'){
-     player.frame = 12 
-    } if (player.face === 'left'){
-     player.frame = 14
-    }
-    }
-   player.pushOff = false;
-  }
-  
-  
-  /*if (player.jumping === true) {
+  if (player.jumping === true) {
     if (controller.right === false && controller.left === false)
     {
      if (player.face === 'right'){
@@ -450,7 +431,7 @@ player.sHeight = 276
      player.frame = 9
     }
     }
-  }*/
+  }
  
    if (controller.left) {
  if (player.x <= 20) {
@@ -459,10 +440,10 @@ player.sHeight = 276
  } else {
    player.x_velocity -= 5.4; 
   player.face = 'left'
- //if (player.frame <= 6 || player.frame >= 10) {
-  player.frame = 13
-  //}
-// player.frame++
+ if (player.frame <= 6 || player.frame >= 10) {
+  player.frame = 7
+  }
+player.frame++
  }
  }
  
@@ -473,14 +454,21 @@ player.sHeight = 276
   } else {
   player.x_velocity += 5.4;
 player.face = 'right';
-  // if (player.frame >= 5){
-    player.frame = 11
-  // }
-   //player.frame++
+  if (player.frame >= 5){
+    player.frame = 2
+  }
+   player.frame++
    
 }
    }}
+ 
+ function attackAnimation = {
+  c.drawImage()
   
+  
+ }
+ 
+ setInterval(attackAnimation, 50)
  setInterval(animation, 30)
  setInterval(playerMovement, 150)
 
