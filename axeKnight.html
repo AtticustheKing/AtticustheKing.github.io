@@ -89,11 +89,12 @@
   c.drawImage(player_image, player.sx, player.sy, player.sWidth, player.sHeight, player.x, player.y, player.sWidth, player.sHeight); 
  }
  
+ 
  //AXE
  
  var rightAxe = {
- x: player.x,
- y: player.y,
+ x: rightAxeX,
+ y: rightAxeY,
  width: 1609,
  height: 335,
  };
@@ -136,6 +137,8 @@ controller = {
 
  function animation() {
   
+  var axeRightX = player.x
+  var axeRightY = player.y
 
    //DIFFERENT SCREENS
   
