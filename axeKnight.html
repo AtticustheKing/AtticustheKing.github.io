@@ -301,7 +301,8 @@ enemy.x += enemy.x_velocity;
    
  
 
- drawPlayer();
+
+  
   if (player.frame === 1){  
 player.sx = 0
 player.sy = 0
@@ -396,7 +397,8 @@ player.sHeight = 276
   
   
   
-  
+ drawPlayer();
+ drawRightAxe(); 
  enemy.draw();
  drawHealth();  
    
@@ -470,7 +472,7 @@ player.face = 'right';
  
 function attackAnimation() {
 //if (controller.attack){
-drawRightAxe();
+
 //} 
  }
  
