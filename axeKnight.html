@@ -69,6 +69,7 @@
  player_image.src = 'axe_Knight.png';
  
   var player = {
+   pushOff: false,
    frame: 1,
    imunityLength: 100,
    imunity: false,
@@ -412,23 +413,40 @@ player.sHeight = 276
  
  function playerMovement() {
   
+  if(player.jumping === true){
+   player.pushOff = true
+   if (player.pushOff === true)
+   if (controller.right === false && controller.left === false) {
+     if (player.face === 'right'){
+      player.frame = 11
+    } if (player.face === 'left'){
+     player.frame = 13
+    }    }else{
+   if (player.face === 'right'){
+     player.frame = 12 
+    } if (player.face === 'left'){
+     player.frame = 14
+    }
+    }
+   player.pushOff = false;
+  }
+  
   
   if (player.jumping === true) {
     if (controller.right === false && controller.left === false)
     {
      if (player.face === 'right'){
-     player.frame = 11
+ 
       player.frame = 1
     } if (player.face === 'left'){
-     player.frame = 13
      player.frame = 6
+    
     }
     }else{
    if (player.face === 'right'){
-     player.frame = 12
-    player.frame = 4
+     player.frame = 4
+   
     } if (player.face === 'left'){
-     player.frame = 14
      player.frame = 9
     }
     }
