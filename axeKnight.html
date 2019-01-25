@@ -466,10 +466,11 @@ player.face = 'right';
  
 function attackAnimation() {
 if (controller.attack){
-
- c.drawImage(axe_image, rightAxe.x, rightAxe.y, rightAxe.width, rightAxe.height)
-  
+drawRightAxe();
 } 
+ function drawRightAxe() { 
+  c.drawImage(axe_image, rightAxe.x, rightAxe.y, rightAxe.width, rightAxe.height)
+ }
  }
  
  setInterval(attackAnimation, 30)
