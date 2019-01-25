@@ -92,8 +92,8 @@
  //AXE
  
  var rightAxe = {
- x: player.x + player.sWidth,
- y: player.y/2,
+ x: player.x,
+ y: player.y,
  width: 1609,
  height: 335,
  };
@@ -467,9 +467,9 @@ player.face = 'right';
 function attackAnimation() {
 if (controller.attack){
  console.log(rightAxe.x)
- console.log(player.x + player.sWidth)
+ console.log(player.x)
  console.log(rightAxe.y)
- console.log(player.y/2)
+ console.log(player.y)
  c.drawImage(axe_image, rightAxe.x, rightAxe.y, rightAxe.width, rightAxe.height)
   
 } 
