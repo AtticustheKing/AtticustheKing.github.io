@@ -105,7 +105,7 @@
  }
  
  function drawRightAxe() { 
-  c.drawImage(axe_image, rightAxe.sx, rightAxe.sy, rightAxe.sWidth, rightAxe.sHeight, player.x, player.y, rightAxe.sWidth, rightAxe.sHeight)
+  c.drawImage(axe_image, rightAxe.sx, rightAxe.sy, rightAxe.sWidth, rightAxe.sHeight, player.x + 20, player.y + 5, rightAxe.sWidth, rightAxe.sHeight)
  }
  
  //CONTROLLER
@@ -517,8 +517,8 @@ player.face = 'right';
 function attackAnimation() {
  
 if (controller.attack){
-//rightAxe.frame = 1
-rightAxe.frame = 2
+rightAxe.frame = 1
+//rightAxe.frame = 2
 //rightAxe.frame = 3
 //rightAxe.frame = 4
 //rightAxe.frame = 5
