@@ -515,15 +515,13 @@ player.face = 'right';
  
  
 function attackAnimation() {
- if (controller.attack === false){
-  rightAxe.frame = 0
- }
+ 
 if (controller.attack){
 rightAxe.frame = 1
 rightAxe.frame = rightAxe.frame + 1
  if (rightAxe.frame >= 6){
+  rightAxe.frame = 0
  }
- controller.attack = false;
 } 
  
  }
