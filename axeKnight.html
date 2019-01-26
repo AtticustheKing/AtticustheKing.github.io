@@ -329,22 +329,22 @@ rightAxe.sWidth = 262
 rightAxe.sHeight = 105
  }
  if (rightAxe.frame === 4) {
-rightAxe.sx = 0
-rightAxe.sy = 0
-rightAxe.sWidth = 0
-rightAxe.sHeight = 0 
+rightAxe.sx = 790
+rightAxe.sy = 110
+rightAxe.sWidth = 265
+rightAxe.sHeight = 120 
  }
  if (rightAxe.frame === 5) {
-rightAxe.sx = 0
-rightAxe.sy = 0
-rightAxe.sWidth = 0
-rightAxe.sHeight = 0
+rightAxe.sx = 1090
+rightAxe.sy = 155
+rightAxe.sWidth = 257
+rightAxe.sHeight = 127
  }
  if (rightAxe.frame === 6) {
-rightAxe.sx = 0
-rightAxe.sy = 0
-rightAxe.sWidth = 0
-rightAxe.sHeight = 0
+rightAxe.sx = 1370
+rightAxe.sy = 175
+rightAxe.sWidth = 250
+rightAxe.sHeight = 173
  }
   
   if (player.frame === 1){  
@@ -517,10 +517,8 @@ player.face = 'right';
 function attackAnimation() {
 if (controller.attack){
 rightAxe.frame = 1
-rightAxe.frame++
- if (rightAxe.frame >= 3){
- controller.attack = false;
-  
+rightAxe.frame = rightAxe.frame + 1
+ if (rightAxe.frame >= 6){
  }
  controller.attack = false;
 } 
