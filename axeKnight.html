@@ -525,16 +525,13 @@ player.face = 'right';
  
  
 function attackAnimation() {
-function axeRightFunction() {
- rightAxe.frame = 1
- rightAxe.frame = 2
- rightAxe.frame = 3
- rightAxe.frame = 4
- rightAxe.frame = 5
- rightAxe.frame = 6
+
+ if (controller.attack === true && player.face === 'right' && axeStall === false){
+rightAxe.frame = 1 
+axeStall = true
+ setTimeout(function () {axeStall = false, 100})  
+} else {
  rightAxe.frame = 0
- 
- 
 }
 
  }
