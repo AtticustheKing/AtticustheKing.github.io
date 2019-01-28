@@ -10,6 +10,7 @@
 <script>
  
  //SET UP
+ var axeStall = false
  var axe_image = new Image();
  axe_image.src = 'axe.png'
  var death_image = new Image();
@@ -62,6 +63,7 @@
  player_image.src = 'axe_Knight.png';
  
   var player = {
+   axeStall: 100,
    frame: 1,
    imunityLength: 100,
    imunity: false,
@@ -147,6 +149,14 @@ controller = {
  function animation() {
   
    //DIFFERENT SCREENS
+  
+  if (controller.attack === true && player.face === 'right' && axeStall === false){
+axeRightFunction();
+axeStall = true
+setTimeout(function () {axeStall = false}, player.axeStall) 
+ 
+} 
+ 
   
   
   
@@ -515,18 +525,18 @@ player.face = 'right';
  
  
 function attackAnimation() {
+function axeRightFunction() {
+ rightAxe.frame = 1
+ rightAxe.frame = 2
+ rightAxe.frame = 3
+ rightAxe.frame = 4
+ rightAxe.frame = 5
+ rightAxe.frame = 6
+ rightAxe.frame = 0
  
-if (controller.attack === true && player.face === 'right'){
-rightAxe.frame = 1
-rightAxe.frame = 2
-rightAxe.frame = 3
-rightAxe.frame = 4
-rightAxe.frame = 5
-rightAxe.frame = 6
-rightAxe.frame = 0
+ 
+}
 
-} 
- 
  }
  
  setInterval(attackAnimation, 30)
