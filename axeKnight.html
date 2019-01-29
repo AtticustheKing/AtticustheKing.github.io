@@ -259,7 +259,7 @@ enemy.x += enemy.x_velocity;
    player.y + 10 + rightAxe.sHeight > enemy.y) {
    
    enemy.health -= player.damage;
-   enemy.x_velocity -= 40;
+   enemy.x_velocity += 40;
    console.log("collision detected")
    
   }
