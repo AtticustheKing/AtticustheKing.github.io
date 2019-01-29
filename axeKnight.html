@@ -100,8 +100,8 @@
  sy: 0,
  sWidth: 0,
  sHeight: 0, 
- x: player.x,
- y: player.y,
+ x: player.x + 25,
+ y: player.y + 10,
  width: 1609,
  height: 335,
  }
@@ -155,12 +155,6 @@ confirm("You won! I'm still figuring out what to do when then enemy dies, so for
 }
   
   
-  if (controller.attack === true && player.face === 'right' && axeStall === false){
-axeRightFunction();
-axeStall = true
-setTimeout(function () {axeStall = false}, player.axeStall) 
- 
-} 
  
   
   
@@ -259,13 +253,14 @@ enemy.x += enemy.x_velocity;
    
   
   //COLLISION DETECTION
-  if (rightAxe.x < enemy.x + enemy.width &&
-   rightAxe.x + rightAxe.sWidth > enemy.x &&
-   rightAxe.y < enemy.y + enemy.height &&
-   rightAxe.y + rightAxe.sHeight > enemy.y) {
+  if (player.x + 25 < enemy.x + enemy.width &&
+   player.x + 25 + rightAxe.sWidth > enemy.x &&
+   player.y + 10 < enemy.y + enemy.height &&
+   player.y + 10 + rightAxe.sHeight > enemy.y) {
    
    enemy.health -= player.damage;
    enemy.x_velocity -= 40;
+   console.log("collision detected")
    
   }
   
