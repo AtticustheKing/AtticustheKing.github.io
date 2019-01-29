@@ -539,9 +539,8 @@ function attackAnimation() {
  if (controller.attack === true && player.face === 'right' && axeStall === false){
 
   rightAxe.frame = 5
-  setTimeout(function() {controller.attack = false, 1000)
-  
-}
+  setTimeout(function() {controller.attack = false, 1000) 
+}}         
  
  setInterval(attackAnimation, 30)
  setInterval(animation, 30)
