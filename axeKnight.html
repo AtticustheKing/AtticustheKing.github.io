@@ -44,7 +44,7 @@
    x: 25,
    y: 775 - 20 - 50,
    damage: 10,
-   health: 100,
+   health: 30,
    x_velocity: 0,
    y_velocity: 0,
    height: enemy_height,
@@ -148,7 +148,12 @@ controller = {
 
  function animation() {
   
-   //DIFFERENT SCREENS
+ 
+  
+if (enemy.health === 0) {
+confirm("You won! I'm still figuring out what to do when then enemy dies, so for now I guess you beat the game!")
+}
+  
   
   if (controller.attack === true && player.face === 'right' && axeStall === false){
 axeRightFunction();
@@ -254,6 +259,15 @@ enemy.x += enemy.x_velocity;
    
   
   //COLLISION DETECTION
+  if (rightAxe.x < enemy.x + enemy.width &&
+   rightAxe.x + rightAxe.sWidth > enemy.x &&
+   rightAxe.y < enemy.y + enemy.height &&
+   rightAxe.y + rightAxe.sHeight > enemy.y) {
+   
+   enemy.health -= player.damage;
+   enemy.x_velocity -= 40;
+   
+  }
   
   if (player.x < enemy.x + enemy.width &&
    player.x + player.sWidth > enemy.x &&
@@ -527,7 +541,7 @@ player.face = 'right';
 function attackAnimation() {
 
  if (controller.attack === true && player.face === 'right' && axeStall === false){
-rightAxe.frame = 1 
+rightAxe.frame = 5 
 axeStall = true
  setTimeout(function () {axeStall = false, 100})  
 } else {
