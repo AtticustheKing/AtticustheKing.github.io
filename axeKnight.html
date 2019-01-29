@@ -476,7 +476,19 @@ player.sHeight = 276
   if (playerInput === "health"){
    player.health += 1000;
   }
+ 
+  if (controller.attack === true && player.face === 'right' && axeStall === false){
+
+  rightAxe.frame = 5;
+  setTimeout(function() { controller.attack = false }, 1000) 
+}         
+ 
+ 
+ if (controller.attack === false) {
   
+  rightAxe.frame = 0;
+ }
+ 
  }
  
  //PLAYER RUNNING ANIMATION
@@ -534,23 +546,12 @@ player.face = 'right';
    }}
  
  
-function attackAnimation() {
+//function attackAnimation() {
 
- if (controller.attack === true && player.face === 'right' && axeStall === false){
-
-  rightAxe.frame = 5;
-  setTimeout(function() { controller.attack = false }, 1000) 
-}         
  
+//}
  
- if (controller.attack === false) {
-  
-  rightAxe.frame = 0;
- }
- 
-}
- 
- setInterval(attackAnimation, 30)
+// setInterval(attackAnimation, 30)
  setInterval(animation, 30)
  setInterval(playerMovement, 150)
 
