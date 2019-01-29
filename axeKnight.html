@@ -537,14 +537,21 @@ player.face = 'right';
 function attackAnimation() {
 
  if (controller.attack === true && player.face === 'right' && axeStall === false){
-rightAxe.frame = 5 
-axeStall = true
- setTimeout(function () {axeStall = false, 100})  
-} else {
- rightAxe.frame = 0
-}
+rightAxe.frame = 1
+setTimeout(function () {rightAxe.frame = 2
+                       setTimeout(function () {rightAxe.frame = 3
+                                              setTimeout(function () {rightAxe.frame = 4
+                                                                     setTimeout(function () {rightAxe.frame = 5
+                                                                                            setTimeout(function () {rightAxe.frame = 6
+                                                                                                                   setTimeout(function () {rightAxe.frame = 0
+                                                                                                                                          
 
- }
+axeStall = true
+setTimeout(function () {axeStall = false}, player.axeStall) }, 30) }, 30)}, 30) }, 30) }, 30) }, 30) 
+
+
+  
+}
  
  setInterval(attackAnimation, 30)
  setInterval(animation, 30)
