@@ -456,7 +456,7 @@ player.sWidth = 150
 player.sHeight = 276 
  }  
   
-  
+
   
  drawPlayer();
  drawRightAxe(); 
@@ -530,7 +530,22 @@ player.face = 'right';
 }
    }}
  
+ function attackAnimation() {
+  
+  if (controller.attack === true){
+   if (player.face === 'right'){
+    rightAxe.frame++   
+    if (rightAxe.frame > 5){
+    controller.attack = false
+    }
+   }if (player.face === 'left'){
+    console.log("I don't have the axes facing this way yet")
+   }
+  }
  
+ }
+ 
+ setInterval(attackAnimation, 30)
  setInterval(animation, 30)
  setInterval(playerMovement, 150)
 
