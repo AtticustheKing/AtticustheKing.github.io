@@ -538,6 +538,7 @@ player.face = 'right';
     rightAxe.frame++   
     if (rightAxe.frame > 5){
     axeStall = true;
+     rightAxe.frame = 0
      setTimeout(function() {axeStall = false}, 50)
     }
    }if (player.face === 'left'){
