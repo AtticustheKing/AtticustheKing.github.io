@@ -543,9 +543,13 @@ player.face = 'right';
    }
   }
  
+  if (controller.attack === false){
+   rightAxe.frame = 0
+  }
+ 
  }
  
- setInterval(attackAnimation, 30)
+ setInterval(attackAnimation, 10)
  setInterval(animation, 30)
  setInterval(playerMovement, 150)
 
