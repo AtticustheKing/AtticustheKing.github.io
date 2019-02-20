@@ -111,8 +111,15 @@
  }
  
  //CONTROLLER
+ var attacking = false;
  
- 
+  document.onkeydown = function(event) {
+        switch (event.keyCode) {
+           case 88:
+                attacking = true;
+              break;
+        }
+    };
  
  
 controller = {
@@ -127,6 +134,8 @@ controller = {
  keyListener: function(event) {
   
   var key_state = (event.type == 'keydown')?true:false;
+  
+   
  
   switch(event.keyCode) {
     case 84: controller.T = key_state;
@@ -539,11 +548,10 @@ player.face = 'right';
  function attackAnimation() {
   var axeStall = false
   
-  if (controller.attack === true && axeStall === false){
+  if (attacking === true && axeStall === false){
    if (player.face === 'right'){
     rightAxe.frame++   
     if (rightAxe.frame > 5){
-    controller.attack = false
      rightAxe.frame = 0
     }
    }if (player.face === 'left'){
@@ -551,9 +559,6 @@ player.face = 'right';
    }
   }
 
-  if (controller.attack === false) {
-   rightAxe.frame = 0
-  }
  
  }
  
