@@ -111,15 +111,6 @@
  }
  
  //CONTROLLER
- var attacking = false;
- 
-  document.onkeydown = function(event) {
-        switch (event.keyCode) {
-           case 88:
-                attacking = true;
-              break;
-        }
-    };
  
  
 controller = {
@@ -148,8 +139,8 @@ controller = {
     break;
    case 90: controller.up = key_state;
     break; 
-   //case 88: controller.attack = key_state;
-    //break;
+   case 88: controller.attack = key_state;
+    break;
    case 67: controller.dash = key_state;
     break;
    case 65: controller.heal = key_state;
@@ -548,17 +539,20 @@ player.face = 'right';
  function attackAnimation() {
   var axeStall = false
   
-  if (attacking === true && axeStall === false){
+  if (controller.attack === true && axeStall === false){
    if (player.face === 'right'){
     rightAxe.frame++   
     if (rightAxe.frame > 5){
      rightAxe.frame = 0
+     controller.attack = false
     }
    }if (player.face === 'left'){
     console.log("I don't have the axes facing this way yet")
    }
   }
-
+if (controller.attack === false){
+ rightAxe.frame = 0
+}
  
  }
  
