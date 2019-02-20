@@ -531,21 +531,21 @@ player.face = 'right';
    }}
  
  function attackAnimation() {
+  var axeStall = false
   
-  if (controller.attack === true){
+  if (controller.attack === true && axeStall === false){
    if (player.face === 'right'){
     rightAxe.frame++   
     if (rightAxe.frame > 5){
-    controller.attack = false
+    axeStall = true;
+     setTimeout(function() {axeStall = false}, 50)
     }
    }if (player.face === 'left'){
     console.log("I don't have the axes facing this way yet")
    }
   }
- 
-  if (controller.attack === false){
-   rightAxe.frame = 0
-  }
+
+  
  
  }
  
