@@ -111,11 +111,17 @@
  }
  
  //CONTROLLER
+ 
+ 
+ 
+ 
 controller = {
+ Y: false,
+ T: false,
  up: false,
  left: false,
  right: false, 
- attack: false,
+ //attack: false,
  dash: false,
  heal: false,
  keyListener: function(event) {
@@ -133,8 +139,8 @@ controller = {
     break;
    case 90: controller.up = key_state;
     break; 
-   case 88: controller.attack = key_state;
-    break;
+   //case 88: controller.attack = key_state;
+    //break;
    case 67: controller.dash = key_state;
     break;
    case 65: controller.heal = key_state;
