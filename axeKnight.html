@@ -537,16 +537,16 @@ player.face = 'right';
    if (player.face === 'right'){
     rightAxe.frame++   
     if (rightAxe.frame > 5){
-    axeStall = true;
-     rightAxe.frame = 0
-     setTimeout(function() {axeStall = false}, 1000)
+    controller.attack = false
     }
    }if (player.face === 'left'){
     console.log("I don't have the axes facing this way yet")
    }
   }
 
-  
+  if (controller.attack = false) {
+   rightAxe.frame = 0
+  }
  
  }
  
