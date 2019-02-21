@@ -542,7 +542,7 @@ player.face = 'right';
   if (controller.attack === true && axeStall === false){
    if (player.face === 'right'){
     rightAxe.frame++   
-    if (rightAxe.frame > 5 || controller.attack === false){
+    if (rightAxe.frame > 5){
      rightAxe.frame = 0
      axeStall = true 
     }
@@ -553,6 +553,7 @@ player.face = 'right';
   
   if (controller.attack === false) {
    axeStall = false
+   rightAxe.frame = 0
   }
  
  }
