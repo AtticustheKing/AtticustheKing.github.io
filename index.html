@@ -13,14 +13,10 @@
     <button type"button" onclick="addOne()">add 1</button>
     
     <script>
-       var number
+       var number = 0
        
-      window.onload = function() {
-      player = JSON.parse(localStorage.getItem('number'));
-      }
-      
-  
-      function addOne(){
+       function addOne(){   
+       player = JSON.parse(localStorage.getItem('number'));
        number++
        localStorage.setItem('number', JSON.stringify(number)); 
        alert(number); 
