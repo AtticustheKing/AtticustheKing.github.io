@@ -7,6 +7,8 @@
   border: 5px solid #00ff00;
   font-size: 55px;
   font-family: "Times New Roman";
+  margin: auto;
+  width: 50%;
 }
 
 .play_btn:hover {
@@ -18,4 +20,6 @@
   border: 5px solid #00ff00;
   font-size: 55px;
   font-family: "Times New Roman";
+   margin: auto;
+   width: 50%;
 }
