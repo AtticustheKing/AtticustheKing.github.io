@@ -19,3 +19,25 @@
   font-size: 55px;
   font-family: "Times New Roman";
 }
+
+.back_btn {
+  height: 30px;
+  width: 60px;  
+  background-color: #ff0000;
+  color: #ffffff;
+  border-radius: 25px;
+  border: 5px solid #ff0000;
+  font-size: 11px;
+  font-family: "Times New Roman"; 
+}
+
+.back_btn:hover {
+  height: 30px;
+  width: 60px;  
+  background-color: #ffffff;
+  color: #ff0000;
+  border-radius: 25px;
+  border: 5px solid #ff0000;
+  font-size: 11px;
+  font-family: "Times New Roman"; 
+}
