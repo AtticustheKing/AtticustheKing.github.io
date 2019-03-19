@@ -9,13 +9,29 @@
   <button type="button" class="back_btn">Back</button>
       </a>
     
+    <br>
+    
     <canvas id="canvas" height="500" width="500"></canvas>
     
     <script>
+      
       var c = document.getElementById("canvas");
       var ctx = c.getContext("2d");
       ctx.fillStyle = "#cccccc";
       ctx.fillRect(0, 0, 500, 500);
-      </script>
+      
+      var player_img = new Image;
+      player_img.src = "https://kawaii.kawaii.at/img/solid-red-fabric-Robert-Kaufman-USA-Red-179485-1.JPG"
+      
+    var player = {
+      height: 20,
+      width: 20,
+      x: 250,
+      y:250,
+      draw: function() {
+      ctx.drawImage(player_img, this..x, this.y, this.width, this.height)
+      }
+    }
+    </script>
   </body>
 </html>
