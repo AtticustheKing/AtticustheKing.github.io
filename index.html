@@ -11,16 +11,13 @@
     <br>
     
     <button type"button" onclick="addOne()">add 1</button>
+    <p id="result"></p>
     
     <script>
-       var number = 0
        
        function addOne(){   
-       player = JSON.parse(localStorage.getItem('number'));
-       number++
-       localStorage.setItem('number', JSON.stringify(number)); 
-       alert(number); 
-      }
+    localStorage.number = number + 1 
+    document.getElementById("result").innerHTML = localStorage.number     
       </script>
     
   </body>
