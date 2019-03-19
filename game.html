@@ -32,8 +32,17 @@
       ctx.drawImage(player_img, this.x, this.y, this.width, this.height)
       }
     }
-    setInterval(function() {player.draw()}, 1000);
-    
+   
+      
+      function animation() {
+        player.draw();
+        ctx.clearRect();
+        
+        
+        
+      }
+      
+       setInterval(function() {animation()}, 1000);                   
     </script>
   </body>
 </html>
