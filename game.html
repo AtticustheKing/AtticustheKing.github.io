@@ -42,42 +42,80 @@
     
     //ARROW KEYS
     
-    function checkKey(e) {
+    controller = {
 
-    e = e || window.event;
+  left:false,
+  right:false,
+  up:false,
+  keyListener:function(event) {
 
-    if (e.keyCode == '38') {
-        player.y_speed -= 5
-    }
-    else if (e.keyCode == '40') {
-        player.y_speed += 5
-    }
-    else if (e.keyCode == '37') {
-        player.x_speed -= 5
-    }
-    else if (e.keyCode == '39') {
-        player.x_speed += 5
+    var key_state = (event.type == "keydown")?true:false;
+
+    switch(event.keyCode) {
+
+      case 37:// left key
+        controller.left = key_state;
+      break;
+      case 38:// up key
+        controller.up = key_state;
+      break;
+      case 39:// right key
+        controller.right = key_state;
+      break;
+      case 40:// down key
+        controller.down = key_state;
+      break;
+
     }
 
-}
+  }
 
-   player.x += player.x_speed
-   player.y += player.y_speed   
+};
+ 
       
       function animation() {
+        
+        if (controller.up) {
+        
+          player.y_speed += -0.5
+          
+        }
+        
+         if (controller.down) {
+        
+            player.y_speed += 0.5
+           
+        }
+        
+         if (controller.left) {
+        
+            player.x_speed += -0.5
+           
+        }
+        
+         if (controller.right) {
+           
+            player.x_speed += 0.5
+        
+        }
+        
+        player.x += player.x_speed;
+        player.y += player.y_speed;
+        player.x_speed *= 0.9;
+        player.y_speed *= 0.9;
+        
+        
+        
        ctx.clearRect(0, 0, 500, 500);
         drawCanvas();
-        player.draw();
-        
-        
-        
-        
-        
+        player.draw();         
       }
       
        setInterval(function() {animation()}, 50); 
       
-      document.onkeydown = checkKey;
+    
+      window.addEventListener("keydown", controller.keyListener)
+      window.addEventListener("keyup", controller.keyListener);
       
     </script>
   </body>
