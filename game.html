@@ -31,6 +31,8 @@
     var player = {
       height: 20,
       width: 20,
+      x_speed: 0,
+      y_speed: 0,
       x: 250,
       y:250,
       draw: function() {
@@ -45,21 +47,22 @@
     e = e || window.event;
 
     if (e.keyCode == '38') {
-        player.y -= 5
+        player.y_speed -= 5
     }
     else if (e.keyCode == '40') {
-        player.y += 5
+        player.y_speed += 5
     }
     else if (e.keyCode == '37') {
-        player.x -= 5
+        player.x_speed -= 5
     }
     else if (e.keyCode == '39') {
-        player.x += 5
+        player.x_speed += 5
     }
 
 }
 
-   
+   player.x += player.x_speed
+   player.y += player.y_speed   
       
       function animation() {
        ctx.clearRect(0, 0, 500, 500);
