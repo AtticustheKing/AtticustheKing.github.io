@@ -123,7 +123,8 @@
       }
       
        setInterval(function() {animation()}, 20); 
-      
+       setInterval(function() {coin.draw()}, 1000); 
+                    
     
       window.addEventListener("keydown", controller.keyListener)
       window.addEventListener("keyup", controller.keyListener);
