@@ -125,21 +125,19 @@
         
          
         if (controller.upAttack) {
-           console.log(bullet.x)
-           console.log(bullet.y) 
-           bullet.draw()     
+              
         }
         
          if (controller.downAttack) {       
-            bullet.draw()     
+               
         }
         
          if (controller.leftAttack) {      
-            bullet.draw()
+            
         }
         
          if (controller.rightAttack) {          
-            bullet.draw()
+            
         }
         
         if (controller.up) {
@@ -172,7 +170,7 @@
         drawCanvas();
         player.draw();      
         coin.draw()
-     
+        bullet.draw()
       }
       
        setInterval(function() {animation()}, 20); 
