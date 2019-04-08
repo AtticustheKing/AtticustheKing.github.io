@@ -25,6 +25,7 @@
         
       }
      
+  
       
       //PLAYER 
       
@@ -43,13 +44,29 @@
       }
     }
     
+     //BULLET
+      
+      var bullet_img = new Image();
+      buttle_img.src = "https://upload.wikimedia.org/wikipedia/en/8/8b/Purplecom.jpg"
+      
+      var bullet = {
+       height: 10,
+       width: 10,
+       x: player.x,
+       y: player.y, 
+       draw: function() {
+        ctx.drawImage(bullet_img, this.x, this.y, this.width, this.height) 
+       }
+        
+      }
+    
     //COIN
     
     var coin_img = new Image();
     coin_img.src = "https://icon2.kisspng.com/20180319/vxe/kisspng-symbol-trademark-yellow-coin-us-dollar-5ab051799eabd7.5409505115215046336499.jpg"
       var coin = {
      x: Math.floor((Math.random() * 500) + 1),
-     y: Math.floor((Math.random() * 500) + 1),
+     y: Math.floor((Math.random() * 500) + 1)s,
      height: 15,
      width: 15,
      draw: function() {
@@ -72,17 +89,29 @@
     switch(event.keyCode) {
 
       
-      case 65:// left key
+      case 65:// A
         controller.left = key_state;
       break;
-      case 87:// up key
+      case 87:// W
         controller.up = key_state;
       break;
-      case 68:// right key
+      case 68:// D
         controller.right = key_state;
       break;
-      case 83:// down key
+      case 83:// S
         controller.down = key_state;
+      break;  
+      case 37:// left arrow
+        controller.leftAttack = key_state;
+      break;
+      case 38:// up arrow
+        controller.upAttack = key_state;
+      break;
+      case 39:// right arrow
+        controller.rightAttack = key_state;
+      break;
+      case 40:// down arrow
+        controller.downAttack = key_state;
       break;  
 
     }
@@ -93,6 +122,23 @@
  
       
       function animation() {
+        
+         
+        if (controller.upAttack) {
+           bullet.draw()     
+        }
+        
+         if (controller.downAttack) {       
+            bullet.draw()     
+        }
+        
+         if (controller.leftAttack) {      
+            bullet.draw()
+        }
+        
+         if (controller.rightAttack) {          
+            bullet.draw()
+        }
         
         if (controller.up) {
           player.y_speed += -0.5          
