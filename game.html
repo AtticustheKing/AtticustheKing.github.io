@@ -28,6 +28,8 @@
   
       
       //PLAYER 
+      var playerX = 250;
+      var playerY = 250;
       
       var player_img = new Image();
       player_img.src = "https://kawaii.kawaii.at/img/solid-red-fabric-Robert-Kaufman-USA-Red-179485-1.JPG"
@@ -37,8 +39,8 @@
       width: 30,
       x_speed: 0,
       y_speed: 0,
-      x: 250,
-      y:250,
+      x: playerX,
+      y: playerY,
       draw: function() {
       ctx.drawImage(player_img, this.x, this.y, this.width, this.height)
       }
@@ -52,8 +54,8 @@
       var bullet = {
        height: 10,
        width: 10,
-       x: 100,
-       y: 100, 
+       x: playerY,
+       y: playerX, 
        draw: function() {
         ctx.drawImage(bullet_img, this.x, this.y, this.width, this.height) 
        }
@@ -156,8 +158,8 @@
             player.x_speed += 0.5        
         }
         
-        player.x += player.x_speed;
-        player.y += player.y_speed;
+        playerX += player.x_speed;
+        playerY += player.y_speed;
         player.x_speed *= 0.9;
         player.y_speed *= 0.9;
         
