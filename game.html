@@ -53,8 +53,8 @@
       var bullet = {
        height: 10,
        width: 10,
-       x: player.x,
-       y: player.y, 
+       x: 250,
+       y: 250, 
        draw: function() {
         ctx.drawImage(bullet_img, this.x, this.y, this.width, this.height) 
        }
@@ -161,6 +161,8 @@
         
         player.x += player.x_speed;
         player.y += player.y_speed;
+        player.x = bullet.x
+        player.y = bullet.y
         player.x_speed *= 0.9;
         player.y_speed *= 0.9;
         
