@@ -15,6 +15,7 @@
     
     <script>
       
+      var shooting = false;
       var c = document.getElementById("canvas");
       var ctx = c.getContext("2d");
      
@@ -126,7 +127,10 @@
         
          
         if (controller.upAttack) {
-              
+          shooting = true;
+          bullet.x = 100;
+        } else {
+         shooting = false; 
         }
         
          if (controller.downAttack) {       
@@ -159,10 +163,13 @@
             player.x_speed += 0.5        
         }
         
-        player.x += player.x_speed;
-        player.y += player.y_speed;
+       if (shooting === false) {
         bullet.x = player.x
         bullet.y = player.y 
+       }
+        
+        player.x += player.x_speed;
+        player.y += player.y_speed;
         player.x_speed *= 0.9;
         player.y_speed *= 0.9;
         
@@ -173,9 +180,10 @@
         //DRAW SECTION 
         
         drawCanvas();
+        bullet.draw()
         player.draw();      
         coin.draw()
-        bullet.draw()
+    
       }
       
        setInterval(function() {animation()}, 20); 
