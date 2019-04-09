@@ -55,8 +55,8 @@
       var bullet = {
        height: 15,
        width:15,
-       x: player.x,
-       y: player.y,
+       x: 100,
+       y: 100,
        draw: function() { 
         ctx.drawImage(bullet_img, this.x, this.y, this.width, this.height)
        }
@@ -121,9 +121,8 @@
       
       function bulletUpdate(bFiller) {
        
-        bFiller.draw();
-        bFiller.x += 10
-        
+        console.log(bFiller.x)
+   
       }
     
       
