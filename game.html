@@ -25,6 +25,59 @@
       ctx.fillRect(0, 0, 500, 500);
         
       }
+      
+      
+      
+      //ARROW KEYS
+    
+ var controller = {
+
+  left:false,
+  right:false,
+  up:false,
+  down:false,
+  leftAttack: false,
+  rightAttack: false,
+  upAttack: false,
+  downAttack: false,   
+      
+  keyListener:function(event) {
+
+    var key_state = (event.type == "keydown")?true:false;
+
+    switch(event.keyCode) {
+
+      
+      case 65:// A
+        controller.left = key_state;
+      break;
+      case 87:// W
+        controller.up = key_state;
+      break;
+      case 68:// D
+        controller.right = key_state;
+      break;
+      case 83:// S
+        controller.down = key_state;
+      break;
+      case 37:// left arrow
+        controller.leftAttack = key_state;
+      break;
+      case 38:// up arrow
+        controller.upAttack = key_state;
+      break;
+      case 39:// right arrow
+        controller.rightAttack = key_state;
+      break;
+      case 40:// down arrow
+        controller.downAttack = key_state;
+      break;    
+
+    }
+
+  }
+
+};
      
   
       
@@ -77,57 +130,6 @@
         
       }
     
-    
-    //ARROW KEYS
-    
- var controller = {
-
-  left:false,
-  right:false,
-  up:false,
-  down:false,
-  leftAttack: false,
-  rightAttack: false,
-  upAttack: false,
-  downAttack: false,   
-      
-  keyListener:function(event) {
-
-    var key_state = (event.type == "keydown")?true:false;
-
-    switch(event.keyCode) {
-
-      
-      case 65:// A
-        controller.left = key_state;
-      break;
-      case 87:// W
-        controller.up = key_state;
-      break;
-      case 68:// D
-        controller.right = key_state;
-      break;
-      case 83:// S
-        controller.down = key_state;
-      break;
-      case 37:// left arrow
-        controller.leftAttack = key_state;
-      break;
-      case 38:// up arrow
-        controller.upAttack = key_state;
-      break;
-      case 39:// right arrow
-        controller.rightAttack = key_state;
-      break;
-      case 40:// down arrow
-        controller.downAttack = key_state;
-      break;    
-
-    }
-
-  }
-
-};
  
       
       function update() {
