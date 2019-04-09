@@ -134,11 +134,8 @@
        ctx.clearRect(0, 0, 500, 500);
         drawCanvas();
         playerUpdate();
+        generateBullet();
         
-        if (controller.upAttack){
-          Bullet('B1', player.x + 5, player.y -30);
-          console.log('this worked')
-        }
         
         for (var key in bulletList){        
          bulletUpdate(bulletList[key]) 
@@ -149,9 +146,21 @@
       function bulletUpdate(something) {
        
         something.draw();
+        
    
       }
     
+      function generateBullet() {
+        
+       if (controller.upAttack) {
+       var x = player.x + 10
+       var y = player.x - 30
+       var id = Math.random();
+       Bullet(id, x, y); 
+        }
+        
+        
+      }
       
       function playerUpdate() {
         
