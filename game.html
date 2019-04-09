@@ -50,7 +50,7 @@
     
     
     var bullet_img = new Image();
-      bullet_img.scr = "https://cdn.static-economist.com/sites/default/files/images/2014/06/blogs/babbage/20140628_stp501.jpg"
+      bullet_img.src = "https://cdn.static-economist.com/sites/default/files/images/2014/06/blogs/babbage/20140628_stp501.jpg"
       
       var bullet = {
        height: 15,
@@ -115,8 +115,7 @@
        ctx.clearRect(0, 0, 500, 500);
         drawCanvas();
         playerUpdate();
-        bullet.draw();
-        //bulletUpdate(bullet);
+        bulletUpdate(bullet);
     
       }
       
