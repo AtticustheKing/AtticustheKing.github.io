@@ -115,13 +115,14 @@
        ctx.clearRect(0, 0, 500, 500);
         drawCanvas();
         playerUpdate();
-        bulletUpdate(bullet);
+        bullet.draw();
+        //bulletUpdate(bullet);
     
       }
       
-      function bulletUpdate(bFiller) {
+      function bulletUpdate(something) {
        
-        bFiller.draw();
+        something.draw();
    
       }
     
