@@ -15,7 +15,9 @@
     
     <script>
       
-      var shooting = false;
+      //SET UP
+      
+    
       var c = document.getElementById("canvas");
       var ctx = c.getContext("2d");
      
@@ -28,7 +30,7 @@
       
       
       
-      //ARROW KEYS
+      //ARROW KEYS and CONTROLLER
     
  var controller = {
 
@@ -102,13 +104,7 @@
     //BULLET
     
     var bulletList = {} 
-
-      
-      if (controller.upAttack)
-      {
-      Bullet('B1', player.x + 15, player.y +30);
-        console.log('this worked')
-      }
+       
     
       function Bullet(id,x,y) {
         
@@ -131,13 +127,18 @@
         
       }
     
- 
+ //UPDATE FUNCTION
       
       function update() {
         
        ctx.clearRect(0, 0, 500, 500);
         drawCanvas();
         playerUpdate();
+        
+        if (controller.upAttack){
+          Bullet('B1', player.x + 15, player.y +30);
+          console.log('this worked')
+        }
         
         for (var key in bulletList){        
          bulletUpdate(bulletList[key]) 
