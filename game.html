@@ -49,39 +49,33 @@
     //BULLET
     
     var bulletList = {} 
+
+      
+      Bullet('B1', 10, 10);
+      Bullet('B2', 20, 20);
+      Bullet('B3', 20, 20);
+      Bullet('B4', 20, 20);
     
-    var bullet_img = new Image();
+      function Bullet(id,x,y) {
+        
+        var bullet_img = new Image();
       bullet_img.src = "https://cdn.static-economist.com/sites/default/files/images/2014/06/blogs/babbage/20140628_stp501.jpg"
       
       var bullet = {
        height: 10,
        width:10,
-       x: 100,
-       y: 100,
-       id: 'B1',
+       x: x,
+       y: y,
+       id: id, 
        draw: function() { 
         ctx.drawImage(bullet_img, this.x, this.y, this.width, this.height)
        }
       }
      
-     bulletList['B1'] = bullet;
-      
-      
-      var bullet_img = new Image();
-      bullet_img.src = "https://cdn.static-economist.com/sites/default/files/images/2014/06/blogs/babbage/20140628_stp501.jpg"
-      
-      var bullet2 = {
-       height: 10,
-       width:10,
-       x: 150,
-       y: 150,
-       id: 'B2', 
-       draw: function() { 
-        ctx.drawImage(bullet_img, this.x, this.y, this.width, this.height)
-       }
+     bulletList[id] = bullet;
+        
+        
       }
-     
-     bulletList['B2'] = bullet2;
     
     
     //ARROW KEYS
