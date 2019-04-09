@@ -135,8 +135,10 @@
        ctx.clearRect(0, 0, 500, 500);
         drawCanvas();
         playerUpdate();
-        bulletUpdate(bulletList['B1'])
-        bulletUpdate(bulletList['B2'])
+        
+        for (var key in bulletList){        
+         bulletUpdate(bulletList[key]) 
+        }
     
       }
       
