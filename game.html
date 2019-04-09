@@ -48,20 +48,40 @@
     
     //BULLET
     
+    var bulletList = {} 
     
     var bullet_img = new Image();
       bullet_img.src = "https://cdn.static-economist.com/sites/default/files/images/2014/06/blogs/babbage/20140628_stp501.jpg"
       
       var bullet = {
-       height: 15,
-       width:15,
+       height: 10,
+       width:10,
        x: 100,
        y: 100,
+       id: 'B1',
        draw: function() { 
         ctx.drawImage(bullet_img, this.x, this.y, this.width, this.height)
        }
       }
-    
+     
+     bulletList['B1'] = bullet;
+      
+      
+      var bullet_img = new Image();
+      bullet_img.src = "https://cdn.static-economist.com/sites/default/files/images/2014/06/blogs/babbage/20140628_stp501.jpg"
+      
+      var bullet2 = {
+       height: 10,
+       width:10,
+       x: 150,
+       y: 150,
+       id: 'B2', 
+       draw: function() { 
+        ctx.drawImage(bullet_img, this.x, this.y, this.width, this.height)
+       }
+      }
+     
+     bulletList['B2'] = bullet2;
     
     
     //ARROW KEYS
@@ -115,7 +135,8 @@
        ctx.clearRect(0, 0, 500, 500);
         drawCanvas();
         playerUpdate();
-        bulletUpdate(bullet);
+        bulletUpdate(bulletList['B1'])
+        bulletUpdate(bulletList['B2'])
     
       }
       
