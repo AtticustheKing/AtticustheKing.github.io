@@ -120,25 +120,10 @@
       }
       
       function bulletUpdate(bFiller) {
-        
-        if (controller.upAttack) {
-          bFiller.draw();
-        }
-        
-        if (controller.downAttack) {
-          bFiller.draw();
-        }
-        
-        if (controller.leftAttack) {
-          bFiller.draw();
-        }
-        
-        if (controller.rightAttack) {
-          bFiller.draw();
-        }
-        
-        
-      }
+       
+        bFiller.draw();
+        bFiller.x += 10
+    
       
       function playerUpdate() {
         
