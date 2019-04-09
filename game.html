@@ -51,10 +51,10 @@
     var bulletList = {} 
 
       
-      Bullet('B1', 10, 10);
-      Bullet('B2', 20, 20);
-      Bullet('B3', 30, 30);
-      Bullet('B4', player.x, player.y);
+      if (controller.upAttack)
+      {
+      Bullet('B1', player.x, player.y);
+      }
     
       function Bullet(id,x,y) {
         
