@@ -112,6 +112,8 @@
       bullet_img.src = "https://cdn.static-economist.com/sites/default/files/images/2014/06/blogs/babbage/20140628_stp501.jpg"
       
       var bullet = {
+       x_speed: 5,
+       y_speed: 5, 
        height: 10,
        width:10,
        x: x,
@@ -145,6 +147,8 @@
       
       function bulletUpdate(something) {
        
+        something.x += something.x_speed;
+        something.y += something.y_speed;
         something.draw();
         
    
