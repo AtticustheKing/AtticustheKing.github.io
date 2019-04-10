@@ -278,8 +278,8 @@
       
       function generateEnemy() {
         if (player.enemySpawnCounter > 300){
-        var x_speed = 2;
-        var y_speed = 2;
+        var x_speed = Math.random() * 4 
+        var y_speed = x_speed
         var x = Math.random() * 650;
         var y = Math.random() * 650;
         var width = 20;
