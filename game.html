@@ -168,7 +168,7 @@
         
          
        if (controller.upAttack && controller.downAttack === false && controller.leftAttack === false && controller.rightAttack === false) {
-       if (player.attackCounter > 25){
+       if (player.attackCounter > 30){
          var x_speed = 0
        var y_speed = -5
        var x = player.x + 10
@@ -180,7 +180,7 @@
         }
         
            if (controller.downAttack && controller.upAttack === false && controller.leftAttack === false && controller.rightAttack === false) {
-       if (player.attackCounter > 25){
+       if (player.attackCounter > 30){
              var x_speed = 0
        var y_speed = 5
        var x = player.x + 10
@@ -192,7 +192,7 @@
         }
         
            if (controller.rightAttack && controller.downAttack === false && controller.leftAttack === false && controller.upAttack === false) {
-       if (player.attackCounter > 25){
+       if (player.attackCounter > 30){
              var x_speed = 5
        var y_speed = 0
        var x = player.x + 25
@@ -204,7 +204,7 @@
         }
         
            if (controller.leftAttack && controller.downAttack === false && controller.upAttack === false && controller.rightAttack === false) {
-       if (player.attackCounter > 25){
+       if (player.attackCounter > 30){
              var x_speed = -5
        var y_speed = 0
        var x = player.x - 5
@@ -220,7 +220,7 @@
       function playerUpdate() {
         
         if (controller.t) {
-         player.attackSpeed *= 4 
+         player.attackSpeed *= 2 
         }
         
         if (controller.up) {
