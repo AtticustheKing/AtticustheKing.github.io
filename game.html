@@ -11,7 +11,7 @@
     
     <br>
     
-    <canvas id="canvas" height="750" width="1000"></canvas>
+    <canvas id="canvas" height="650" width="650"></canvas>
     
     <script>
       
@@ -24,7 +24,7 @@
       function drawCanvas() {
         
       ctx.fillStyle = "#cccccc";
-      ctx.fillRect(0, 0, 1000, 750);
+      ctx.fillRect(0, 0, 650, 650);
         
       }
       
@@ -94,8 +94,8 @@
       width: 30,
       x_speed: 0,
       y_speed: 0,
-      x: 1000/2,
-      y: 750/2,
+      x: 650/2,
+      y: 650/2,
       attackSpeed: 1,
       attackCounter: 0,
       draw: function() {
@@ -135,7 +135,7 @@
       
       function update() {
         
-       ctx.clearRect(0, 0, 1000, 750);
+       ctx.clearRect(0, 0, 650, 650);
         drawCanvas();
         playerUpdate();
         generateBullet();
