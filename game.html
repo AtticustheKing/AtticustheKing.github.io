@@ -170,6 +170,22 @@
         
       }
       
+      //COllISION FUNCTION
+      
+     function entityDistance(entity1, entity2){
+       
+      var vx = entity1.x - entity2.x;
+      var vy = entity1.y - entity2.y;
+      return Math.sqrt(vx*vx+vy*vy); 
+       
+     }
+      
+      function testEntityCollison(entity1, entity2){
+       var distance = entityDistance(entity1, entity2);
+        return distance < 10
+        
+      }
+      
     
  //UPDATE FUNCTION
       
@@ -197,6 +213,12 @@
         
         for (var key in bulletList){        
          bulletUpdate(bulletList[key]) 
+        }
+        
+        var enemyShot = testEntityCollision(bulletList[key], enemyList[key])
+        if (enemyShot) {
+          
+         console.log("you shot the enemy") 
         }
     
       }
