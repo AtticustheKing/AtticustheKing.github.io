@@ -209,16 +209,16 @@
         
         for (var key in enemyList){        
          enemyUpdate(enemyList[key]) 
+          
+           var enemyPlayerCollision = testEntityCollision(player, enemyList[key])
+        if (enemyPlayerCollision) {       
+         console.log("you shot the enemy") 
+        }
+          
         }
         
         for (var key in bulletList){        
          bulletUpdate(bulletList[key]) 
-        }
-        
-        var enemyShot = testEntityCollision(bulletList[key], enemyList[key])
-        if (enemyShot) {
-          
-         console.log("you shot the enemy") 
         }
     
       }
