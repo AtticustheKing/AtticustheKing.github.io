@@ -99,6 +99,7 @@
       player_img.src = "https://kawaii.kawaii.at/img/solid-red-fabric-Robert-Kaufman-USA-Red-179485-1.JPG"
       
     var player = {
+      money: 0,
       health: 10,
       height: 30,
       width: 30,
@@ -244,6 +245,7 @@
         if (isColliding) {       
          delete bulletList[key]
           delete enemyList[key2]
+          player.money += 100;
         
         }
             
@@ -409,6 +411,7 @@
         ctx.font = "30px Arial";
         ctx.fillStyle = "#000000";
         ctx.fillText(player.health + " Hp",0,30)
+        ctx.fillText("$" + player.money,0,230)
         
       }
       
