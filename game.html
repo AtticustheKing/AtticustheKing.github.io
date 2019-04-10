@@ -211,7 +211,7 @@
          immunityCounter++ 
         }
         
-        if (frame % 400) {
+        if (frame % 400 === 0) {
          alert('the enemy spawn speed is doubbled')
          player.enemySpawnSpeed *= 2; 
         }
