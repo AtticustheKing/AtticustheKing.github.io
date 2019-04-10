@@ -73,7 +73,10 @@
       break;
       case 40:// down arrow
         controller.downAttack = key_state;
-      break;    
+      break;   
+      case 84://t
+        controller.t = key_state;
+      break;  
 
     }
 
@@ -215,6 +218,10 @@
       }
       
       function playerUpdate() {
+        
+        if (controller.t) {
+         player.attackSpeed *= 4 
+        }
         
         if (controller.up) {
           player.y_speed += -0.5 
