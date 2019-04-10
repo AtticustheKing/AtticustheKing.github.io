@@ -211,6 +211,12 @@
          immunityCounter++ 
         }
         
+        if (frame % 400) {
+         alert('the enemy spawn speed is doubbled')
+         player.enemySpawnSpeed *= 2; 
+        }
+          
+        
         for (var key in enemyList){        
          enemyUpdate(enemyList[key]) 
           
