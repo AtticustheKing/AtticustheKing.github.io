@@ -226,7 +226,7 @@
           
            var isColliding = testEntityCollision(player, enemyList[key])
         if (isColliding) { 
-          if (immunityCounter > 5) {
+          if (immunityCounter > 3) {
            player.health -= 1
             immunityCounter = 0;
           }
