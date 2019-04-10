@@ -108,6 +108,7 @@
       enemySpawnCounter: 0,
       attackSpeed: 1,
       attackCounter: 0,
+      seedBoost: 0,
       draw: function() {
       ctx.drawImage(player_img, this.x, this.y, this.width, this.height)
       }
@@ -325,19 +326,19 @@
         
         
         if (controller.up) {
-          player.y_speed += -0.5 
+          player.y_speed += (-0.5 - player.speedBoost)
         }
         
          if (controller.down) {       
-            player.y_speed += 0.5           
+            player.y_speed += (0.5 + player.speedBoost)           
         }
         
          if (controller.left) {      
-            player.x_speed += -0.5
+            player.x_speed += (-0.5 - player.speedBoost) 
         }
         
          if (controller.right) {          
-            player.x_speed += 0.5        
+            player.x_speed += (0.5 + player.speedBoost)        
         }
         
      
