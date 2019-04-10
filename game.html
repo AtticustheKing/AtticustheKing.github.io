@@ -41,7 +41,9 @@
   leftAttack: false,
   rightAttack: false,
   upAttack: false,
-  downAttack: false,   
+  downAttack: false, 
+  t: false,
+  y: false, 
       
   keyListener:function(event) {
 
@@ -77,6 +79,9 @@
       case 84://t
         controller.t = key_state;
       break;  
+      case 89://y
+        controller.y = key_state;
+      break;    
 
     }
 
@@ -99,7 +104,7 @@
       y_speed: 0,
       x: 650/2,
       y: 650/2,
-      attackSpeed: 2,
+      attackSpeed: 1,
       attackCounter: 0,
       draw: function() {
       ctx.drawImage(player_img, this.x, this.y, this.width, this.height)
@@ -219,8 +224,12 @@
       
       function playerUpdate() {
         
-        if (controller.t) {
-         player.attackSpeed *= 2 
+        if (controller.t && controller.y) {
+         var command = prompt("Put command here:")
+        }
+        
+        if (var command === 'increase bullet speed'){
+         player.attackSpeed *= 2; 
         }
         
         if (controller.up) {
