@@ -104,6 +104,8 @@
       y_speed: 0,
       x: 650/2,
       y: 650/2,
+      enemySpawnSpeed: 1,
+      enemySpawnCounter: 0,
       attackSpeed: 1,
       attackCounter: 0,
       draw: function() {
@@ -150,8 +152,6 @@
       enemy_img.src = "https://www.solidbackgrounds.com/images/2560x1440/2560x1440-blue-solid-color-background.jpg"
       
       var enemy = {
-       spawnSpeed: 1,
-       spawnCounter: 0, 
        x_speed: x_speed,
        y_speed: y_speed, 
        height: width,
@@ -183,7 +183,7 @@
         
         if (frame % 1 === 0){
          player.attackCounter += player.attackSpeed
-         enemy.spawnCounter += enemy.spawnSpeed
+         player.enemySpawnCounter += player.enemySpawnSpeed
         }
         
         if (frame % 20 === 0){
@@ -233,7 +233,7 @@
       
       
       function generateEnemy() {
-        if (enemy.spawnCounter > 300){
+        if (player.enemySpawnCounter > 300){
         var x_speed = 3;
         var y_speed = 3;
         var x = Math.random() * 650;
@@ -242,7 +242,7 @@
         var height = 20;
         var id = Math.random(); 
         Enemy(id,x,y,x_speed,y_speed, width, height);
-        enemy.spawnCounter = 0
+        player.enemySpawnCounter = 0
         }     
       }
     
