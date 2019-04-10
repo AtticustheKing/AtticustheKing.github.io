@@ -270,8 +270,8 @@
         }
         
      
-        player.x_speed += player.speedBoost
-        player.y_speed += player.speedBoost
+        player.x_speed *= player.speedBoost
+        player.y_speed *= player.speedBoost
         player.x += player.x_speed;
         player.y += player.y_speed;
         player.x_speed *= 0.9;
