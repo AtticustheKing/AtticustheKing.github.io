@@ -184,7 +184,7 @@
       
       function testEntityCollision(entity1,entity2){
        var distance = entityDistance(entity1,entity2);
-        return distance < 25
+        return distance < 20
         
       }
       
@@ -216,8 +216,8 @@
           
            var isColliding = testEntityCollision(player, enemyList[key])
         if (isColliding) { 
-          if (immunityCounter > 10) {
-           player.health -= 2
+          if (immunityCounter > 5) {
+           player.health -= 1
             immunityCounter = 0;
           }
           
@@ -396,7 +396,8 @@
         
         
         player.draw();
-         ctx.fillStyle = "#000000";
+        ctx.font = "30px Arial";
+        ctx.fillStyle = "#000000";
         ctx.fillText(player.health + " Hp",0,30)
         
       }
