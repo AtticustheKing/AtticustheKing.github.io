@@ -199,7 +199,7 @@
         generateBullet();
         generateEnemy();
         frame++
-        ctx.fillText(player.health + " Hp",0,30)
+        
         
         if (frame % 1 === 0){
          player.attackCounter += player.attackSpeed
@@ -396,6 +396,8 @@
         
         
         player.draw();
+         ctx.fillStyle = "#000000";
+        ctx.fillText(player.health + " Hp",0,30)
         
       }
       
