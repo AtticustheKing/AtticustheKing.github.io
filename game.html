@@ -89,7 +89,7 @@
 
 };
      
-  
+      
       
       //PLAYER 
       
@@ -138,6 +138,37 @@
         
         
       }
+      
+ //ENEMY     
+      
+      var enemyList = {} 
+       
+    
+      function Enemy(id,x,y,x_speed,y_speed, width, height) {
+        
+        var enemy_img = new Image();
+      enemy_img.src = "https://www.solidbackgrounds.com/images/2560x1440/2560x1440-blue-solid-color-background.jpg"
+      
+      var enemy = {
+       spawnSpeed: 1,
+       spawnCounter: 0, 
+       x_speed: x_speed,
+       y_speed: y_speed, 
+       height: width,
+       width: width,
+       x: x,
+       y: y,
+       id: id, 
+       draw: function() { 
+        ctx.drawImage(enemy_img, this.x, this.y, this.width, this.height)
+       }
+      }
+     
+     enemyList[id] = enemy;
+        
+        
+      }
+      
     
  //UPDATE FUNCTION
       
@@ -147,14 +178,20 @@
         drawCanvas();
         playerUpdate();
         generateBullet();
+        generateEnemy();
         frame++
         
         if (frame % 1 === 0){
-         player.attackCounter += player.attackSpeed 
+         player.attackCounter += player.attackSpeed
+         enemy.spawnCounter += enemy.spawnSpeed
         }
         
         if (frame % 20 === 0){
-         commandFrameCounter++ 
+         commandFrameCounter++
+        }
+        
+        for (var key in enemyList){        
+         enemyUpdate(enemyList[key]) 
         }
         
         for (var key in bulletList){        
@@ -171,7 +208,45 @@
         
    
       }
+      
+      function enemyUpdate(something) {
+       
+        if (player.x > enemy.x) {
+         enemy.x += enemy.x_speed 
+        }
+        
+         if (player.x < enemy.x) {
+         enemy.x -= enemy.x_speed 
+        }
+        
+         if (player.y > enemy.y) {
+         enemy.y += enemy.y_speed 
+        }
+        
+         if (player.y < enemy.y) {
+         enemy.y -= enemy.y_speed 
+        }
+        
+        something.draw();
+       
+      }
+      
+      
+      function generateEnemy() {
+        if (enemy.spawnCounter > 300){
+        var x_speed = 3;
+        var y_speed = 3;
+        var x = Math.random() * 650;
+        var y = Math.random() * 650;
+        var width = 20;
+        var height = 20;
+        var id = Math.random(); 
+        Enemy(id,x,y,x_speed,y_speed, width, height);
+        enemy.spawnCounter = 0
+        }     
+      }
     
+      
       function generateBullet() {
         
          
