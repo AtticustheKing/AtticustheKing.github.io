@@ -210,9 +210,9 @@
         for (var key in enemyList){        
          enemyUpdate(enemyList[key]) 
           
-           var enemyPlayerCollision = testEntityCollision(player, enemyList[key])
-        if (enemyPlayerCollision) {       
-         console.log("you got hit") 
+           var isColliding = testEntityCollision(player, enemyList[key])
+        if (isColliding) {       
+          
         }
           
         }
@@ -222,9 +222,10 @@
           
            for (var key2 in enemyList){ 
              
-             var enemyShot = testEntityCollision(bulletList[key], enemyList[key2])
-        if (enemyPlayerCollision) {       
-         console.log("you shot the enemy") 
+             var isColliding = testEntityCollision(bulletList[key], enemyList[key2])
+        if (isColliding) {       
+         delete bulletList[key]
+          delete enemyList[key2]
         
         }
             
