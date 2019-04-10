@@ -236,10 +236,19 @@
          }
         }
         
-        if (command === 'increase bullet speed'){
-          
-         player.attackSpeed *= 2; 
-        }
+       switch(command) {
+        
+           case:'increase bullet speed':
+               player.attackSpeed *= 2;
+           break;
+           case:'increase player speed':
+               player.x_speed *= 2;
+               player.y_speed *= 2;
+           break;
+         default:
+           alert('sorry, that is not a command');     
+           
+       }
         
         if (controller.up) {
           player.y_speed += -0.5 
