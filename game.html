@@ -16,6 +16,7 @@
     <script>
       
       //SET UP
+      var immunityCounter = 0
       var commandFrameCounter = 0
       var frame = 0
       var c = document.getElementById("canvas");
@@ -98,6 +99,7 @@
       player_img.src = "https://kawaii.kawaii.at/img/solid-red-fabric-Robert-Kaufman-USA-Red-179485-1.JPG"
       
     var player = {
+      health: 10,
       height: 30,
       width: 30,
       x_speed: 0,
@@ -205,13 +207,18 @@
         
         if (frame % 20 === 0){
          commandFrameCounter++
+         immunityCounter++ 
         }
         
         for (var key in enemyList){        
          enemyUpdate(enemyList[key]) 
           
            var isColliding = testEntityCollision(player, enemyList[key])
-        if (isColliding) {       
+        if (isColliding) { 
+          if (immunityCounter > 10) {
+           player.health -= 2
+            immunityCounter = 0;
+          }
           
         }
           
@@ -388,6 +395,7 @@
         
         
         player.draw();
+        ctx.fillText(player.health + " Hp",0,30)
         
       }
       
