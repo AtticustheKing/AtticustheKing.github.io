@@ -206,14 +206,17 @@
          player.enemySpawnCounter += player.enemySpawnSpeed
         }
         
-        if (frame % 20 === 0){
+        if (frame % 20 === 0){ 
          commandFrameCounter++
          immunityCounter++ 
         }
         
-        if (frame % 400 === 0) {
-         alert('the enemy spawn speed is doubbled')
-         player.enemySpawnSpeed *= 2; 
+        if (frame % 47 === 0) {   // this should be about 1 second
+          
+        }
+        
+        if (frame % 470 === 0) {  //10 seconds 
+         player.enemySpawnSpeed *= 1.2; 
         }
           
         
