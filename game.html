@@ -98,6 +98,7 @@
       player_img.src = "https://kawaii.kawaii.at/img/solid-red-fabric-Robert-Kaufman-USA-Red-179485-1.JPG"
       
     var player = {
+      speedBoost: 1,
       height: 30,
       width: 30,
       x_speed: 0,
@@ -242,8 +243,7 @@
                player.attackSpeed *= 2;
            break;
            case'increase player speed':
-               player.x_speed *= 2;
-               player.y_speed *= 2;
+               player.speedBoost *= 2;              
            break;
          default:
            confirm('sorry, that is not a command');     
@@ -270,7 +270,8 @@
         }
         
      
-        
+        player.x_speed += player.speedBoost
+        player.y_speed += player.speedBoost
         player.x += player.x_speed;
         player.y += player.y_speed;
         player.x_speed *= 0.9;
