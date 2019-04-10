@@ -211,20 +211,20 @@
       
       function enemyUpdate(something) {
        
-        if (player.x > enemy.x) {
-         enemy.x += enemy.x_speed 
+        if (player.x > something.x) {
+         something.x += something.x_speed 
         }
         
-         if (player.x < enemy.x) {
-         enemy.x -= enemy.x_speed 
+         if (player.x < something.x) {
+         something.x -= something.x_speed 
         }
         
-         if (player.y > enemy.y) {
-         enemy.y += enemy.y_speed 
+         if (player.y > something.y) {
+         something.y += something.y_speed 
         }
         
-         if (player.y < enemy.y) {
-         enemy.y -= enemy.y_speed 
+         if (player.y < something.y) {
+         something.y -= something.y_speed 
         }
         
         something.draw();
