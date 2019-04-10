@@ -302,6 +302,7 @@
         }     
       }
     
+      //GENERATE BULLET
       
       function generateBullet() {
         
@@ -356,9 +357,33 @@
         
       }
       
+      //START OVER
+      
+      function startOver() {
+       player.x = 650/2
+       player.y = 650/2     
+       player.speedBoost = 0
+       player.enemySpawnSpeed = 1
+       player.attackSpeed = 1
+       
+         for (var key in bulletList){       
+              delete bulletList[key] }
+        
+        for (var key in enemyList){       
+              delete enemyList[key] }
+        
+        
+       player.health = 10  
+      }
+      
+      //PLAYER UPDATE
+      
       function playerUpdate() {
         
         
+        if (player.health <= 0) {
+         startOver(); 
+        }
         
         if (controller.t === true && controller.y === true) {
           if (commandFrameCounter > 10){
