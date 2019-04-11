@@ -207,7 +207,6 @@
         playerUpdate();
         generateBullet();
         generateEnemy();
-        pausePlay();
         frame++
         
         if (controller.esc && pause === false) {
@@ -465,21 +464,6 @@
         
       }
       
-      //PAUSE AND PLAY
-      
-      function pausePlay() {
-        
-        
-       if (pause === false){
-      var gameTimer = setInterval(function() { update()}, 20); 
-      }
-      
-      if (pause === true){
-        console.log('the pause function is running')
-       clearInterval(gameTimer) 
-      } 
-        
-      }
        
       //SHOP FUNCTIONS
       
@@ -500,6 +484,7 @@
        }
        }
       
+      setInterval(function() { update()}, 20); 
      
                     
     
