@@ -199,6 +199,8 @@
         playerUpdate();
         generateBullet();
         generateEnemy();
+        increaseBulletSpeed();
+        increasePlayerSpeed();
         frame++
         
         
@@ -440,6 +442,22 @@
         
       }
       
+      //SHOP FUNCTIONS
+      
+       function increaseBulletSpeed(){
+        if(player.money >= 1000){
+          player.attackSpeed++
+          player.money -= 1000
+       }
+       }
+      
+      function increasePlayerSpeed(){
+        if(player.money >= 1000){
+          player.speedBoost++
+          player.money -= 1000
+       }
+       }
+      
        setInterval(function() { update()}, 20); 
      
                     
@@ -448,5 +466,12 @@
       window.addEventListener("keyup", controller.keyListener);
       
     </script>
+    
+    <html> <button  onclick = "increaseBulletSpeed()">Increase Player Speed</button>
+       <button onclick = "increaseBulletSpeed()">Increase Bullet Speed</button>
+      
+      
+      
+      </html>
   </body>
 </html>
