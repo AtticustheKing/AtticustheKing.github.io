@@ -16,6 +16,7 @@
     <script>
       
       //SET UP
+      var pause
       var immunityCounter = 0
       var commandFrameCounter = 0
       var frame = 0
@@ -44,7 +45,8 @@
   upAttack: false,
   downAttack: false, 
   t: false,
-  y: false, 
+  y: false,
+  esc: false,
       
   keyListener:function(event) {
 
@@ -82,7 +84,10 @@
       break;  
       case 89://y
         controller.y = key_state;
-      break;    
+      break; 
+      case 27: //esc
+        controller.esc = key_state;
+      break;  
 
     }
 
@@ -203,6 +208,13 @@
         generateEnemy();
         frame++
         
+        if (controller.esc && pause === false) {
+          pause = true 
+        }
+        
+        if (conrtoller.esc && pause) {
+         pause = false 
+        }
         
         if (frame % 1 === 0){
          player.attackCounter += player.attackSpeed
@@ -442,9 +454,9 @@
         
       }
       
-      
+      if (pause === false) {
        setInterval(function() { update()}, 20); 
-      
+      }
        
       //SHOP FUNCTIONS
       
