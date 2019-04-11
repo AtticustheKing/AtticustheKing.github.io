@@ -212,6 +212,7 @@
         if (controller.esc && pause === false) {
          if (pauseTimer > 3){
          pause = true
+           console.log('paused')
             pauseTimer = 0
           }
         }
@@ -220,6 +221,7 @@
         if (controller.esc && pause) {
           if (pauseTimer > 3){
          pause = false
+            console.log('play')
             pauseTimer = 0
           }
         }
