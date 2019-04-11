@@ -367,6 +367,8 @@
        player.speedBoost = 0
        player.enemySpawnSpeed = 1
        player.attackSpeed = 1
+       player.bulletSpeedCost = 0
+       player.speedCost = 0 
        
          for (var key in bulletList){       
               delete bulletList[key] }
@@ -452,16 +454,16 @@
        function increaseBulletSpeed(){
         if(player.money >= (1000 + player.bulletSpeedCost)){
           player.attackSpeed++
-          player.bulletSpeedCost += 200;
           player.money -= (1000 + player.bulletSpeedCost)
+          player.bulletSpeedCost += 200;
        }
        }
       
       function increasePlayerSpeed(){
         if(player.money >= (1000 + player.speedCost)){
           player.speedBoost++
-          player.bulletSpeedCost += 200;
           player.money -= (1000 + player.speedCost)
+           player.bulletSpeedCost += 200;
        }
        }
       
