@@ -210,10 +210,12 @@
         
         if (controller.esc && pause === false) {
           pause = true 
+          console.log('in pause')
         }
         
         if (controller.esc && pause) {
-         pause = false 
+         pause = false
+          console.log('out of pause')
         }
         
         if (frame % 1 === 0){
