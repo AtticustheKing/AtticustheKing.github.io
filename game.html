@@ -99,6 +99,8 @@
       player_img.src = "https://kawaii.kawaii.at/img/solid-red-fabric-Robert-Kaufman-USA-Red-179485-1.JPG"
       
     var player = {
+      speedCost: 0,
+      bulletSpeedCost: 0,
       money: 0,
       health: 10,
       height: 30,
@@ -442,23 +444,29 @@
         
       }
       
+      
+       setInterval(function() { update()}, 20); 
+      
+       
       //SHOP FUNCTIONS
       
+      
        function increaseBulletSpeed(){
-        if(player.money >= 1000){
+        if(player.money >= (1000 += player.bulletSpeedCost)){
           player.attackSpeed++
-          player.money -= 1000
+          player.bulletSpeedCost += 200;
+          player.money -= (1000 + player.bulletSpeedCost)
        }
        }
       
       function increasePlayerSpeed(){
-        if(player.money >= 1000){
+        if(player.money >= (1000 += player.speedCost)){
           player.speedBoost++
-          player.money -= 1000
+          player.bulletSpeedCost += 200;
+          player.money -= (1000 += player.speedCost)
        }
        }
       
-       setInterval(function() { update()}, 20); 
      
                     
     
@@ -467,7 +475,9 @@
       
     </script>
     
-    <html> <button  onclick = "increaseBulletSpeed()">Increase Player Speed</button>
+    <html>
+      <br>
+      <button  onclick = "increaseBulletSpeed()">Increase Player Speed</button>
        <button onclick = "increaseBulletSpeed()">Increase Bullet Speed</button>
       
       
