@@ -16,6 +16,7 @@
     <script>
       
       //SET UP
+      var pauseTimer = 0
       var pause = false
       var immunityCounter = 0
       var commandFrameCounter = 0
@@ -210,12 +211,13 @@
         
         if (controller.esc && pause === false) {
           pause = true 
-          console.log('in pause')
+          
         }
         
         if (controller.esc && pause) {
+          if (pauseTimer > 1){
          pause = false
-          console.log('out of pause')
+          }
         }
         
         if (frame % 1 === 0){
@@ -229,7 +231,7 @@
         }
         
         if (frame % 47 === 0) {   // this should be about 1 second
-          
+          pauseTimer++
         }
         
         if (frame % 470 === 0) {  //10 seconds 
