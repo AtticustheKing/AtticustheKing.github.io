@@ -210,13 +210,17 @@
         frame++
         
         if (controller.esc && pause === false) {
-          pause = true 
-          
+         if (pauseTimer > 3){
+         pause = true
+            pauseTimer = 0
+          }
         }
         
+        
         if (controller.esc && pause) {
-          if (pauseTimer > 1){
+          if (pauseTimer > 3){
          pause = false
+            pauseTimer = 0
           }
         }
         
