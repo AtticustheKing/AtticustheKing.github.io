@@ -478,7 +478,7 @@
       
       function increasePlayerSpeed(){
         if(player.money >= (1000 + player.speedCost)){
-          player.speedBoost++
+          player.speedBoost += 0.05
           player.money -= (1000 + player.speedCost)
            player.bulletSpeedCost += 200;
        }
