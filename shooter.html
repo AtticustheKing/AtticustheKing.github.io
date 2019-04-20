@@ -423,9 +423,11 @@
       function playerUpdate() {
         
         if (player.x >= (background.sX + 500)) {
-         background.sX += 10
-         background.sWidth += 10 
-         player.x = (background.sX + 500)  
+         if (player.x + 150 !== 1250){
+         background.sX += 4
+         background.sWidth += 4 
+         player.x = (background.sX + 500) 
+        }
         }
         
         
