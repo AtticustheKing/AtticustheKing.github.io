@@ -23,11 +23,14 @@
       var frame = 0
       var c = document.getElementById("canvas");
       var ctx = c.getContext("2d");
+      
+      
+      var background_img = new Image();
+      background_img.src = "grassyArea.png"
      
       function drawCanvas() {
         
-      ctx.fillStyle = "#cccccc";
-      ctx.fillRect(0, 0, 650, 650);
+      ctx.drawImage(background_img, 0, 0, 625, 625, 0, 0, 625, 625)
         
       }
       
