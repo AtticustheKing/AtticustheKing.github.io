@@ -158,21 +158,25 @@
       var enemyList = {} 
        
     
-      function Enemy(id,x,y,x_speed,y_speed, width, height) {
+      function Enemy(id,sX,sY,sHeight,sWidth,x,y,x_speed,y_speed, width, height) {
         
         var enemy_img = new Image();
       enemy_img.src = "basicEnemy.png"
       
       var enemy = {
        x_speed: x_speed,
-       y_speed: y_speed, 
+       y_speed: y_speed,
+       sX: sX,
+       sy: sY,
+       sHeight: sHeight,
+       sWidth: sWidth, 
        height: width,
        width: width,
        x: x,
        y: y,
        id: id, 
        draw: function() { 
-        ctx.drawImage(enemy_img, 100, 100, 245, 245, this.x, this.y, this.width, this.height)
+        ctx.drawImage(enemy_img, this.sX, this.sY, this.sWidth, this.sHeight, this.x, this.y, this.width, this.height)
        }
       }
      
@@ -318,10 +322,14 @@
         var y_speed = x_speed
         var x = Math.random() * 650;
         var y = Math.random() * 650;
+        var sX = 100;
+        var sY = 100;
+        var sHeight = 245;
+        var sWidth = 245;  
         var width = 20;
         var height = 20;
         var id = Math.random(); 
-        Enemy(id,x,y,x_speed,y_speed, width, height);
+        Enemy(id,sX,sY,sHeight,sWidth,x,y,x_speed,y_speed, width, height);
         player.enemySpawnCounter = 0
         }     
       }
