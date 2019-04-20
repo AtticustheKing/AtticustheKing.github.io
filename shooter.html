@@ -422,6 +422,12 @@
       
       function playerUpdate() {
         
+        if (player.x >= (background.sX + 500)) {
+         background.sX -= (player.x += player.x_speed)
+         background.sWidth -= (player.x += player.x_speed)
+         player.x = (background.sX + 500) 
+        }
+        
         
         if (player.health <= 0) {
          startOver(); 
