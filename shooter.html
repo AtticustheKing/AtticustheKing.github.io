@@ -28,10 +28,17 @@
       var background_img = new Image();
       background_img.src = "grassyArea.png"
      
-      function drawCanvas() {
-        
-      ctx.drawImage(background_img, 0, 0, 900, 900, 0, 0, 625, 625)
-        
+      var background = {
+       sX: 0,
+       sY: 0,
+       sWidth: 900,
+       sHeight: 900,
+       x: 0,
+       y: 0,
+       width: 650,
+       height: 650, 
+       draw: function () {     
+      ctx.drawImage(background_img, this.sX, this.sY, this.sWidth, this.sHeight, this.x, this.y, this.width, this.height)  
       }
       
       
@@ -210,7 +217,7 @@
       function update() {
         
        ctx.clearRect(0, 0, 650, 650);
-        drawCanvas();
+        background.draw();
         playerUpdate();
         generateBullet();
         generateEnemy();
