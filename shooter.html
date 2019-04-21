@@ -425,25 +425,25 @@
         if (player.x >= (background.sX + 500)) {
          if (player.x + 150 !== 1250){
          background.sX += 8
-         player.x -= 8  
+         player.x_speed = 0 
         }
         }
         if (player.x <= (background.sX + 150)) {
          if (player.x - 150 !== 0){
          background.sX -= 8
-         player.x += 8  
+         player.x_speed = 0   
         }
         }
         if (player.y >= (background.sY + 500)) {
          if (player.y + 150 !== 1250){
          background.sY += 8
-         player.x -= 8  
+         player.y_speed = 0  
         }
         }
         if (player.y <= (background.sY + 150)) {
          if (player.y - 150 !== 0){
          background.sY -= 8
-         player.x += 8  
+         player._speed = 0  
         }
         }
         
