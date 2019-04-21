@@ -1,0 +1,10 @@
+<html>
+<onclick="getData()" button>Get Data<button>
+<script>
+function getData() {
+$.getJSON('http://gd.geobytes.com/GetCityDetails?callback=?', function(data) {
+  console.log(JSON.stringify(data, null, 2));
+});
+}
+</script>
+</html>
