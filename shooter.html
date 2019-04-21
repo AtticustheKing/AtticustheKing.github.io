@@ -428,6 +428,24 @@
          player.x -= 8  
         }
         }
+        if (player.x <= (background.sX + 150)) {
+         if (player.x - 150 !== 0){
+         background.sX -= 8
+         player.x += 8  
+        }
+        }
+        if (player.y >= (background.sY + 500)) {
+         if (player.y + 150 !== 1250){
+         background.sY += 8
+         player.x -= 8  
+        }
+        }
+        if (player.y <= (background.sY + 150)) {
+         if (player.y - 150 !== 0){
+         background.sY -= 8
+         player.x += 8  
+        }
+        }
         
         
         if (player.health <= 0) {
