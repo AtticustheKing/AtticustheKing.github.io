@@ -353,7 +353,7 @@
        if (player.attackCounter > 30){
          var x_speed = 0
        var y_speed = -5
-       var x = player.x + 15
+       var x = player.x + 20
        var y = player.y - 5
        var id = Math.random();
        Bullet(id, x, y, x_speed, y_speed); 
@@ -365,8 +365,8 @@
        if (player.attackCounter > 30){
              var x_speed = 0
        var y_speed = 5
-       var x = player.x + 15
-       var y = player.y + 30
+       var x = player.x + 20
+       var y = player.y + 35
        var id = Math.random();
        Bullet(id, x, y, x_speed, y_speed); 
           player.attackCounter = 0;
@@ -377,8 +377,8 @@
        if (player.attackCounter > 30){
              var x_speed = 5
        var y_speed = 0
-       var x = player.x + 30
-       var y = player.y + 15
+       var x = player.x + 35
+       var y = player.y + 20
        var id = Math.random();
        Bullet(id, x, y, x_speed, y_speed); 
               player.attackCounter = 0;
@@ -390,7 +390,7 @@
              var x_speed = -5
        var y_speed = 0
        var x = player.x - 5
-       var y = player.y + 15
+       var y = player.y + 20
        var id = Math.random();
        Bullet(id, x, y, x_speed, y_speed);
        player.attackCounter = 0;
