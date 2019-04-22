@@ -172,7 +172,7 @@
       var enemyList = {} 
        
     
-      function Enemy(id, sX, sY, sHeight, sWidth, x, y, x_speed, y_speed, width, height) {
+      function Enemy(id, x, y, x_speed, y_speed, width, height) {
         
         var enemy_img = new Image();
       enemy_img.src = "blueEnemySpriteSheet.png"
@@ -180,11 +180,11 @@
       var enemy = {
        x_speed: x_speed,
        y_speed: y_speed,
-       sX: sX,
-       sY: sY,
-       sHeight: sHeight,
-       sWidth: sWidth, 
-       height: width,
+       sX: 0,
+       sY: 0,
+       sHeight: 241,
+       sWidth: 952, 
+       height: height,
        width: width,
        x: x,
        y: y,
@@ -311,34 +311,34 @@
        
         if (player.x > something.x) { //enemy is going right
          something.x += something.x_speed
-          eSXV = 497
-          eSYV = 4
-          eSWV = 687
-          eSHV = 242 
+         something.sX = 497
+         something.sY = 4
+         something.sWidth = 687
+         something.sHeight = 242  
         }
         
          if (player.x < something.x) { //enemy is going left
-         something.x -= something.x_speed 
-          eSXV = 274
-          eSYV = 3
-          eSWV = 462
-          eSHV = 244  
+         something.x -= something.x_speed
+         something.sX = 274
+         something.sY = 3
+         something.sWidth = 462
+         something.sHeight = 244    
         }
         
          if (player.y > something.y) { //enemy is doing down
          something.y += something.y_speed
-          eSXV = 13
-          eSYV = 27
-          eSWV = 242
-          eSHV = 245 
+         something.sX = 13
+         something.sY = 27
+         something.sWidth = 242
+         something.sHeight = 245 
         }
         
          if (player.y < something.y) { //enemy is going up
          something.y -= something.y_speed 
-          eSXV = 723
-          eSYV = 22
-          eSWV = 952
-          eSHV = 241 
+         something.sX = 723
+         something.sY = 22
+         something.sWidth = 952
+         something.sHeight = 241 
         }
         
         something.draw();
@@ -352,14 +352,10 @@
         var y_speed = x_speed
         var x = Math.random() * 650;
         var y = Math.random() * 650;
-        var sX = eSXV;
-        var sY = eSYV;
-        var sHeight = eSHV;
-        var sWidth = eSWV;  
         var width = 50;
         var height = 50;
         var id = Math.random(); 
-        Enemy(id, sX, sY, sHeight, sWidth, x, y, x_speed, y_speed, width, height)
+        Enemy(id, x, y, x_speed, y_speed, width, height)
         player.enemySpawnCounter = 0
         }     
       }
