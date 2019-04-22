@@ -315,6 +315,7 @@
          something.sY = 4
          something.sWidth = 190
          something.sHeight = 238  
+          console.log('this ran')
         }
         
          if (player.x < something.x) { //enemy is going left
@@ -322,10 +323,11 @@
          something.sX = 274
          something.sY = 3
          something.sWidth = 188
-         something.sHeight = 241    
+         something.sHeight = 241  
+           console.log('this ran')
         }
         
-         if (player.y > something.y) { //enemy is doing down
+        /* if (player.y > something.y) { //enemy is doing down
          something.y += something.y_speed
          something.sX = 13
          something.sY = 27
@@ -339,7 +341,7 @@
          something.sY = 22
          something.sWidth = 229
          something.sHeight = 219 
-        }
+        }*/
         
         something.draw();
        
