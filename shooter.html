@@ -305,20 +305,36 @@
       
       function enemyUpdate(something) {
        
-        if (player.x > something.x) {
-         something.x += something.x_speed 
+        if (player.x > something.x) { //enemy is going right
+         something.x += something.x_speed
+          eSXV = 497
+          eSYV = 4
+          eSWV = 687
+          eSHV = 242 
         }
         
-         if (player.x < something.x) {
+         if (player.x < something.x) { //enemy is going left
          something.x -= something.x_speed 
+          eSXV = 274
+          eSYV = 3
+          eSWV = 462
+          eSHV = 244  
         }
         
-         if (player.y > something.y) {
-         something.y += something.y_speed 
+         if (player.y > something.y) { //enemy is doing down
+         something.y += something.y_speed
+          eSXV = 13
+          eSYV = 27
+          eSWV = 242
+          eSHV = 245 
         }
         
-         if (player.y < something.y) {
+         if (player.y < something.y) { //enemy is going up
          something.y -= something.y_speed 
+          eSXV = 723
+          eSYV = 22
+          eSWV = 952
+          eSHV = 241 
         }
         
         something.draw();
@@ -332,10 +348,10 @@
         var y_speed = x_speed
         var x = Math.random() * 650;
         var y = Math.random() * 650;
-        var sX = 100;
-        var sY = 100;
-        var sHeight = 245;
-        var sWidth = 245;  
+        var sX = eSXV;
+        var sY = eSYV;
+        var sHeight = eSHV;
+        var sWidth = eSWV;  
         var width = 50;
         var height = 50;
         var id = Math.random(); 
