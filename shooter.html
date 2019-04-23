@@ -203,15 +203,15 @@
       
      function entityDistance(entity1,entity2){
        
-      var vx = entity1.x - entity2.x;
-      var vy = entity1.y - entity2.y;
+      var vx = (entity1.x + (entity1.width/2)) - (entity2.x + (entity2.width/2))
+      var vy = (entity1.y + (entity1.height/2))  - (entity2.y + (entity2.height/2))
       return Math.sqrt(vx*vx+vy*vy); 
        
      }
       
       function testEntityCollision(entity1,entity2){
        var distance = entityDistance(entity1,entity2);
-        return distance < 30
+        return distance < 25
         
       }
       
