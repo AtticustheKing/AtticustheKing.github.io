@@ -325,26 +325,37 @@
          something.y -= something.y_speed  
         }
         
-        if (player.x > something.x) { //enemy is going right        
+        if (player.x > something.x) { //enemy is going right   
+          if ((player.x - something.x) > Math.abs(player.y - something.y)){
          something.sX = 497
          something.sY = 4
          something.sWidth = 190
-         something.sHeight = 238            
-        } else if (player.x < something.x) { //enemy is going left
+         something.sHeight = 238    
+        }
+        }
+        if (player.x < something.x) { //enemy is going left
+          if ((something.x - player.x) > Math.abs(player.y - something.y)){
          something.sX = 274
          something.sY = 3
          something.sWidth = 188
          something.sHeight = 241            
-        } else if (player.y > something.y) { //enemy is doing down        
+        } 
+        }
+          if (player.y > something.y) { //enemy is doing down
+            if ((player.y - something.y) > Math.abs(player.x - something.x)) {
          something.sX = 13
          something.sY = 27
          something.sWidth = 229
          something.sHeight = 218 
-        } else if (player.y < something.y) { //enemy is going up         
+        }      
+        } 
+        if (player.y < something.y) { //enemy is going up  
+          if ((something.y - player.y) > Math.abs(player.x - something.x)) {
          something.sX = 723
          something.sY = 22
          something.sWidth = 229
          something.sHeight = 219 
+          }
         }
         
         something.draw();
