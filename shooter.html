@@ -372,8 +372,12 @@
         var x = Math.random() * 650;
         var y = Math.random() * 650;
           if (x <= (player.x + 300) && y <= (player.y + 300) && x >= (player.x - 300) && y >= (player.y + 300)) {
-           x = Math.random() * 650
-           y = Math.random() * 650 
+            alert('is enemy in 300px?')
+       if (x >= (player.x - 300) && x <= player.x){
+        x -= 300  
+       } else {
+        x += 300 
+       }
           }
         var width = 50;
         var height = 50;
