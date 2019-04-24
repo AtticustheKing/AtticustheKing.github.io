@@ -371,6 +371,10 @@
         var y_speed = x_speed
         var x = Math.random() * 650;
         var y = Math.random() * 650;
+          if (x <= (player.x + 200) && y <= (player.y + 200) && x >= (player.x - 200) && y >= (player.y + 200)) {
+           x = Math.random() * 650
+           y = Math.random() * 650 
+          }
         var width = 50;
         var height = 50;
         var id = Math.random(); 
