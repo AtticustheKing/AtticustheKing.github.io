@@ -16,6 +16,7 @@
     <script>
       
       //SET UP
+      var animationTimer = 0
       var eSXV
       var eSYV
       var eSWV
@@ -172,7 +173,7 @@
       var enemyList = {} 
        
     
-      function Enemy(id, x, y, x_speed, y_speed, width, height, animationTimer) {
+      function Enemy(id, x, y, x_speed, y_speed, width, height, enemyAnimationTimer) {
         
         var enemy_img = new Image();
       enemy_img.src = "blueEnemy.png"
@@ -189,7 +190,7 @@
        x: x,
        y: y,
        id: id,
-       animationTimer: animationTimer, 
+       enemyAnimationTimer: enemyAnimationTimer, 
        draw: function() { 
         ctx.drawImage(enemy_img, this.sX, this.sY, this.sWidth, this.sHeight, this.x, this.y, this.width, this.height)
        }
@@ -256,7 +257,7 @@
         }
         
         if (frame % 10 === 0) {
-         enemy.animationTimer++ 
+         animationTimer++ 
         }
         
         if (frame % 47 === 0) {   // this should be about 1 second
@@ -352,13 +353,13 @@
          something.sY = 27
          something.sWidth = 229
          something.sHeight = 218 
-              if (something.animationTimer >= 2) {
+              if (something.enemyAnimationTimer >= 2) {
          something.sX = 6
          something.sY = 263
          something.sWidth = 233
          something.sHeight = 227
                 if (enemy.animationTimer >= 4){
-              something.animationTimer = 0
+              something.enemyAnimationTimer = 0
                 }
             }
         }      
@@ -381,7 +382,7 @@
       
       function generateEnemy() {
         if (player.enemySpawnCounter > 300){
-        var animationTimer = 0  
+        var enemyAnimationTimer = animationTimer  
         var x_speed = (Math.random() + 0.5) * 2   
         var y_speed = x_speed
         var x = Math.random() * 650;
