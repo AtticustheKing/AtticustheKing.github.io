@@ -16,6 +16,7 @@
     <script>
       
       //SET UP
+      var animationTimer
       var eSXV
       var eSYV
       var eSWV
@@ -254,6 +255,10 @@
          immunityCounter++ 
         }
         
+        if (frame % 10 === 0) {
+         animationTimer++ 
+        }
+        
         if (frame % 47 === 0) {   // this should be about 1 second
           pauseTimer++
         }
@@ -331,6 +336,13 @@
          something.sY = 4
          something.sWidth = 210
          something.sHeight = 240   
+            if (animationTimer === 1) {
+         something.sX = 6
+         something.sY = 263
+         something.sWidth = 233
+         something.sHeight = 227
+              animationTimer = 0
+            }
         }
         }
         if (player.x < something.x) { //enemy is going left
