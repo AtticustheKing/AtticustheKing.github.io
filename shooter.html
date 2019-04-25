@@ -229,7 +229,7 @@
         generateEnemy();
         frame++
         frameCounter += 0.2
-        walkingMod = frameCounter % 2
+        walkingMod = frameCounter % 3
      
         if (controller.esc && pause === false) {
          if (pauseTimer > 1){
@@ -355,11 +355,12 @@
          something.sY = 27
          something.sWidth = 229
          something.sHeight = 218 
-              if (walkingMod === 2) {
+              if (walkingMod >= 2) {
          something.sX = 6
          something.sY = 263
          something.sWidth = 233
          something.sHeight = 227 
+                console.log('this code ran')
             }
         }      
         } 
