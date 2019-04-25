@@ -16,7 +16,6 @@
     <script>
       
       //SET UP
-      var animationTimer = 0
       var eSXV
       var eSYV
       var eSWV
@@ -173,12 +172,12 @@
       var enemyList = {} 
        
     
-      function Enemy(id, x, y, x_speed, y_speed, width, height) {
+      function Enemy(id, x, y, x_speed, y_speed, width, height, animationTimer) {
         
         var enemy_img = new Image();
       enemy_img.src = "blueEnemy.png"
       
-      var enemy = {
+      var enemy = { 
        x_speed: x_speed,
        y_speed: y_speed,
        sX: 0,
@@ -189,7 +188,8 @@
        width: width,
        x: x,
        y: y,
-       id: id, 
+       id: id,
+       animationTimer: animationTimer, 
        draw: function() { 
         ctx.drawImage(enemy_img, this.sX, this.sY, this.sWidth, this.sHeight, this.x, this.y, this.width, this.height)
        }
@@ -352,12 +352,14 @@
          something.sY = 27
          something.sWidth = 229
          something.sHeight = 218 
-              if (animationTimer >= 1) {
+              if (enemy.animationTimer >= 2) {
          something.sX = 6
          something.sY = 263
          something.sWidth = 233
          something.sHeight = 227
-              animationTimer = 0
+                if (enemy.animationTimer >= 4){
+              enemy.animationTimer = 0
+                }
             }
         }      
         } 
@@ -379,6 +381,7 @@
       
       function generateEnemy() {
         if (player.enemySpawnCounter > 300){
+        var animationTimer = 0  
         var x_speed = (Math.random() + 0.5) * 2   
         var y_speed = x_speed
         var x = Math.random() * 650;
@@ -386,7 +389,7 @@
         var width = 50;
         var height = 50;
         var id = Math.random(); 
-        Enemy(id, x, y, x_speed, y_speed, width, height)
+        Enemy(id, x, y, x_speed, y_speed, width, height, animationTimer)
         player.enemySpawnCounter = 0
         }     
       }
