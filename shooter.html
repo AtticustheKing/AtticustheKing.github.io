@@ -17,7 +17,7 @@
       
       //SET UP
       var frameCounter = 0
-      var walkingMod = frameCounter % 2
+      var walkingMod = 0
       var eSXV
       var eSYV
       var eSWV
@@ -229,6 +229,7 @@
         generateEnemy();
         frame++
         frameCounter += 0.2
+        walkingMod = frameCounter % 2
      
         if (controller.esc && pause === false) {
          if (pauseTimer > 1){
