@@ -16,6 +16,10 @@
     <script>
       
       //SET UP
+      var rightB = 0
+      var leftB = 0
+      var upB = 0
+      var downB = 0
       var frameCounter = 0
       var walkingMod = 0
       var eSXV
@@ -223,7 +227,7 @@
       function update() {
         
        ctx.clearRect(0, 0, 650, 650);
-        background.draw();
+        updateBackground();
         playerUpdate();
         generateBullet();
         generateEnemy();
@@ -550,7 +554,32 @@
         ctx.fillText("$" + player.money,230,30)
         
       }
+      //UPDATE BACKGROUND
       
+      function updateBackground() {
+        rightB = background.sX + 500
+        leftB = background.sX + 150
+        upB = background.sY + 150
+        downB = background.sY + 500 
+        
+        if (player.x > rightB) {
+          background.sX += (player.x - rightB)
+          }
+        if (player.x < leftB) {
+         background.sX -= (leftB - player.x) 
+        }
+        if (player.y > downB) {
+         background.sY += (player.y - downB) 
+        }
+        if (player.y < upB) {
+         background.sY -= (upB - player.y) 
+        }
+        
+        
+        
+        background.draw();
+      }
+     
        
       //SHOP FUNCTIONS
       
