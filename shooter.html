@@ -338,7 +338,13 @@
          something.sX = 492
          something.sY = 4
          something.sWidth = 210
-         something.sHeight = 240   
+         something.sHeight = 240
+            if (walkingMod >= 2) {
+         something.sX = 493
+         something.sY = 241
+         something.sWidth = 188
+         something.sHeight = 236 
+            }
         }
         }
         if (player.x < something.x) { //enemy is going left
@@ -346,7 +352,13 @@
          something.sX = 274
          something.sY = 3
          something.sWidth = 208
-         something.sHeight = 237            
+         something.sHeight = 237 
+                 if (walkingMod >= 2) {
+         something.sX = 272
+         something.sY = 241
+         something.sWidth = 188
+         something.sHeight = 236 
+            }
         } 
         }
           if (player.y > something.y) { //enemy is doing down
@@ -360,7 +372,6 @@
          something.sY = 263
          something.sWidth = 233
          something.sHeight = 227 
-                console.log('this code ran')
             }
         }      
         } 
@@ -370,6 +381,12 @@
          something.sY = 22
          something.sWidth = 229
          something.sHeight = 219 
+            if (walkingMod >= 2) {
+         something.sX = 714
+         something.sY = 266
+         something.sWidth = 226
+         something.sHeight = 223 
+            }
           }
         }
         
