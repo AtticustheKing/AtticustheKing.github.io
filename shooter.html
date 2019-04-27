@@ -562,17 +562,17 @@
         upB = background.sY + 150
         downB = background.sY + 500 
         
-        if (player.x > rightB) {
-          background.sX += (player.x - rightB)
+        if ((player.x + player.width) > rightB) {
+          background.sX += (player.x - (rightB + player.width))
           }
         if (player.x < leftB) {
          background.sX -= (leftB - player.x) 
         }
-        if (player.y > downB) {
+        if ((player.y + player.height) > downB) {
          background.sY += (player.y - downB) 
         }
         if (player.y < upB) {
-         background.sY -= (upB - player.y) 
+         background.sY -= (upB - (player.y + player.height)) 
         }
         
         
