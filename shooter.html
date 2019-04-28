@@ -583,8 +583,8 @@
      
       //AUDIO FUNCTIONS
       
-      var ouch_audio = new Audio
-      ouch_audio.src = "ouch.aifc"
+      var ouch_audio
+      ouch_audio = new sound("ouch.aifc")
       
       function playerHitSound() {
         ouch_audio.play()  
