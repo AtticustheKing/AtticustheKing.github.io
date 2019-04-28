@@ -283,6 +283,7 @@
         if (isColliding) { 
           if (immunityCounter > 3) {
            player.health -= 1
+            playerHitSound();
             immunityCounter = 0;
           }
           
@@ -580,7 +581,16 @@
         background.draw();
       }
      
-       
+      //AUDIO FUNCTIONS
+      
+      var ouch_audio = new Audio
+      ouch_audio.src = "ouch.aifc"
+      
+      function playerHitSound() {
+        ouch_audio.play()  
+      }
+     
+      
       //SHOP FUNCTIONS
       
       
