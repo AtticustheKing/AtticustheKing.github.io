@@ -227,6 +227,7 @@
       function update() {
         
        ctx.clearRect(0, 0, 650, 650);
+        for (var key in enemyList){updateBackground(enemyList[key])}
         playerUpdate();
         generateBullet();
         generateEnemy();
@@ -299,20 +300,11 @@
         if (isColliding) {       
          delete bulletList[key]
           delete enemyList[key2]
-          player.money += 100;
-        
-        }
-            
+          player.money += 100;     
              
-           }
-          
-        }
-        
-         for (var key in enemyList){        
-         updateBackground(enemyList[key])
-         
-         }
-    
+        }  
+           }  
+        }  
       }
       
       function bulletUpdate(something) {
