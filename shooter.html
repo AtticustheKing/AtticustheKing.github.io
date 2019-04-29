@@ -566,15 +566,22 @@
   if ((player.x + player.width) >= rightB) {
    background.sX += ((player.x + player.width) - rightB) 
    player.x -= ((player.x + player.width) - rightB)  
+    Enemy(x) {
+     var x -= ((player.x + player.width) - rightB)   
+    }
   }
+        
     if (player.x <= leftB) {
    background.sX -= (leftB - player.x) 
-   player.x += (leftB - player.x) 
+   player.x += (leftB - player.x)
+   console.log(enemy.x)   
   }
+        
    if ((player.y + player.height) >= downB) {
    background.sY += ((player.y + player.height) - downB) 
    player.y -= ((player.y + player.height) - downB) 
   }
+        
         if (player.y <= upB) {
    background.sY -= (upB - player.y) 
    player.y += (upB - player.y) 
