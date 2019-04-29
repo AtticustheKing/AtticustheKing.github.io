@@ -558,8 +558,14 @@
       //UPDATE BACKGROUND
       
       function updateBackground() {
-          background.sX = player.x - 325
-          background.sY = player.y - 325
+  var rightB = 500
+  var leftB = 150
+  var upB = 150 
+  var downB = 500
+  
+  if (player.x >= rightB) {
+   background.sX += (player.x - rightB) 
+  }
         
         background.draw();
       }
