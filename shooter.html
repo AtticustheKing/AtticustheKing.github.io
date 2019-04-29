@@ -558,6 +558,7 @@
   var leftB = 50
   var upB = 50 
   var downB = 600
+  var leftDiff = leftB - player.x
   
   if ((player.x + player.width) >= rightB) {
    background.sX += ((player.x + player.width) - rightB) 
@@ -565,9 +566,9 @@
   }
         
     if (player.x <= leftB) {
-   background.sX -= (leftB - player.x) 
-   player.x += (leftB - player.x) 
-   for (key in enemyList) { enemyList[key].x += 10
+   background.sX -= (leftDiff) 
+   player.x += (leftDiff) 
+   for (key in enemyList) { enemyList[key].x += (leftDiff)
                           console.log('this ran')}
   }
         
