@@ -567,7 +567,7 @@
     if (player.x <= leftB) {
    background.sX -= (leftB - player.x) 
    player.x += (leftB - player.x) 
-   enemyList.x += (leftB - player.x)    
+   for (key in enemyList) { enemyList[key].x += (leftB - player.x) }
   }
         
    if ((player.y + player.height) >= downB) {
