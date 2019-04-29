@@ -227,7 +227,7 @@
       function update() {
         
        ctx.clearRect(0, 0, 650, 650);
-        updateBackground();
+        updateBackground(enemy);
         playerUpdate();
         generateBullet();
         generateEnemy();
@@ -557,7 +557,7 @@
       }
       //UPDATE BACKGROUND
       
-      function updateBackground() {
+      function updateBackground(something) {
   var rightB = 600
   var leftB = 50
   var upB = 50 
@@ -566,9 +566,7 @@
   if ((player.x + player.width) >= rightB) {
    background.sX += ((player.x + player.width) - rightB) 
    player.x -= ((player.x + player.width) - rightB) 
-   for (var key in enemyList){
-    enemyList[key].x -= ((player.x + player.width) - rightB)  
-   }
+   something.x -= ((player.x + player.width) - rightB)
   }
         
     if (player.x <= leftB) {
