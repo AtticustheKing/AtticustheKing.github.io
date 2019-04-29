@@ -562,24 +562,28 @@
   
   if ((player.x + player.width) >= rightB) {
    background.sX += ((player.x + player.width) - rightB) 
+   for (key in bulletList) { bulletList[key].x -= ((player.x + player.width) - rightB) }  
    for (key in enemyList) { enemyList[key].x -= ((player.x + player.width) - rightB) } 
    player.x -= ((player.x + player.width) - rightB)  
   }
         
     if (player.x <= leftB) {
    background.sX -= (leftB - player.x) 
+   for (key in bulletList) { bulletList[key].x += (leftB - player.x) }     
    for (key in enemyList) { enemyList[key].x += (leftB - player.x) } 
    player.x += (leftB - player.x)                      
   }
         
    if ((player.y + player.height) >= downB) {
    background.sY += ((player.y + player.height) - downB)
+   for (key in bulletList) { bulletList[key].y -= ((player.y + player.height) - downB) }   
    for (key in enemyList) { enemyList[key].y -= ((player.y + player.height) - downB) }   
    player.y -= ((player.y + player.height) - downB) 
   }
         
         if (player.y <= upB) {
    background.sY -= (upB - player.y)
+   for (key in bulletList) { bulletList[key].y += (upB - player.y) }        
    for (key in enemyList) { enemyList[key].y += (upB - player.y) }    
    player.y += (upB - player.y) 
   }
