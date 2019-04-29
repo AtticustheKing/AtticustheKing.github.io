@@ -227,7 +227,6 @@
       function update() {
         
        ctx.clearRect(0, 0, 650, 650);
-        updateBackground(enemy);
         playerUpdate();
         generateBullet();
         generateEnemy();
@@ -308,6 +307,11 @@
            }
           
         }
+        
+         for (var key in enemyList){        
+         updateBackground(enemyList[key])
+         
+         }
     
       }
       
