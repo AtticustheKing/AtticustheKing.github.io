@@ -558,22 +558,22 @@
       //UPDATE BACKGROUND
       
       function updateBackground() {
-  var rightB = 550
-  var leftB = 100
-  var upB = 100 
-  var downB = 550
+  var rightB = 600
+  var leftB = 50
+  var upB = 50 
+  var downB = 600
   
-  if (player.x >= rightB) {
-   background.sX += (player.x - rightB) 
-   player.x -= (player.x - rightB)  
+  if ((player.x + player.width) >= rightB) {
+   background.sX += ((player.x + player.width) - rightB) 
+   player.x -= ((player.x + player.width) - rightB)  
   }
     if (player.x <= leftB) {
    background.sX -= (leftB - player.x) 
    player.x += (leftB - player.x) 
   }
-   if (player.y >= downB) {
-   background.sY += (player.y - downB) 
-   player.y -= (player.y - downB) 
+   if ((player.y + player.height) >= downB) {
+   background.sY += ((player.y + player.height) - downB) 
+   player.y -= ((player.y + player.height) - downB) 
   }
         if (player.y <= upB) {
    background.sY -= (upB - player.y) 
