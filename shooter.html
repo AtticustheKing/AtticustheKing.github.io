@@ -567,7 +567,7 @@
     if (player.x <= leftB) {
    background.sX -= (leftB - player.x) 
    player.x += (leftB - player.x) 
-   for (key in enemyList) { enemyList[key].x += (leftB - enemyList[key].x)
+   for (key in enemyList) { enemyList[key].x += (enemyList[key].x - player.x)
                           console.log('this ran')}
   }
         
