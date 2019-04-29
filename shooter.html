@@ -558,18 +558,14 @@
       //UPDATE BACKGROUND
       
       function updateBackground() {
-  var rightB = 500
-  var leftB = 150
-  var upB = 150 
-  var downB = 500
+  var rightB = 550
+  var leftB = 100
+  var upB = 100 
+  var downB = 550
   
   if (player.x >= rightB) {
    background.sX += (player.x - rightB) 
    player.x -= (player.x - rightB)  
-    for (var key in enemyList){        
-         enemyUpdate(enemyList[key]) 
-     enemy.x -= (player.x - rightB) 
-    }
   }
     if (player.x <= leftB) {
    background.sX -= (leftB - player.x) 
