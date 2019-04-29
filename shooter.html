@@ -558,27 +558,29 @@
   var leftB = 50
   var upB = 50 
   var downB = 600
-  var leftDiff = leftB - player.x
+ 
   
   if ((player.x + player.width) >= rightB) {
    background.sX += ((player.x + player.width) - rightB) 
+   for (key in enemyList) { enemyList[key].x -= ((player.x + player.width) - rightB) } 
    player.x -= ((player.x + player.width) - rightB)  
   }
         
     if (player.x <= leftB) {
-   background.sX -= (leftDiff) 
-   player.x += (leftDiff) 
-   for (key in enemyList) { enemyList[key].x += (leftDiff)
-                          console.log('this ran')}
+   background.sX -= (leftB - player.x) 
+   for (key in enemyList) { enemyList[key].x += (leftB - player.x) } 
+   player.x += (leftB - player.x)                      
   }
         
    if ((player.y + player.height) >= downB) {
-   background.sY += ((player.y + player.height) - downB) 
+   background.sY += ((player.y + player.height) - downB)
+   for (key in enemyList) { enemyList[key].y -= ((player.y + player.height) - downB) }   
    player.y -= ((player.y + player.height) - downB) 
   }
         
         if (player.y <= upB) {
-   background.sY -= (upB - player.y) 
+   background.sY -= (upB - player.y)
+   for (key in enemyList) { enemyList[key].y += (upB - player.y) }    
    player.y += (upB - player.y) 
   }
         background.draw();
