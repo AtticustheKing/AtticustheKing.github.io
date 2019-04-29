@@ -566,9 +566,6 @@
   if ((player.x + player.width) >= rightB) {
    background.sX += ((player.x + player.width) - rightB) 
    player.x -= ((player.x + player.width) - rightB)  
-     for (var key in enemyList){  
-       enemyList[key].x -= ((player.x + player.width) - rightB)
-     } 
   }
         
     if (player.x <= leftB) {
