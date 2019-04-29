@@ -567,7 +567,18 @@
    background.sX += (player.x - rightB) 
    player.x -= (player.x - rightB) 
   }
-        
+    if (player.x <= leftB) {
+   background.sX -= (rightB - player.x) 
+   player.x += (rightB - player.x) 
+  }
+   if (player.y >= downB) {
+   background.sY += (player.y - downB) 
+   player.y -= (player.y - downB) 
+  }
+        if (player.y <= upB) {
+   background.sY -= (upB - player.y) 
+   player.y += (upB - player.y) 
+  }
         background.draw();
       }
      
