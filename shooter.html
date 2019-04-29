@@ -566,6 +566,10 @@
   if (player.x >= rightB) {
    background.sX += (player.x - rightB) 
    player.x -= (player.x - rightB)  
+    for (var key in enemyList){        
+         enemyUpdate(enemyList[key]) 
+     enemy.x -= (player.x - rightB) 
+    }
   }
     if (player.x <= leftB) {
    background.sX -= (leftB - player.x) 
