@@ -554,10 +554,10 @@
       //UPDATE BACKGROUND
       
       function updateBackground() {
-  var rightB = 600
+  var rightB = background.width - 50
   var leftB = 50
   var upB = 50 
-  var downB = 600
+  var downB = background.height - 50
  
   
   if ((player.x + player.width) >= rightB) {
@@ -588,8 +588,6 @@
    player.y += (upB - player.y) 
   }
         background.draw();        
-        background.sX += background.width
-        background.draw();
       }
      
       //AUDIO FUNCTIONS
