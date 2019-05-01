@@ -11,7 +11,7 @@
     
     <br>
     
-    <canvas id="canvas" height="650" width="1250"></canvas>
+    <canvas id="canvas" height="650" width="1300"></canvas>
     
     <script>
       
@@ -41,11 +41,11 @@
       var background = {
        sX: 0,
        sY: 0,
-       sWidth: 1250,
-       sHeight: 650,
+       sWidth: 1400,
+       sHeight: 700,
        x: 0,
        y: 0,
-       width: 1250,
+       width: 1300,
        height: 650, 
        draw: function () {     
       ctx.drawImage(background_img, this.sX, this.sY, this.sWidth, this.sHeight, this.x, this.y, this.width, this.height)  
@@ -226,7 +226,7 @@
       
       function update() {
         
-       ctx.clearRect(0, 0, 1250, 650);
+       ctx.clearRect(0, 0, 1300, 650);
         updateBackground();
         playerUpdate();
         generateBullet();
@@ -402,7 +402,7 @@
         if (player.enemySpawnCounter > 300){  
         var x_speed = (Math.random() + 0.5) * 2   
         var y_speed = x_speed
-        var x = Math.random() * 1250;
+        var x = Math.random() * 1300;
         var y = Math.random() * 650;
         var width = 50;
         var height = 50;
@@ -472,7 +472,7 @@
       function startOver() {
        background.sX = 0
        background.sY = 0 
-       player.x = 1250/2
+       player.x = 1300/2
        player.y = 650/2     
        player.enemySpawnSpeed = 1
        player.bulletSpeedCost = 0
