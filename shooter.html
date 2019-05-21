@@ -17,6 +17,7 @@
       
       //SET UP
       var scoreTime = 0
+      var scoreTime2 = 0
       var rightB = 0
       var leftB = 0
       var upB = 0
@@ -623,13 +624,14 @@
        }
        }
       
-      function timerFunction() {
-       scoreTime += 0.01 
-       ctx.fillText("Time: " + scoreTime,430,30)
+      function timerPlace() {
+       scoreTime++
+       scoreTime2 += 0.1 
+       ctx.fillText("Time: " + scoreTime + "." + scoreTime2,430,30)
       }
       
       setInterval(function() { update()}, 20); 
-      setInterval(function() { timerFunction()}, 10)
+      setInterval(function() { timerPlace()}, 1000)
                     
     
       window.addEventListener("keydown", controller.keyListener)
