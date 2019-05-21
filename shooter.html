@@ -624,11 +624,11 @@
        }
       
       function timerFunction() {
-       scoreTime++ 
+       scoreTime += 0.01 
       }
       
       setInterval(function() { update()}, 20); 
-      setInterval(function() { timerFunction()}, 1000)
+      setInterval(function() { timerFunction()}, 10)
                     
     
       window.addEventListener("keydown", controller.keyListener)
