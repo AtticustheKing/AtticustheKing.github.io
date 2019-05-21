@@ -552,6 +552,7 @@
         ctx.fillStyle = "#000000";
         ctx.fillText(player.health + " Hp",0,30)
         ctx.fillText("$" + player.money,230,30)
+         ctx.fillText("Score: " + score,430,30)
        
         
       }
@@ -625,7 +626,6 @@
       
       function scoreFunction() {
        score++
-       ctx.fillText("Score: " + score,430,30)
       }
       
       setInterval(function() { update()}, 20); 
