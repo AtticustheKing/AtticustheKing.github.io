@@ -552,7 +552,7 @@
         ctx.fillStyle = "#000000";
         ctx.fillText(player.health + " Hp",0,30)
         ctx.fillText("$" + player.money,230,30)
-        ctx.fillText("Time: " + scoreTime,430,30)
+       
         
       }
       //UPDATE BACKGROUND
@@ -624,11 +624,12 @@
        }
       
       function timerFunction() {
-       scoreTime += 0.1 
+       scoreTime += 0.01 
+       ctx.fillText("Time: " + scoreTime,430,30)
       }
       
       setInterval(function() { update()}, 20); 
-      setInterval(function() { timerFunction()}, 100)
+      setInterval(function() { timerFunction()}, 10)
                     
     
       window.addEventListener("keydown", controller.keyListener)
