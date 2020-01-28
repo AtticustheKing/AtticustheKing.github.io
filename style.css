@@ -41,6 +41,17 @@
   font-family: "Times New Roman"; 
 }
 
+.upgrade_btn {
+  height: 60px;
+  width: 120px;  
+  background-color: #0000ff;
+  color: #ffffff;
+  border-radius: 25px;
+  border: 2px solid #ff0000;
+  font-size: 22px;
+  font-family: "Times New Roman"; 
+}
+
 .back_btn:hover {
   height: 60px;
   width: 120px;  
