@@ -54,7 +54,7 @@
 
 .upgrade_btn {
   height: 60px;
-  width: 120px;  
+  width: 180px;  
   background-color: #0000ff;
   color: #ffffff;
   border-radius: 25px;
@@ -65,7 +65,7 @@
 
 .upgrade_btn:hover {
   height: 60px;
-  width: 120px;  
+  width: 180px;  
   background-color: #ffffff;
   color: #0000ff;
   border-radius: 25px;
