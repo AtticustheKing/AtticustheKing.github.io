@@ -2,3 +2,12 @@
 html {
   font-family: 'Times New Roman';
 }
+
+.post {
+  border-style: solid;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-bottom: 30px;
+  margin-right: 300px;
+  padding: 10px;
+}
