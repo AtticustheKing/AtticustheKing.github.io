@@ -1,13 +1,127 @@
+/* 
+#2F4454 -blue/grey
+#2E151B -deep purple/red
+#DA7B93 -pink
+#376E6F -blue/green
+#1C3334 -green/grey
+*/
 
 html {
-  font-family: 'Times New Roman';
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  background-color: #2F4454;
+  color: white;
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.topbar {
+  width: 90%;
+  height: 40px;
+  background-color: #1C3334;
+  margin: auto;
+}
+
+.topLinks {
+  margin: auto;
+  width: 70%;
+  text-align: center;
+  word-spacing: 15vw;
+
 }
 
 .post {
   border-style: solid;
-  margin-top: 30px;
-  margin-left: 40px;
-  margin-bottom: 30px;
-  margin-right: 300px;
+  border-color: #DA7B93;
+  width: 80%;
+  margin-right: 10%;
   padding: 10px;
+}
+
+.post_section {
+  margin-left: 10%;
+}
+
+.postImage{
+  width: 100%;
+  height: auto;
+  border: solid 4px #2E151B;
+}
+figure {
+  display: inline-block;
+  width: 30%;
+}
+
+figcaption{
+  background-color: #1C3334;
+  color: white;
+  font-style: italic;
+  font-family: 'Roboto', sans-serif;
+  padding: 2px;
+  text-align: center;
+  width: 30%;
+}
+
+h1 {
+  font-weight: 100;
+  text-align: center;
+  letter-spacing: 0.3em;
+}
+
+h2 {
+  font-weight: 400;
+  text-align: center;
+}
+
+.post_section h3 {
+  margin-left: -5%;
+}
+
+.topMainTitle {
+  font-size: 7vw;
+  letter-spacing: 0.6em;
+  margin-top: 10%;
+}
+
+.bottomMainTitle {
+  font-size: 8vw;
+  letter-spacing: 0.6em;
+  margin-top: -5%;
+  font-weight: 700;
+}
+
+.gameImages {
+  display: inline-block;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  width:  200px;
+  height: 140px;
+  border-radius: 30%;
+  border: solid #DA7B93 3px;
+}
+
+@media screen and (max-width: 500px) {
+  .centerImages {
+    text-align: center;
+  }
+}
+
+.projects h3{
+  font-weight: 100;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.linkWords {
+  font-weight: 700;
 }
